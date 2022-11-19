@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public sealed class DashSecondsView : MonoBehaviour
@@ -10,6 +11,7 @@ public sealed class DashSecondsView : MonoBehaviour
         if (seconds > 3)
             seconds = 3;
 
-        _text.text = seconds.ToString();
+        var secondsText = MathF.Truncate(seconds).ToString();
+        _text.text = secondsText;
     }
 }

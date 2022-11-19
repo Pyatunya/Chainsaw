@@ -12,10 +12,10 @@ public class PlayerInputController : MonoBehaviour
 
     private void Update()
     {
-        // if (Input.GetKeyDown(_key))
-        // {
-        //     _player.Attack();
-        // }
+        if (Input.GetKeyDown(_key) && _time == 0f)
+        {
+            _player.Attack();
+        }
 
         _dashSecondsView.Visualize(_time);
         if (Input.GetKey(_key))
@@ -23,10 +23,12 @@ public class PlayerInputController : MonoBehaviour
             _time += Time.deltaTime;
         }
 
-        if (Input.GetKeyUp(_key) && _time >= 3)
+        if (Input.GetKeyUp(_key))
         {
+            if (_time >= 3)
+                _player.Dash();
+            
             _time = 0;
-            _player.Dash();
         }
     }
 }

@@ -17,8 +17,6 @@ public class Player : Entity
 
     public void Attack()
     {
-        Debug.Log("attack");
-
         if (_targetSearcher.TryFindTarget(out Entity closest))
             MoveTo(closest, _moveForce);
     }
@@ -31,7 +29,6 @@ public class Player : Entity
 
     public void Dash()
     {
-        Debug.Log("Dash");
         if (_targetSearcher.TryFindTarget(out Entity closest))
             MoveTo(closest, _dashForce);
     }
