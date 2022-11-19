@@ -4,8 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] private KeyCode _key;
-
     private Player _player;
 
     private void Awake()
@@ -15,7 +13,7 @@ public class PlayerInputController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(_key))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             _player.Attack();
         }

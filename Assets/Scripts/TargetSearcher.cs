@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,11 +9,7 @@ public sealed class TargetSearcher : MonoBehaviour
 
     public bool TryFindTarget(out Entity closest)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _radius, _layerMask);
-
-        var entities = colliders.
-            Where(collider => collider.GetComponent<Entity>() != null).
-            Select(collider => collider.GetComponent<Entity>());
+        IEnumerable<Entity> entities = FindInCircle();
 
         if (entities == null || entities.Count() == 0)
         {
@@ -20,7 +17,25 @@ public sealed class TargetSearcher : MonoBehaviour
             return false;
         }
 
-        closest = entities.ElementAt(0);
+        closest = FindClosest(entities);
+
+        return closest != null;
+    }
+
+    private IEnumerable<Entity> FindInCircle()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _radius, _layerMask);
+
+        var entities = colliders.
+            Where(collider => collider.GetComponent<Entity>() != null).
+            Select(collider => collider.GetComponent<Entity>());
+
+        return entities;
+    }
+
+    private Entity FindClosest(IEnumerable<Entity> entities)
+    {
+        Entity closest = entities.ElementAt(0);
         float closestDistance = Vector3.Distance(transform.position, entities.ElementAt(0).transform.position);
 
         for (int i = 0; i < entities.Count(); i++)
@@ -33,13 +48,6 @@ public sealed class TargetSearcher : MonoBehaviour
             }
         }
 
-        Debug.Log(closest.gameObject.name);
-        return closest != null;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = new Color(1f, 0f, 0f, 0.25f);
-        Gizmos.DrawSphere(transform.position, _radius);
+        return closest;
     }
 }
