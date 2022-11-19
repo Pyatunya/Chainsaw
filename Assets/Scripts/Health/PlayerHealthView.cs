@@ -7,6 +7,6 @@ public sealed class PlayerHealthView : HealthView
     
     public override void Visualize(int value)
     {
-        _scrollbar.size = value / 100f;
+        _scrollbar.size = value / 10f;
     }
 }
