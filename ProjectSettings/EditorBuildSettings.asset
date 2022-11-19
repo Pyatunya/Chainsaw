@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Score.unity
-    guid: 53407a1f3b3297840bfafe4ba2a7173b
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 0a17b9efb9573144487f1b5818e08c66
+  - enabled: 1
+    path: Assets/Scenes/Zombie Spawner.unity
+    guid: 4bfb2eae90164ae44bf2b69151e3a025
   m_configObjects: {}
