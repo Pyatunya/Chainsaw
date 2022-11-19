@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d466ad26-94c4-4186-a775-97dd5f37b8d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Score.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Score.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Zombie Spawner.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Zombie Spawner.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ComboCounter.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ComboCounter/ComboCounter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ComboCounter/ComboCounter.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
