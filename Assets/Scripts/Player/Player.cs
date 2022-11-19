@@ -3,8 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
 public class Player : Entity
 {
-    [SerializeField] private float _moveForce = 300f;
-    [SerializeField] private float _dashForce = 600f;
+    private float _moveForce = 500f;
+    private float _dashForce = 3000f;
     
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
@@ -21,15 +21,15 @@ public class Player : Entity
             MoveTo(closest, _moveForce);
     }
 
-    private void MoveTo(Entity closest, float force)
-    {
-        var direction = (closest.transform.position - transform.position).normalized;
-        _rigidbody.AddForce(direction * force);
-    }
-
     public void Dash()
     {
         if (_targetSearcher.TryFindTarget(out Entity closest))
             MoveTo(closest, _dashForce);
+    }
+
+    private void MoveTo(Entity closest, float force)
+    {
+        var direction = (closest.transform.position - transform.position).normalized;
+        _rigidbody.AddForce(direction * force);
     }
 }
