@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] private float dashChargeTime = 1;
+    [SerializeField] private float dashChargeTime = 0.5f;
     [SerializeField] private DashSecondsView _dashSecondsView;
 
     private readonly KeyCode _key = KeyCode.F;
@@ -15,15 +15,6 @@ public class PlayerInputController : MonoBehaviour
     private void Update()
     {
         ChargeDash();
-    }
-
-    private void ChargeDash()
-    {
-        _dashSecondsView.Visualize(_time);
-        if (Input.GetKey(_key))
-        {
-            _time += Time.deltaTime;
-        }
 
         if (Input.GetKeyUp(_key))
         {
@@ -33,6 +24,15 @@ public class PlayerInputController : MonoBehaviour
                 _player.Attack();
 
             _time = 0;
+        }
+    }
+
+    private void ChargeDash()
+    {
+        _dashSecondsView.Visualize(_time);
+        if (Input.GetKey(_key))
+        {
+            _time += Time.deltaTime;
         }
     }
 }
