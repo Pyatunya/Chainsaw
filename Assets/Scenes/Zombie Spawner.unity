@@ -363,6 +363,9 @@ MonoBehaviour:
   _spawnSeconds: 0.3
   _prefabs:
   - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+  - {fileID: -1506822977903473609, guid: 437c63de62444ee4d97b5092578d5565, type: 3}
+  - {fileID: -1506822977903473609, guid: c3802db7840ffb640a094910ac449f70, type: 3}
+  - {fileID: -1506822977903473609, guid: d9ecd969a88c4a54185e40a05ed5ce88, type: 3}
   _spawnPoints:
   - {fileID: 293790393}
   - {fileID: 2052956839}
@@ -777,6 +780,10 @@ PrefabInstance:
     - target: {fileID: 7897066370255026738, guid: 017c9e45e1d00ff43bc9751bc776480f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897066370255026740, guid: 017c9e45e1d00ff43bc9751bc776480f, type: 3}
+      propertyPath: _moveForce
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017c9e45e1d00ff43bc9751bc776480f, type: 3}
