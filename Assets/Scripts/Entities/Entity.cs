@@ -13,7 +13,11 @@ public class Entity : MonoBehaviour
         _health.OnDied += OnDied;
     }
 
-    private void OnDisable() => _health.OnDied -= OnDied;
+    private void OnDisable()
+    {
+        if (_health != null)
+            _health.OnDied -= OnDied;
+    }
 
     private void OnDied()
     {
