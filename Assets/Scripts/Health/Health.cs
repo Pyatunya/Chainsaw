@@ -5,7 +5,12 @@ public sealed class Health : MonoBehaviour
 {
     [SerializeField] private int _value;
     [SerializeField] private HealthView _healthView;
-    
+
+    private void OnEnable()
+    {
+        _healthView.Visualize(_value);
+    }
+
     public void TakeDamage(int damage)
     {
         if (damage <= 0)
