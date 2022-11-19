@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6389e6cd8c7be4419e7771c38a9b999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 7
+  _radius: 15
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7750f3d2db5df3d4aad3a57522be2056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveForce: 300
+  _moveForce: 500
 --- !u!114 &7897066370255026741
 MonoBehaviour:
   m_ObjectHideFlags: 0
