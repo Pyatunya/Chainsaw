@@ -8,6 +8,8 @@ public sealed class EnemySpawner : MonoBehaviour
     [SerializeField, Min(0.1f)] private float _spawnSeconds = 1.5f;
     [SerializeField] private Entity[] _prefabs;
     [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private Score _score;
+    
     private Dictionary<Entity, IndependentPool<Entity>> _pools = new();
 
     private IEnumerator Start()
@@ -22,6 +24,7 @@ public sealed class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(_spawnSeconds);
             var prefab = _prefabs[Random.Range(0, _prefabs.Length)];
             var entity = _pools[prefab].Get();
+            entity.Init(_score);
             entity.gameObject.SetActive(true);
             entity.transform.position = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
         }
