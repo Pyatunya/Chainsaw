@@ -6,10 +6,9 @@ public sealed class Health : MonoBehaviour
     [SerializeField] private int _value;
     [SerializeField] private HealthView _healthView;
 
-    private void OnEnable()
-    {
-        _healthView.Visualize(_value);
-    }
+    public event Action OnDied;
+    
+    private void OnEnable() => _healthView.Visualize(_value);
 
     public void TakeDamage(int damage)
     {
@@ -23,6 +22,9 @@ public sealed class Health : MonoBehaviour
             Die();
     }
 
-    private void Die() => gameObject.SetActive(false);
-    
+    private void Die()
+    {
+        OnDied?.Invoke();
+        gameObject.SetActive(false);
+    }
 }
