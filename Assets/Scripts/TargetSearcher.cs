@@ -3,7 +3,7 @@ using UnityEngine;
 
 public sealed class TargetSearcher : MonoBehaviour
 {
-    [SerializeField, Min(0.1f)] private float _radius = 1.5f;
+    [SerializeField, Min(0.1f)] private float _radius;
     [SerializeField] private LayerMask _layerMask;
 
     public bool TryFindTarget(out Entity closest)
@@ -20,11 +20,14 @@ public sealed class TargetSearcher : MonoBehaviour
             return false;
         }
 
-        closest = null;
+        closest = entities.ElementAt(0);
+        float closestDistance = Vector3.Distance(transform.position, entities.ElementAt(0).transform.position);
 
-        for (int i = 0; i < entities.Count() - 1; i++)
+        for (int i = 0; i < entities.Count(); i++)
         {
-            if (GetDistance(entities.ElementAt(i)) < GetDistance(entities.ElementAt(i + 1)))
+            float distance = Vector3.Distance(transform.position, entities.ElementAt(i).transform.position);
+
+            if (distance < closestDistance)
             {
                 closest = entities.ElementAt(i);
             }
@@ -32,14 +35,6 @@ public sealed class TargetSearcher : MonoBehaviour
 
         Debug.Log(closest.gameObject.name);
         return closest != null;
-
-    }
-
-    private float GetDistance(Entity entity)
-    {
-        Debug.Log((entity.transform.position - transform.position).sqrMagnitude);
-        Debug.Log(entity.gameObject.name);
-        return (entity.transform.position - transform.position).sqrMagnitude;
     }
 
     private void OnDrawGizmosSelected()
