@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
@@ -7,11 +6,11 @@ public class Player : Entity
     [SerializeField] private float _moveForce = 300f;
 
     private TargetSearcher _targetSearcher;
-    private Rigidbody2D playerRB;
+    private Rigidbody2D _playerRB;
 
     private void Awake()
     {
-        playerRB = GetComponent<Rigidbody2D>();
+        _playerRB = GetComponent<Rigidbody2D>();
         _targetSearcher = GetComponent<TargetSearcher>();
     }
 
@@ -27,7 +26,7 @@ public class Player : Entity
             return;
 
         Vector3 direction = (closest.transform.position - transform.position).normalized;
-        playerRB.AddForce(direction * _moveForce);
+        _playerRB.AddForce(direction * _moveForce);
     }
 
     public void Dash()

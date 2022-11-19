@@ -6,7 +6,7 @@ public sealed class EnemySpawner : MonoBehaviour
 {
     [SerializeField, Min(0.1f)] private float _spawnSeconds = 1.5f;
     [SerializeField] private Entity[] _prefabs;
-    [SerializeField] private float _radius = 1.5f;
+    [SerializeField] private Transform[] _spawnPoints;
 
     private IEnumerator Start()
     {
@@ -14,12 +14,13 @@ public sealed class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(_spawnSeconds);
             var prefab = _prefabs[Random.Range(0, _prefabs.Length)];
-            Instantiate(prefab, Random.insideUnitCircle * _radius, Quaternion.identity, transform);
+            Instantiate(prefab, _spawnPoints[Random.Range(0, _spawnPoints.Length)].position, Quaternion.identity, transform);
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = new Color(Color.magenta.r, Color.magenta.g, Color.magenta.b, 0.25f);
-    }
+    // private void OnDrawGizmosSelected()
+    // {
+    //     Gizmos.color = new Color(Color.magenta.r, Color.magenta.g, Color.magenta.b, 0.25f);
+    //     Gizmos.DrawSphere(transform.position, _radius);
+    // }
 }
