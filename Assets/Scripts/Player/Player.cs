@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : Entity
 {
     private float _moveForce = 500f;
-    private float _dashForce = 3000f;
+    private float _dashForce = 2800f;
     
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
