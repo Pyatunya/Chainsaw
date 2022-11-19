@@ -3,7 +3,6 @@
 [RequireComponent(typeof(Collider2D))]
 public sealed class PlayerCollision : MonoBehaviour
 {
-    [SerializeField] private Player _player;
     [SerializeField, Min(1)] private int _damage = 5;
 
     private void OnCollisionEnter2D(Collision2D collision)
