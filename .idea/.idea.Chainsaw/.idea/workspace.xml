@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d466ad26-94c4-4186-a775-97dd5f37b8d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Wallet/WalletView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Wallet/WalletView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Chainsaw/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chainsaw/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Score.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Score.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Wallet/WalletView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Wallet/WalletView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

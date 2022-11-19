@@ -16,23 +16,27 @@ public sealed class WalletView : MonoBehaviour
     public void Visualize(int count)
     {
         var text = count.ToString();
-        for (var i = 0; i < _digitsPrefixes.Count - 1; ++i)
+        
+        if (count > 1000)
         {
-            var (currentValue, currentPostfix) = _digitsPrefixes[i];
-            var (nextValue, nextPostfix) = _digitsPrefixes[i + 1];
-            var nextIsLast = i >= _digitsPrefixes.Count - 2;
-
-            if (nextValue > count)
+            for (var i = 0; i < _digitsPrefixes.Count - 1; ++i)
             {
-                float result = (float)count / currentValue;
-                text = result.ToString(result >= 100 ? "0" : "0.0").Replace(".0", "") + currentPostfix;
-                break;
-            }
+                var (currentValue, currentPostfix) = _digitsPrefixes[i];
+                var (nextValue, nextPostfix) = _digitsPrefixes[i + 1];
+                var nextIsLast = i >= _digitsPrefixes.Count - 2;
 
-            if (nextIsLast)
-            {
-                float result = (float)count / nextValue;
-                text = result.ToString(result >= 100 ? "0" : "0.0").Replace(".0", "") + nextPostfix;
+                if (nextValue > count)
+                {
+                    float result = (float)count / currentValue;
+                    text = result.ToString(result >= 100 ? "0" : "0.0").Replace(".0", "") + currentPostfix;
+                    break;
+                }
+
+                if (nextIsLast)
+                {
+                    float result = (float)count / nextValue;
+                    text = result.ToString(result >= 100 ? "0" : "0.0").Replace(".0", "") + nextPostfix;
+                }
             }
         }
 
