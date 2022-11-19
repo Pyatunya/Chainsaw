@@ -1,55 +1,53 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public sealed class TargetSearcher : MonoBehaviour
 {
-    [SerializeField, Min(0.1f)] private float _radius = 1.5f;
+    [SerializeField, Min(0.1f)] private float _radius;
     [SerializeField] private LayerMask _layerMask;
-
-    private void Start()
-    {
-        TryFindTarget(out var en);
-    }
 
     public bool TryFindTarget(out Entity closest)
     {
-        var colliders = Physics2D.OverlapCircleAll(transform.position, _radius, _layerMask);
-
-        var entities = colliders.Where(collider => collider.GetComponent<Entity>() != null).
-                Select(collider => collider.GetComponent<Entity>());
+        IEnumerable<Entity> entities = FindInCircle();
 
         if (entities == null || entities.Count() == 0)
         {
             closest = null;
             return false;
         }
-        
-        closest = entities.ElementAt(0);
-        
-        for (var i = 0; i < entities.Count(); i++)
+
+        closest = FindClosest(entities);
+
+        return closest != null;
+    }
+
+    private IEnumerable<Entity> FindInCircle()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _radius, _layerMask);
+
+        var entities = colliders.
+            Where(collider => collider.GetComponent<Entity>() != null).
+            Select(collider => collider.GetComponent<Entity>());
+
+        return entities;
+    }
+
+    private Entity FindClosest(IEnumerable<Entity> entities)
+    {
+        Entity closest = entities.ElementAt(0);
+        float closestDistance = Vector3.Distance(transform.position, entities.ElementAt(0).transform.position);
+
+        for (int i = 0; i < entities.Count(); i++)
         {
-            if(i + 1 == entities.Count() - 1)
-                break;
-            
-            if (GetDistance(entities.ElementAt(i)) < GetDistance(entities.ElementAt(i + 1)))
+            float distance = Vector3.Distance(transform.position, entities.ElementAt(i).transform.position);
+
+            if (distance < closestDistance)
             {
                 closest = entities.ElementAt(i);
             }
         }
 
-        Debug.Log(closest.gameObject.name);
-        return closest != null;
-
-    }
-
-    private float GetDistance(Entity entity)
-    {
-        return (transform.position - entity.transform.position).sqrMagnitude;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, _radius);
+        return closest;
     }
 }
