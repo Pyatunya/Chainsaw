@@ -6,8 +6,15 @@ public sealed class Health : MonoBehaviour
     [SerializeField] private int _value;
     [SerializeField] private HealthView _healthView;
 
+    private int _maxValue;
+
     public event Action OnDied;
-    
+
+    private void Start()
+    {
+        _maxValue = _value;
+    }
+
     private void OnEnable() => _healthView.Visualize(_value);
 
     public void TakeDamage(int damage)
