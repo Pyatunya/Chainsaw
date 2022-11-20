@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
 public class Player : Entity
@@ -8,6 +9,8 @@ public class Player : Entity
     
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
+
+    public event UnityAction Dashing;
 
     private void Awake()
     {
@@ -24,7 +27,10 @@ public class Player : Entity
     public void Dash()
     {
         if (_targetSearcher.TryFindTarget(out Entity closest))
+        {
+            Dashing?.Invoke();
             MoveTo(closest, _dashForce);
+        }
     }
 
     private void MoveTo(Entity closest, float force)
