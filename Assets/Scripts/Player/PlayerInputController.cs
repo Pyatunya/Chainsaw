@@ -19,9 +19,14 @@ public class PlayerInputController : MonoBehaviour
         if (Input.GetKeyUp(_key))
         {
             if (_time >= dashChargeTime)
-                _player.Dash();
+            {
+                float chargingTimeForDashForce = _time - dashChargeTime;
+                _player.Dash(chargingTimeForDashForce);
+            }
             else
+            {
                 _player.Attack();
+            }
 
             _time = 0;
         }
