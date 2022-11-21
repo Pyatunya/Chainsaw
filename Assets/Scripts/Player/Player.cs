@@ -6,7 +6,7 @@ public class Player : Entity
 {
     private float _moveForce = 500f;
     private float _dashForce = 2800f;
-    private float _maxTimeForDashForce = 3f;
+    private float _maxTimeForDashForce = 1.2f;
 
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
@@ -43,15 +43,11 @@ public class Player : Entity
         _rigidbody.AddForce(direction * force);
     }
 
-    private float GetChargedDashForce(float chargingtime)
+    private float GetChargedDashForce(float chargingTime)
     {
-        float deltaForce = ((_dashForce - _moveForce) * GetDashForceCoefficient(chargingtime, _maxTimeForDashForce));
+        float dashForceCoefficient = Mathf.Min(chargingTime, _maxTimeForDashForce) / _maxTimeForDashForce;
+        float deltaForce = (_dashForce - _moveForce) * dashForceCoefficient;
         float result = deltaForce + _moveForce;
         return result;
-    }
-
-    private float GetDashForceCoefficient(float chargingTime, float maxTime)
-    {
-        return Mathf.Min(chargingTime, maxTime) / maxTime;
     }
 }

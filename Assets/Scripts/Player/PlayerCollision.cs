@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public sealed class PlayerCollision : MonoBehaviour
 {
     [SerializeField, Min(1)] private int _damage = 5;
+    private ComboCounter _comboCounter;
+
+    private void OnEnable() => _comboCounter = GetComponent<ComboCounter>();
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,5 +20,6 @@ public sealed class PlayerCollision : MonoBehaviour
     private void Attack(Health health)
     {
         health.TakeDamage(_damage);
+        _comboCounter?.Increase();
     }
 }

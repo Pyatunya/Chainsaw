@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public sealed class EntityCollision : MonoBehaviour
 {
     [SerializeField, Min(1)] private int _damage = 5;
+    private ComboCounter _comboCounter;
+
+    private void OnEnable() => _comboCounter ??= GetComponent<ComboCounter>();
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,6 +26,7 @@ public sealed class EntityCollision : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         health.TakeDamage(_damage);
         gameObject.SetActive(false);
-        Debug.Log("Damage лоъ");
+        _comboCounter?.ResetToZero();
+        Debug.Log("Damage player");
     }
 }

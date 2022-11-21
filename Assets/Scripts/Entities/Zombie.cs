@@ -4,7 +4,7 @@ using UnityEngine;
 public class Zombie : Entity
 {
     [SerializeField, Min(0.1f)] private float _speed = 1.4f;
-    
+
     private Player _player;
     private Rigidbody2D _rigidbody;
 

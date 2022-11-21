@@ -4,7 +4,7 @@ using UnityEngine;
 public sealed class ComboCounter : MonoBehaviour
 {
     [SerializeField] private Wallet _wallet;
-    [SerializeField] private CountView _view;
+    [SerializeField] private ComboCounterView _view;
     [SerializeField] private int _countWhenNeedAddNewMoney = 5;
     [SerializeField] private int _addMoney = 10;
     
@@ -15,7 +15,7 @@ public sealed class ComboCounter : MonoBehaviour
         _value++;
         _view.Visualize(_value);
 
-        var numberOfWholeDivisions = _value.GetNumberOfWholeDivisions(5);
+        var numberOfWholeDivisions = _value.GetNumberOfWholeDivisions(_countWhenNeedAddNewMoney);
         
         if (numberOfWholeDivisions > 0)
         {
