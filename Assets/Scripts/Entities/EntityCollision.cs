@@ -12,7 +12,7 @@ public sealed class EntityCollision : MonoBehaviour
 
     private void OnEnable() => _comboCounter ??= GetComponent<ComboCounter>();
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerHealth player))
         {
@@ -28,6 +28,5 @@ public sealed class EntityCollision : MonoBehaviour
         yield return new WaitForSeconds(_secondsBeforeAttack);
         health.TakeDamage(_damage);
         _comboCounter?.ResetToZero();
-        Debug.Log("Damage player");
     }
 }
