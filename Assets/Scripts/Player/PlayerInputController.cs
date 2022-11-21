@@ -1,14 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Player))]
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] private float dashChargeTime = 0.5f;
+    [SerializeField] private float _dashLockTime = 0.5f;
     [SerializeField] private DashSecondsView _dashSecondsView;
 
     private readonly KeyCode _key = KeyCode.F;
     private Player _player;
     private float _time;
+    private bool _isDashCharging = false;
+
+    public event UnityAction DashChargingStarted;
+    public event UnityAction DashChargingEnded;
 
     private void Awake() => _player = GetComponent<Player>();
 
@@ -18,10 +23,17 @@ public class PlayerInputController : MonoBehaviour
 
         if (Input.GetKeyUp(_key))
         {
-            if (_time >= dashChargeTime)
-                _player.Dash();
+            if (_isDashCharging)
+            {
+                _isDashCharging = false;
+                DashChargingEnded?.Invoke();
+                float chargingTimeForDashForce = _time - _dashLockTime;
+                _player.Dash(chargingTimeForDashForce);
+            }
             else
+            {
                 _player.Attack();
+            }
 
             _time = 0;
         }
@@ -33,6 +45,11 @@ public class PlayerInputController : MonoBehaviour
         if (Input.GetKey(_key))
         {
             _time += Time.deltaTime;
+            if (_time > _dashLockTime && _isDashCharging == false)
+            {
+                _isDashCharging = true;
+                DashChargingStarted?.Invoke();
+            }
         }
     }
 }
