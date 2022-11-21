@@ -13,6 +13,8 @@ public class Player : Entity
 
     public event UnityAction Dashing;
 
+    public float MaxTimeForDashForce => _maxTimeForDashForce;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -31,7 +33,6 @@ public class Player : Entity
         {
             Dashing?.Invoke();
             float chargedDashForce = GetChargedDashForce(chargingTimeForDashForce);
-            Debug.Log(chargedDashForce);
             MoveTo(closest, chargedDashForce);
         }
     }
