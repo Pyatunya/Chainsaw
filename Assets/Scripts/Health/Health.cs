@@ -24,8 +24,8 @@ public sealed class Health : MonoBehaviour
 
         _value = Mathf.Max(0, _value - damage);
         _healthView.Visualize(_value);
-        
-        if(_value == 0)
+
+        if (_value == 0)
             Die();
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public sealed class EntityCollision : MonoBehaviour
 {
     [SerializeField, Min(1)] private int _damage = 5;
-    [SerializeField, Min(0.1f)] private float _secondsBeforeAttack = 0.5f;
+    [SerializeField, Min(0.1f)] private float _attackDelay = 0.5f;
     
     private ComboCounter _comboCounter;
     private Coroutine _coroutine;
@@ -25,7 +25,7 @@ public sealed class EntityCollision : MonoBehaviour
 
     private IEnumerator StartAttacking(Health health)
     {
-        yield return new WaitForSeconds(_secondsBeforeAttack);
+        yield return new WaitForSeconds(_attackDelay);
         health.TakeDamage(_damage);
         _comboCounter?.ResetToZero();
     }
