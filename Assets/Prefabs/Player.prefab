@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1369986485227066073}
   - component: {fileID: 2195493277566510118}
-  - component: {fileID: 4073142547298644556}
+  - component: {fileID: 2762435604846317625}
+  - component: {fileID: 8679266396058078677}
   m_Layer: 0
   m_Name: DashAoeDamage
   m_TagString: Untagged
@@ -49,7 +50,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &4073142547298644556
+--- !u!114 &2762435604846317625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689666704542680846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7a994abe18eeb45ab45c79c94ccb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 0}
+  _player: {fileID: 7640625594194428934}
+  _playerInputController: {fileID: 7640625594194428935}
+--- !u!114 &8679266396058078677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
+  _comboCounter: {fileID: 0}
 --- !u!114 &545199964967693107
 MonoBehaviour:
   m_ObjectHideFlags: 0
