@@ -492,6 +492,17 @@ Transform:
   m_Father: {fileID: 623599262}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &721410546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5440818953585858695, guid: 1a77ad35e0afc2b4d85dc86cc00b73db, type: 3}
+  m_PrefabInstance: {fileID: 866597413}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &743983803
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +661,8 @@ PrefabInstance:
       propertyPath: m_PlaneDistance
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1474930412023304863, guid: 1a77ad35e0afc2b4d85dc86cc00b73db, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a77ad35e0afc2b4d85dc86cc00b73db, type: 3}
 --- !u!114 &866597414 stripped
 MonoBehaviour:
@@ -1012,6 +1024,18 @@ PrefabInstance:
       propertyPath: _healthView
       value: 
       objectReference: {fileID: 7897066368288001030}
+    - target: {fileID: 2762435604846317625, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 7897066368288001020}
+    - target: {fileID: 2762435604846317625, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _slider
+      value: 
+      objectReference: {fileID: 721410546}
+    - target: {fileID: 2762435604846317625, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _playerInputController
+      value: 
+      objectReference: {fileID: 7897066368288001033}
     - target: {fileID: 7640625594194428928, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: m_RootOrder
       value: 2
