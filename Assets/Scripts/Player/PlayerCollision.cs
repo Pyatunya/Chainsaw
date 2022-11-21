@@ -1,14 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public sealed class PlayerCollision : MonoBehaviour
 {
     [SerializeField, Min(1)] private int _damage = 5;
-    private ComboCounter _comboCounter;
-
-    private void OnEnable() => _comboCounter = GetComponent<ComboCounter>();
-
+    [SerializeField] private ComboCounter _comboCounter;
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Health health))
