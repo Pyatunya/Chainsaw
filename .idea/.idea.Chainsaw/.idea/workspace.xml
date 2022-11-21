@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d466ad26-94c4-4186-a775-97dd5f37b8d5" name="Changes" comment="" />
+    <list default="true" id="d466ad26-94c4-4186-a775-97dd5f37b8d5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blood Particles.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blood Particles.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Zombie.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Zombie.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/ZombieLoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/ZombieLoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectDissappear.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectDissappear.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +37,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Health/Health.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Health/Health.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectDissappear.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PauseInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/DashAoeDamager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
