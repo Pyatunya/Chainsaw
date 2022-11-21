@@ -5,12 +5,13 @@ public sealed class Wallet : MonoBehaviour
 {
     [SerializeField] private WalletView _view;
     private readonly StorageWithNameSaveObject<Wallet, int> _storage = new();
-    private int _money;
+    
+    public int Money { get; private set; }
 
     private void OnEnable()
     {
-        _money = _storage.HasSave() ? _storage.Load() : 0;
-        _view.Visualize(_money);
+        Money = _storage.HasSave() ? _storage.Load() : 0;
+        _view.Visualize(Money);
     }
 
     public void Put(int money)
@@ -18,8 +19,8 @@ public sealed class Wallet : MonoBehaviour
         if (money <= 0)
             throw new ArgumentOutOfRangeException(nameof(money));
 
-        _money += money;
-        VisualizedAndSave(_money);
+        Money += money;
+        VisualizedAndSave(Money);
     }
 
     private void VisualizedAndSave(int money)
@@ -36,9 +37,10 @@ public sealed class Wallet : MonoBehaviour
         if (CanTake(money) == false)
             throw new InvalidOperationException($"Can't take {money} ");
 
-        _money -= money;
-        VisualizedAndSave(_money);
+        Money -= money;
+        VisualizedAndSave(Money);
     }
 
-    private bool CanTake(int money) => _money - money >= 0;
+    public bool CanTake(int money) => Money - money >= 0;
+    
 }
