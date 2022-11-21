@@ -13,6 +13,8 @@ public class Player : Entity
 
     public event UnityAction Dashing;
 
+    public float MaxTimeForDashForce => _maxTimeForDashForce;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
