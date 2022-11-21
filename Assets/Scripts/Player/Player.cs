@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,7 @@ public class Player : Entity
     public event UnityAction Dashing;
 
     public float MaxTimeForDashForce => _maxTimeForDashForce;
+    public bool IsAttacking { get; private set; }
 
     private void Awake()
     {
@@ -40,8 +42,16 @@ public class Player : Entity
 
     private void MoveTo(Entity closest, float force)
     {
+        IsAttacking = true;
         var direction = (closest.transform.position - transform.position).normalized;
         _rigidbody.AddForce(direction * force);
+        StartCoroutine(SetFalseIsAttacking());
+    }
+
+    private IEnumerator SetFalseIsAttacking()
+    {
+        yield return new WaitForSeconds(0.25f);
+        IsAttacking = false;
     }
 
     private float GetChargedDashForce(float chargingTime)

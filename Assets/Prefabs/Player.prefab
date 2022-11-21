@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 9009377954239230135}
   - component: {fileID: 545199964967693107}
   - component: {fileID: 545199964967693104}
+  - component: {fileID: 3647564683463022411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -353,6 +354,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   _healthView: {fileID: 545199964967693107}
+--- !u!114 &3647564683463022411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640625594194428957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684b7f9aaa244b9a8feeb7a5208bf97e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _endGamePanel: {fileID: 0}
+  _gameLoop: {fileID: 0}
+  <Health>k__BackingField: {fileID: 545199964967693104}
 --- !u!1001 &4928081033268367939
 PrefabInstance:
   m_ObjectHideFlags: 0
