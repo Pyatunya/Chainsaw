@@ -5,23 +5,28 @@ using UnityEngine;
 public sealed class EntityCollision : MonoBehaviour
 {
     [SerializeField, Min(1)] private int _damage = 5;
+    [SerializeField, Min(0.1f)] private float _secondsBeforeAttack = 0.5f;
+    
+    private ComboCounter _comboCounter;
+    private Coroutine _coroutine;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnEnable() => _comboCounter ??= GetComponent<ComboCounter>();
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Health health))
+        if (collision.gameObject.TryGetComponent(out PlayerHealth player))
         {
-            if(health.gameObject.layer == gameObject.layer)
-                return;
-
-            StartCoroutine(StartAttacking(health));
+            if (_coroutine is not null)
+                StopCoroutine(_coroutine);
+            
+            _coroutine = StartCoroutine(StartAttacking(player.Health));
         }
     }
 
     private IEnumerator StartAttacking(Health health)
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(_secondsBeforeAttack);
         health.TakeDamage(_damage);
-        gameObject.SetActive(false);
-        Debug.Log("Damage лоъ");
+        _comboCounter?.ResetToZero();
     }
 }

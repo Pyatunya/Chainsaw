@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
-public class DashAoeDamager : MonoBehaviour
+public sealed class DashAoeDamager : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField, Min(1)] private int _damage = 5;
