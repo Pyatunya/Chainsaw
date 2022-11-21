@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d466ad26-94c4-4186-a775-97dd5f37b8d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ComboCounter.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ComboCounter/ComboCounter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ComboCounter/ComboCounter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Chainsaw/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chainsaw/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,10 +15,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../Farid/Downloads/Balloons Clicker/Assets/Scripts/SoundsScripts/AudioVolume.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Farid/Downloads/Ice cream/Assets/Scripts/IceCream/IceCreamMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Farid/Downloads/Voxel Shooter/Assets/Scripts/Runtime/Views/Wallet/DigitsFormatter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Farid/Downloads/Walker/Assets/Scripts/Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ExitButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioVolume.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PauseInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pool/Pool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Score/Score.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Wallet/Wallet.cs" root0="FORCE_HIGHLIGHTING" />
