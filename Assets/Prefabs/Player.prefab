@@ -111,6 +111,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8925481454318194768}
+  - {fileID: 1176634442114274165}
   m_Father: {fileID: 7640625594194428928}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dashChargingVfx: {fileID: 4069679326524937487}
+  _dashTrailVfx: {fileID: 1176634442114274164}
   _playerInputController: {fileID: 7640625594194428935}
 --- !u!1 &7640625594194428957
 GameObject:
@@ -435,4 +437,71 @@ ParticleSystem:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4591878870935011859, guid: bb641289e9e3b274e92a574c7e803a7b, type: 3}
   m_PrefabInstance: {fileID: 4928081033268367939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5986018307761022941
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 187322797961925645}
+    m_Modifications:
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999931
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0037186588
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847743627337839787, guid: 9baa664abb880e141b14783c47086883, type: 3}
+      propertyPath: m_Name
+      value: VfxDashTrail
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9baa664abb880e141b14783c47086883, type: 3}
+--- !u!198 &1176634442114274164 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4847743627337839785, guid: 9baa664abb880e141b14783c47086883, type: 3}
+  m_PrefabInstance: {fileID: 5986018307761022941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1176634442114274165 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4847743627337839784, guid: 9baa664abb880e141b14783c47086883, type: 3}
+  m_PrefabInstance: {fileID: 5986018307761022941}
   m_PrefabAsset: {fileID: 0}
