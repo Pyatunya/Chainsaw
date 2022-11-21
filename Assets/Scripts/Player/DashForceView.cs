@@ -15,13 +15,13 @@ public class DashForceView : MonoBehaviour
     {
         _slider.value = 0f;
         _playerInputController.DashChargingStarted += OnDashChargingStarted;
-        _playerInputController.DashChargingEnded += OnDashChargingEnded;
+        _playerInputController.DashChargingCompleted += OnDashChargingCompleted;
     }
 
     private void OnDisable()
     {
         _playerInputController.DashChargingStarted -= OnDashChargingStarted;
-        _playerInputController.DashChargingEnded -= OnDashChargingEnded;
+        _playerInputController.DashChargingCompleted -= OnDashChargingCompleted;
     }
 
     private IEnumerator ChargingUp()
@@ -53,7 +53,7 @@ public class DashForceView : MonoBehaviour
         _chargingUpRoutine = StartCoroutine(ChargingUp());
     }
 
-    private void OnDashChargingEnded()
+    private void OnDashChargingCompleted()
     {
         if (_chargingUpRoutine != null)
             StopCoroutine(_chargingUpRoutine);

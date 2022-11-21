@@ -3,18 +3,19 @@ using UnityEngine;
 public class DashVfx : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _dashChargingVfx;
+    [SerializeField] private ParticleSystem _dashTrailVfx;
     [SerializeField] private PlayerInputController _playerInputController;
 
     private void OnEnable()
     {
         _playerInputController.DashChargingStarted += OnDashChargingStarted;
-        _playerInputController.DashChargingEnded += OnDashChargingEnded;
+        _playerInputController.DashChargingCompleted += OnDashChargingCompleted;
     }
 
     private void OnDisable()
     {
         _playerInputController.DashChargingStarted -= OnDashChargingStarted;
-        _playerInputController.DashChargingEnded -= OnDashChargingEnded;
+        _playerInputController.DashChargingCompleted -= OnDashChargingCompleted;
     }
 
     private void OnDashChargingStarted()
@@ -22,8 +23,9 @@ public class DashVfx : MonoBehaviour
         _dashChargingVfx.Play();
     }
 
-    private void OnDashChargingEnded()
+    private void OnDashChargingCompleted()
     {
         _dashChargingVfx.Stop();
+        _dashTrailVfx.Play();
     }
 }
