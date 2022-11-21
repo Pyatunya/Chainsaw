@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d466ad26-94c4-4186-a775-97dd5f37b8d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Health/PlayerHealth.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Health/PlayerHealth.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Chainsaw/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chainsaw/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DashCharge.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DashCharge.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DashCharge.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Score.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Score.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/EntityCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/EntityCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Health/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DashAoeDamager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DashAoeDamager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DashForceView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DashForceView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tools/IntUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/IntUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-    </list>
+    <list default="true" id="d466ad26-94c4-4186-a775-97dd5f37b8d5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,12 +15,36 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Farid/Downloads/Ice cream/Assets/Scripts/IceCream/IceCreamMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Farid/Downloads/Voxel Shooter/Assets/Scripts/Runtime/Views/Wallet/DigitsFormatter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Farid/Downloads/Walker/Assets/Scripts/Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioVolume.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Health/Health.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Health/Health.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PauseInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/PlayerInputController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/PlayerInputController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/PlayerInputController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/PlayerInputController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/PlayerInputController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/PlayerInputController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/PlayerInputController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/PlayerInputController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Users/Farid/Downloads/SGJ-2022-Autumn-master/Chainsaw/Assets/Scripts/Player/PlayerInputController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -127,6 +132,17 @@
         <option value="Default.Subject" />
         <option value="Space.CommitStatus" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
