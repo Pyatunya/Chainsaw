@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
+  _secondsBeforeAttack: 0.5
 --- !u!114 &8885449577304539054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,3 +208,4 @@ MonoBehaviour:
   _health: {fileID: 8885449577304539054}
   _chance: 80
   _loot: {fileID: 6158314075022282871, guid: 23b4f6bc7795cdc4eaec89944b455825, type: 3}
+  _vfx: {fileID: 5207895295306248532, guid: 4ffd0612af673204aa980d86c9dd0a38, type: 3}

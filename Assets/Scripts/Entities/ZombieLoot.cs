@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieLoot : MonoBehaviour
+public sealed class ZombieLoot : MonoBehaviour
 {
     [SerializeField] private Health _health;
     [SerializeField] private int _chance;
     [SerializeField] GameObject _loot;
+    [SerializeField] private ParticleSystem _vfx;
 
-    private int _maxValue = 100;
+    private const int MaxValue = 100;
 
     private void OnEnable()
     {
@@ -27,9 +26,13 @@ public class ZombieLoot : MonoBehaviour
 
     private void DropLoot()
     {
-        int randomChance = Random.Range(0, _maxValue);
+        int randomChance = Random.Range(0, MaxValue);
+        var position = transform.position;
+        Instantiate(_vfx, position, Quaternion.identity).Play();
 
         if (randomChance > _chance)
-            Instantiate(_loot, transform.position, Quaternion.identity);
+        {
+            Instantiate(_loot, position, Quaternion.identity);
+        }
     }
 }
