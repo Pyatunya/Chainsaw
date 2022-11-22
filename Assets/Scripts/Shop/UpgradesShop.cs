@@ -25,6 +25,8 @@ public class UpgradesShop : MonoBehaviour
 
 public sealed class NullUpgrade : IUpgrade
 {
+    public bool HasUsed { get; private set; }
+
     public void Use()
     {
         

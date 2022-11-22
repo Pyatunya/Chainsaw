@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public sealed class ShoppingCart : MonoBehaviour
+public sealed class ShoppingCart : MonoBehaviour, IShoppingCart
 {
     [SerializeField] private CountView _view;
-    private List<UpgradeViewData> _data;
+    private readonly List<IUpgradeView> _upgrades = new();
 
-    public int Price => _data.Sum(data => data.Price);
+    public int Price => _upgrades.Sum(upgrade => upgrade.Data.Price);
     
-    public void Add(UpgradeViewData viewData)
+    public void Add(IUpgradeView view)
     {
-        if (viewData == null)
-            throw new ArgumentNullException(nameof(viewData));
+        if (view == null)
+            throw new ArgumentNullException(nameof(view));
         
-        _data.Add(viewData);
+        _upgrades.Add(view);
         _view.Visualize(Price);
     }
     
-    public void Remove(UpgradeViewData viewData)
+    public void Remove(IUpgradeView view)
     {
-        if (_data.Contains(viewData))
-            throw new InvalidOperationException("Already contains this data!");
+        if (_upgrades.Contains(view) == false)
+            throw new InvalidOperationException("Shopping Cart doesn't contain this view!");
         
-        if (viewData == null)
-            throw new ArgumentNullException(nameof(viewData));
+        if (view == null)
+            throw new ArgumentNullException(nameof(view));
         
-        _data.Remove(viewData);
+        _upgrades.Remove(view);
         _view.Visualize(Price);
     }
 }

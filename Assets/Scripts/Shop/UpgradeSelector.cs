@@ -13,20 +13,15 @@ public sealed class UpgradeSelector : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            var hit = Physics2D.Raycast(mousePosition, Vector2.up);
             
-            var hit = Physics2D.Raycast(Vector2.zero, mousePosition - transform.position);
-            Debug.Log($"try hit {hit.point}");
             if (hit.transform != null)
             {
-                Debug.Log(hit.transform.name);
-                
                 if (hit.transform.TryGetComponent(out UpgradeView upgrade))
                 {
-                    Debug.Log("hit");
-
-                    var fullDescription = upgrade.ViewData.FullDescription;
+                    var fullDescription = upgrade.Data.FullDescription;
                     Select(upgrade);
-                    _panel.Show(fullDescription, upgrade.ViewData.Icon);
+                    _panel.Show(fullDescription, upgrade.Data.Icon);
                 }
             }
         }
@@ -34,10 +29,11 @@ public sealed class UpgradeSelector : MonoBehaviour
 
     private void Select(UpgradeView upgrade)
     {
-        if (upgrade.IsSelected)
+        if (upgrade.CanSelect)
         {
             upgrade.Select();
         }
+        
         else
         {
             upgrade.Unselect();
