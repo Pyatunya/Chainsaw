@@ -747,10 +747,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99267a303a955949a34025c60bf122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upgrades: []
-  _player: {fileID: 0}
+  _data:
+  - {fileID: 11400000, guid: 835a9e0330c6524438c21c1e8e953381, type: 2}
+  - {fileID: 11400000, guid: f2115562e08e958439ba0dbe466bef2f, type: 2}
   _itemContainer: {fileID: 5340527617740722547}
   _upgradePrefab: {fileID: 4524247501642793084, guid: d4cb1f4cc026e7744ad8d8141fff1a2e, type: 3}
+  _shoppingCart: {fileID: 5340527617052580242}
 --- !u!114 &5340527617052580242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3280,6 +3282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4568124723b03242bbcfdf365cad2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _panel: {fileID: 5340527618866761755}
 --- !u!114 &5340527618582202520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3984,7 +3987,6 @@ MonoBehaviour:
   _shoppingCart: {fileID: 5340527617052580242}
   _wallet: {fileID: 0}
   _notEnoughMoney: {fileID: 5340527618890529181}
-  _button: {fileID: 0}
 --- !u!224 &5340527618911157636
 RectTransform:
   m_ObjectHideFlags: 0
