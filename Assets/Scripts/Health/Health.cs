@@ -15,7 +15,7 @@ public sealed class Health : MonoBehaviour
         _maxValue = _value;
     }
 
-    private void OnEnable() => _healthView.Visualize(_value);
+    private void OnEnable() => _healthView.Visualize(_value, _maxValue);
 
     public void TakeDamage(int damage)
     {
@@ -23,7 +23,7 @@ public sealed class Health : MonoBehaviour
             throw new ArgumentOutOfRangeException(nameof(damage));
 
         _value = Mathf.Max(0, _value - damage);
-        _healthView.Visualize(_value);
+        _healthView.Visualize(_value, _maxValue);
 
         if (_value == 0)
             Die();
