@@ -8,7 +8,6 @@ public sealed class EntityCollision : MonoBehaviour
     [SerializeField, Min(0.1f)] private float _attackDelay = 0.3f;
 
     private ComboCounter _comboCounter;
-    private Coroutine _coroutine;
     private float _collisionTime = 0f;
 
     private void OnEnable() => _comboCounter ??= GetComponent<ComboCounter>();
