@@ -30,7 +30,6 @@ public sealed class IndependentPool<T> : IPool<T> where T : MonoBehaviour
                 _releasedObjects.Add(item);
                 Release(item);
             }
-
             else
             {
                 if (_releasedObjects.Contains(item))
