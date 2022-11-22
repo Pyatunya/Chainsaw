@@ -9,6 +9,8 @@ public sealed class ShoppingCart : MonoBehaviour, IShoppingCart
     private readonly List<IUpgradeView> _upgrades = new();
 
     public int Price => _upgrades.Sum(upgrade => upgrade.Data.Price);
+
+    public IEnumerable<IUpgradeView> Views => _upgrades;
     
     public void Add(IUpgradeView view)
     {
@@ -29,5 +31,11 @@ public sealed class ShoppingCart : MonoBehaviour, IShoppingCart
         
         _upgrades.Remove(view);
         _view.Visualize(Price);
+    }
+
+    public void Clear()
+    {
+       _upgrades.Clear();
+       _view.Visualize(0);
     }
 }

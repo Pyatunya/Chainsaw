@@ -5,4 +5,6 @@
     IUpgrade Upgrade { get; }
     
     bool CanSelect { get; }
+
+    void Use();
 }

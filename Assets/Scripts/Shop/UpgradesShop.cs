@@ -29,6 +29,6 @@ public sealed class NullUpgrade : IUpgrade
 
     public void Use()
     {
-        
+        HasUsed = true;
     }
 }

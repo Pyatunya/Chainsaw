@@ -27,16 +27,16 @@ public sealed class UpgradeSelector : MonoBehaviour
         }
     }
 
-    private void Select(UpgradeView upgrade)
+    private void Select(UpgradeView upgradeView)
     {
-        if (upgrade.CanSelect)
+        if (upgradeView.CanSelect)
         {
-            upgrade.Select();
+            upgradeView.Select();
         }
         
-        else
+        else if(upgradeView.Upgrade.HasUsed == false)
         {
-            upgrade.Unselect();
+            upgradeView.Unselect();
         }
     }
 }

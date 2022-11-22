@@ -10,6 +10,7 @@ public sealed class UpgradeView : MonoBehaviour, IUpgradeView
     [SerializeField] private TMP_Text _tittle;
     [SerializeField] private TMP_Text _price;
     [SerializeField] private Image _checkMark;
+    [SerializeField] private Image _hasUsedImage;
     private IShoppingCart _shoppingCart;
 
     public bool CanSelect { get; private set; } = true;
@@ -31,15 +32,21 @@ public sealed class UpgradeView : MonoBehaviour, IUpgradeView
 
         if (Upgrade.HasUsed)
         {
-            CanSelect = false;
+            Use();
         }
+    }
+
+    public void Use()
+    {
+        CanSelect = false;
+        _hasUsedImage.gameObject.SetActive(true);
     }
 
     public void Select()
     {
         if (!CanSelect)
             throw new InvalidOperationException("Already selected!");
-        
+
         _shoppingCart.Add(this);
         CanSelect = false;
         _checkMark.gameObject.SetActive(true);
@@ -49,10 +56,7 @@ public sealed class UpgradeView : MonoBehaviour, IUpgradeView
     {
         if (CanSelect)
             throw new InvalidOperationException("Already unselected!");
-        
-        if(Upgrade.HasUsed)
-            return;
-        
+
         _shoppingCart.Remove(this);
         CanSelect = true;
         _checkMark.gameObject.SetActive(false);

@@ -4,7 +4,7 @@
 public sealed class PlayerCollision : MonoBehaviour
 {
     [SerializeField, Min(1)] private int _damage = 5;
-    private Player _player;
+    [SerializeField] private Player _player;
     
     private void OnCollisionStay2D(Collision2D collision)
     {

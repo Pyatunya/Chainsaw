@@ -27,6 +27,14 @@ public sealed class UpgradeButton : MonoBehaviour
         if (_wallet.CanTake(price))
         {
             _wallet.Take(price);
+            
+            foreach (var upgradeView in _shoppingCart.Views)
+            {
+                upgradeView.Use();
+                upgradeView.Upgrade.Use();
+            }
+
+            _shoppingCart.Clear();
         }
         
         else
