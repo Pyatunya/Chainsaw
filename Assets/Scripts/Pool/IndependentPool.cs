@@ -6,7 +6,6 @@ public sealed class IndependentPool<T> : IPool<T> where T : MonoBehaviour
 {
     private readonly IPool<T> _pool;
     private readonly IGameObjectsContainerFactory<T> _factory;
-    private readonly List<T> _releasedObjects = new();
 
     public IndependentPool(GameObjectsFactory<T> gameObjectsFactory)
     {
@@ -25,15 +24,9 @@ public sealed class IndependentPool<T> : IPool<T> where T : MonoBehaviour
     {
         foreach (var item in CreatedObjects)
         {
-            if (item.gameObject.activeInHierarchy == false && _releasedObjects.Contains(item) == false)
+            if (item.gameObject.activeInHierarchy == false)
             {
-                _releasedObjects.Add(item);
                 Release(item);
-            }
-            else
-            {
-                if (_releasedObjects.Contains(item))
-                    _releasedObjects.Remove(item);
             }
         }
 
