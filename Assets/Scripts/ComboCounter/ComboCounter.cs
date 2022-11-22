@@ -15,7 +15,7 @@ public sealed class ComboCounter : MonoBehaviour
         _value++;
         _view.Visualize(_value);
 
-        var numberOfWholeDivisions = _value.GetNumberOfWholeDivisions(_countWhenNeedAddNewMoney);
+        int numberOfWholeDivisions = _value.GetNumberOfWholeDivisions(_countWhenNeedAddNewMoney);
         
         if (numberOfWholeDivisions > 0)
         {

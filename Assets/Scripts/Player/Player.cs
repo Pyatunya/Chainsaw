@@ -5,8 +5,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
 public class Player : Entity
 {
-    private float _moveForce = 500f;
-    private float _dashForce = 2800f;
+    private float _moveForce = 800f;
+    private float _dashForce = 3400f;
     private float _maxTimeForDashForce = 1f;
 
     private TargetSearcher _targetSearcher;
@@ -56,8 +56,8 @@ public class Player : Entity
     private float GetChargedDashForce(float chargingTime)
     {
         float dashForceCoefficient = Mathf.Min(chargingTime, _maxTimeForDashForce) / _maxTimeForDashForce;
-        float deltaForce = (_dashForce - _moveForce) * dashForceCoefficient;
-        float result = deltaForce + _moveForce;
+        float deltaForce = _dashForce * dashForceCoefficient;
+        float result = deltaForce;
         return result;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public sealed class EntityCollision : MonoBehaviour
 {
     [SerializeField, Min(1)] private int _damage = 5;
-    [SerializeField, Min(0.1f)] private float _attackDelay = 0.5f;
+    [SerializeField, Min(0.1f)] private float _attackDelay = 0.3f;
 
     private ComboCounter _comboCounter;
     private Coroutine _coroutine;
@@ -26,12 +26,6 @@ public sealed class EntityCollision : MonoBehaviour
 
                 _collisionTime = 0f;
             }
-
-            // if (_coroutine is not null)
-            //     StopCoroutine(_coroutine);
-
-            // if (gameObject.activeSelf == true)
-            //     _coroutine = StartCoroutine(StartAttacking(player.Health));
         }
     }
 
