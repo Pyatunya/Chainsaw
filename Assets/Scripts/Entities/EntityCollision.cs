@@ -8,7 +8,7 @@ public sealed class EntityCollision : MonoBehaviour
 
     private ComboCounter _comboCounter;
     private float _attackDelay = 0.4f;
-    private float _collisionTime = 0f; 
+    private float _collisionTime = 0f;
 
     private void OnEnable() => _comboCounter = FindObjectOfType<ComboCounter>();
 

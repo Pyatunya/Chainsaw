@@ -43,6 +43,7 @@ public sealed class DashAoeDamager : MonoBehaviour
         WaitForSeconds timer = new WaitForSeconds(_time);
         _circleCollider.enabled = true;
         yield return timer;
+
         _circleCollider.enabled = false;
     }
 
