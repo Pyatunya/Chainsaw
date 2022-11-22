@@ -7,7 +7,7 @@ public class Player : Entity
 {
     private float _moveForce = 500f;
     private float _dashForce = 2800f;
-    private float _maxTimeForDashForce = 1.2f;
+    private float _maxTimeForDashForce = 1f;
 
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
@@ -37,7 +37,6 @@ public class Player : Entity
             float chargedDashForce = GetChargedDashForce(chargingTimeForDashForce);
             MoveTo(closest, chargedDashForce);
         }
-        MoveTo(closest, _dashForce);
     }
 
     private void MoveTo(Entity closest, float force)

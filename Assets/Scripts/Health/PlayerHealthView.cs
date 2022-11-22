@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public sealed class PlayerHealthView : HealthView
 {
-    [SerializeField] private Scrollbar _scrollbar;
+    [SerializeField] private Slider _slider;
     
-    public override void Visualize(int value)
+    public override void Visualize(int value, int maxValue)
     {
-        _scrollbar.size = value / 10f;
+        _slider.value = (float)value / maxValue;
     }
 }
