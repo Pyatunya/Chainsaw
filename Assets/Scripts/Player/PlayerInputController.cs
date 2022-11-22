@@ -13,7 +13,7 @@ public class PlayerInputController : MonoBehaviour
     private bool _isDashCharging = false;
 
     public event UnityAction DashChargingStarted;
-    public event UnityAction DashChargingEnded;
+    public event UnityAction DashChargingCompleted;
 
     private void Awake() => _player = GetComponent<Player>();
 
@@ -26,7 +26,7 @@ public class PlayerInputController : MonoBehaviour
             if (_isDashCharging)
             {
                 _isDashCharging = false;
-                DashChargingEnded?.Invoke();
+                DashChargingCompleted?.Invoke();
                 float chargingTimeForDashForce = _time - _dashLockTime;
                 _player.Dash(chargingTimeForDashForce);
             }

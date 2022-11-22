@@ -5,9 +5,9 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
 public class Player : Entity
 {
-    private float _moveForce = 500f;
-    private float _dashForce = 2800f;
-    private float _maxTimeForDashForce = 1.2f;
+    private float _moveForce = 800f;
+    private float _dashForce = 3400f;
+    private float _maxTimeForDashForce = 1f;
 
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
@@ -37,14 +37,16 @@ public class Player : Entity
             float chargedDashForce = GetChargedDashForce(chargingTimeForDashForce);
             MoveTo(closest, chargedDashForce);
         }
-        MoveTo(closest, _dashForce);
     }
 
     private void MoveTo(Entity closest, float force)
     {
         IsAttacking = true;
-        var direction = (closest.transform.position - transform.position).normalized;
+
+        Vector3 direction = (closest.transform.position - transform.position).normalized;
+
         _rigidbody.AddForce(direction * force);
+
         StartCoroutine(SetFalseIsAttacking());
     }
 
@@ -57,8 +59,8 @@ public class Player : Entity
     private float GetChargedDashForce(float chargingTime)
     {
         float dashForceCoefficient = Mathf.Min(chargingTime, _maxTimeForDashForce) / _maxTimeForDashForce;
-        float deltaForce = (_dashForce - _moveForce) * dashForceCoefficient;
-        float result = deltaForce + _moveForce;
+        float deltaForce = _dashForce * dashForceCoefficient;
+        float result = deltaForce;
         return result;
     }
 }

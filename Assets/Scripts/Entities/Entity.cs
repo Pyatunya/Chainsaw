@@ -4,7 +4,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [SerializeField] private Health _health;
-    [SerializeField, Min(1)] private int _addSCount = 25;
+    [SerializeField, Min(1)] private int _addScoreCount = 25;
     private IScore _score;
 
     public void Init(IScore score)
@@ -21,7 +21,7 @@ public class Entity : MonoBehaviour
 
     private void OnDied()
     {
-        _score.Add(_addSCount);
+        _score.Add(_addScoreCount);
         gameObject.SetActive(false);
     }
 }

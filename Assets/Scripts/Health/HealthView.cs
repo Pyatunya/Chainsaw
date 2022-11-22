@@ -2,5 +2,5 @@
 
 public abstract class HealthView : MonoBehaviour
 {
-    public abstract void Visualize(int value);
+    public abstract void Visualize(int value, int maxValue);
 }
