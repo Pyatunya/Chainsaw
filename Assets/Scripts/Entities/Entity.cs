@@ -8,14 +8,17 @@ public class Entity : MonoBehaviour
     private ComboCounter _comboCounter;
     private IScore _score;
 
-    private void OnEnable() => _health.OnDied += OnDied;
+    private void OnEnable()
+    {
+        _health.OnDied += OnDied;
+        _comboCounter = FindObjectOfType<ComboCounter>();
+    }
 
     public void Init(IScore score)
     {
         if(_score != null)
             return;
         
-        _comboCounter = FindObjectOfType<ComboCounter>();
         _score = score ?? throw new ArgumentNullException(nameof(score));
     }
 
@@ -24,7 +27,7 @@ public class Entity : MonoBehaviour
     private void OnDied()
     {
         _comboCounter.Increase();
-        _score.Add(_addScoreCount);
+        _score?.Add(_addScoreCount);
         gameObject.SetActive(false);
     }
 }

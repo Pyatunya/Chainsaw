@@ -11,10 +11,12 @@ public sealed class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private Score _score;
     [SerializeField] private LevelTime _levelTime;
+
+    public bool IsMinSpawnSeconds => _startSpawnSeconds <= _targetSpawnSeconds;
     
-    private Dictionary<Entity, IndependentPool<Entity>> _pools = new();
-    Coroutine _changeSpawnRateRoutine;
-    Coroutine _spawnRoutine;
+    private readonly Dictionary<Entity, IndependentPool<Entity>> _pools = new();
+    private Coroutine _changeSpawnRateRoutine;
+    private Coroutine _spawnRoutine;
 
     private void Start()
     {
@@ -29,10 +31,7 @@ public sealed class EnemySpawner : MonoBehaviour
         _spawnRoutine = StartCoroutine(Spawn());
     }
 
-    private void OnDisable()
-    {
-        _levelTime.LevelTimedOut -= OnLevelTimedOut;
-    }
+    private void OnDisable() => _levelTime.LevelTimedOut -= OnLevelTimedOut;
 
     private IEnumerator Spawn()
     {
@@ -50,7 +49,7 @@ public sealed class EnemySpawner : MonoBehaviour
 
     private IEnumerator ChangeSpawnRate()
     {
-        float spawnTimeChangeValue = 0.1f;
+        const float spawnTimeChangeValue = 0.1f;
         var timeBetweenChanges = new WaitForSeconds(3f);
 
         while (_startSpawnSeconds >= _targetSpawnSeconds)

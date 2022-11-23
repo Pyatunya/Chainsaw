@@ -34,7 +34,7 @@ public sealed class Health : MonoBehaviour
 
     private void Die()
     {
-        OnDied.Invoke();
+        OnDied?.Invoke();
         gameObject.SetActive(false);
     }
 }
