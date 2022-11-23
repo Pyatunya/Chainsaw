@@ -952,7 +952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54df534594b23aa418567691d1bbd3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnSeconds: 0.45
+  _startSpawnSeconds: 1
+  _targetSpawnSeconds: 0.45
   _prefabs:
   - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
   _spawnPoints:
@@ -1996,6 +1997,7 @@ GameObject:
   - component: {fileID: 1515121553}
   - component: {fileID: 1515121557}
   - component: {fileID: 1515121558}
+  - component: {fileID: 1515121559}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2102,6 +2104,19 @@ MonoBehaviour:
   _view: {fileID: 1956958674}
   _countWhenNeedAddNewMoney: 5
   _addMoney: 10
+--- !u!114 &1515121559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515121549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31562cf835e9f6b46ac3388bc746af49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelTime: 30
 --- !u!1 &1612572809
 GameObject:
   m_ObjectHideFlags: 0
