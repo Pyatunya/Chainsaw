@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public sealed class EnemySpawner : MonoBehaviour
@@ -11,14 +10,15 @@ public sealed class EnemySpawner : MonoBehaviour
     [SerializeField] private Entity[] _prefabs;
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private Score _score;
-
+    [SerializeField] private LevelTime _levelTime;
+    
     private Dictionary<Entity, IndependentPool<Entity>> _pools = new();
     Coroutine _changeSpawnRateRoutine;
     Coroutine _spawnRoutine;
 
     private void Start()
     {
-        LevelTime.Instance.LevelTimedOut += OnLevelTimedOut;
+       _levelTime.LevelTimedOut += OnLevelTimedOut;
 
         foreach (var prefab in _prefabs)
         {
@@ -31,7 +31,7 @@ public sealed class EnemySpawner : MonoBehaviour
 
     private void OnDisable()
     {
-        LevelTime.Instance.LevelTimedOut -= OnLevelTimedOut;
+        _levelTime.LevelTimedOut -= OnLevelTimedOut;
     }
 
     private IEnumerator Spawn()
@@ -51,11 +51,11 @@ public sealed class EnemySpawner : MonoBehaviour
     private IEnumerator ChangeSpawnRate()
     {
         float spawnTimeChangeValue = 0.1f;
-        var timeBetweenChages = new WaitForSeconds(3f);
+        var timeBetweenChanges = new WaitForSeconds(3f);
 
         while (_startSpawnSeconds >= _targetSpawnSeconds)
         {
-            yield return timeBetweenChages;
+            yield return timeBetweenChanges;
             _startSpawnSeconds -= spawnTimeChangeValue;
         }
     }

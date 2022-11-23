@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public sealed class EntityCollision : MonoBehaviour
@@ -39,6 +38,6 @@ public sealed class EntityCollision : MonoBehaviour
     private void Attack(Health health)
     {
         health.TakeDamage(_damage);
-        _comboCounter?.ResetToZero();
+        _comboCounter.ResetToZero();
     }
 }

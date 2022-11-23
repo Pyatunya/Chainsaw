@@ -1,4 +1,5 @@
-﻿using Tools;
+﻿using System;
+using Tools;
 using UnityEngine;
 
 public sealed class ComboCounter : MonoBehaviour
