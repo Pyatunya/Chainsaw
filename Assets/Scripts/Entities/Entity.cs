@@ -5,23 +5,29 @@ public class Entity : MonoBehaviour
 {
     [SerializeField] private Health _health;
     [SerializeField, Min(1)] private int _addScoreCount = 25;
+    private ComboCounter _comboCounter;
     private IScore _score;
+
+    private void OnEnable()
+    {
+        _health.OnDied += OnDied;
+        _comboCounter = FindObjectOfType<ComboCounter>();
+    }
 
     public void Init(IScore score)
     {
+        if(_score != null)
+            return;
+        
         _score = score ?? throw new ArgumentNullException(nameof(score));
-        _health.OnDied += OnDied;
     }
 
-    private void OnDisable()
-    {
-        if (_health != null)
-            _health.OnDied -= OnDied;
-    }
+    private void OnDisable() => _health.OnDied -= OnDied;
 
     private void OnDied()
     {
-        _score.Add(_addScoreCount);
+        _comboCounter.Increase();
+        _score?.Add(_addScoreCount);
         gameObject.SetActive(false);
     }
 }
