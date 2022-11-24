@@ -1664,8 +1664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54df534594b23aa418567691d1bbd3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startSpawnSeconds: 0.6
-  _targetSpawnSeconds: 0.1
   _prefabs:
   - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
   _spawnPoints:
@@ -1685,6 +1683,7 @@ MonoBehaviour:
   - {fileID: 1359268222}
   - {fileID: 1292421286}
   _score: {fileID: 1515121554}
+  _levelTimer: {fileID: 1515121564}
 --- !u!4 &623599262
 Transform:
   m_ObjectHideFlags: 0
@@ -3215,7 +3214,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213168487
 GameObject:
@@ -4190,6 +4189,7 @@ GameObject:
   - component: {fileID: 1515121557}
   - component: {fileID: 1515121558}
   - component: {fileID: 1515121561}
+  - component: {fileID: 1515121564}
   - component: {fileID: 1515121560}
   - component: {fileID: 1515121563}
   - component: {fileID: 1515121562}
@@ -4325,11 +4325,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb75b6748be4e68b300f199502f09d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpawner: {fileID: 623599261}
   _clearAllInCanvas: {fileID: 1623630217}
   _displayNewCanvas: {fileID: 1517460855}
   _sceneLoader: {fileID: 1515121560}
   _shop: {fileID: 11400000, guid: a1225f53d863c7f44a0fcd30c9b29152, type: 2}
+  _levelTimer: {fileID: 1515121564}
 --- !u!114 &1515121562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4354,6 +4354,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2d0f2f427d0c70499e139f5f14b714e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1515121564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515121549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed497a14ca31c649b5d858107a61c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1517460854
@@ -4462,7 +4474,7 @@ RectTransform:
   - {fileID: 1582146880}
   - {fileID: 1820394075}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4771,7 +4783,7 @@ RectTransform:
   - {fileID: 1017693132}
   - {fileID: 160238966}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5646,7 +5658,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 545199964967693104, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _value
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 545199964967693104, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _healthView

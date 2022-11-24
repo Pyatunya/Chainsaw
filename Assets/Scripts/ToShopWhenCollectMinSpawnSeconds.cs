@@ -4,33 +4,31 @@ using UnityEngine;
 
 public sealed class ToShopWhenCollectMinSpawnSeconds : MonoBehaviour
 {
-    [SerializeField] private EnemySpawner _enemySpawner;
     [SerializeField] private Animator _clearAllInCanvas;
     [SerializeField] private Animator _displayNewCanvas;
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private SceneData _shop;
-    private bool _wasAnimationPlayed;
+    [SerializeField] private LevelTimer _levelTimer;
 
-    private void Update()
+    private void OnEnable()
     {
-        if(_wasAnimationPlayed)
-            return;
-
-        if (_enemySpawner.IsMinSpawnSeconds)
-        {
-            _enemySpawner.OnLevelEnded();
-
-            if (FindObjectsOfType<Zombie>().Length == 0)
-            {
-                Debug.Log("GameOver");
-                StartCoroutine(GoToShop());
-            }
-        }
+        _levelTimer.LevelCompleted += OnLevelCompleted;
     }
+
+    private void OnDisable()
+    {
+        _levelTimer.LevelCompleted -= OnLevelCompleted;
+    }
+
+    private void OnLevelCompleted() => StartCoroutine(GoToShop());
 
     private IEnumerator GoToShop()
     {
-        _wasAnimationPlayed = true;
+        while (FindObjectsOfType<Zombie>().Length > 0)
+        {
+            yield return null;
+        }
+        
         _clearAllInCanvas.SetBool("ToShop", true);
         yield return new WaitForSeconds(2.3f);
         _clearAllInCanvas.SetBool("ToShop", false);

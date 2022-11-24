@@ -6,7 +6,7 @@ public sealed class EntityCollision : MonoBehaviour
     [SerializeField, Min(1)] private int _damage = 5;
 
     private ComboCounter _comboCounter;
-    private float _attackDelay = 0.4f;
+    private float _attackDelay = 0.3f;
     private float _collisionTime = 0f;
 
     private void OnEnable() => _comboCounter = FindObjectOfType<ComboCounter>();

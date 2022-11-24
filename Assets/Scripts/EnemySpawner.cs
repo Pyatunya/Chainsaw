@@ -5,17 +5,27 @@ using Random = UnityEngine.Random;
 
 public sealed class EnemySpawner : MonoBehaviour
 {
-    [SerializeField, Min(0.1f)] private float _startSpawnSeconds = 1f;
-    [SerializeField, Min(0.1f)] private float _targetSpawnSeconds = 0.45f;
     [SerializeField] private Entity[] _prefabs;
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private Score _score;
+    [SerializeField] private LevelTimer _levelTimer;
 
-    public bool IsMinSpawnSeconds => _startSpawnSeconds <= _targetSpawnSeconds;
-    
+    private float _spawnSeconds = 0.3f;
+    private float _spawnSecondsOnHardLevelTime = 0.15f;
     private readonly Dictionary<Entity, IndependentPool<Entity>> _pools = new();
-    private Coroutine _changeSpawnRateRoutine;
     private Coroutine _spawnRoutine;
+
+    private void OnEnable()
+    {
+        _levelTimer.HardLevelTimeStarted += OnHardLevelTimeStarted;
+        _levelTimer.LevelCompleted += OnLevelCompleted;
+    }
+
+    private void OnDisable()
+    {
+        _levelTimer.HardLevelTimeStarted -= OnHardLevelTimeStarted;
+        _levelTimer.LevelCompleted -= OnLevelCompleted;
+    }
 
     private void Start()
     {
@@ -24,7 +34,6 @@ public sealed class EnemySpawner : MonoBehaviour
             _pools.Add(prefab, new IndependentPool<Entity>(new GameObjectsFactory<Entity>(prefab)));
         }
 
-        _changeSpawnRateRoutine = StartCoroutine(ChangeSpawnRate());
         _spawnRoutine = StartCoroutine(Spawn());
     }
 
@@ -32,7 +41,7 @@ public sealed class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(_startSpawnSeconds);
+            yield return new WaitForSeconds(_spawnSeconds);
             var prefab = _prefabs[Random.Range(0, _prefabs.Length)];
             var entity = _pools[prefab].Get();
 
@@ -42,24 +51,7 @@ public sealed class EnemySpawner : MonoBehaviour
         }
     }
 
-    private IEnumerator ChangeSpawnRate()
-    {
-        const float spawnTimeChangeValue = 0.1f;
-        var timeBetweenChanges = new WaitForSeconds(4f);
+    private void OnLevelCompleted() => StopCoroutine(_spawnRoutine);
 
-        while (_startSpawnSeconds >= _targetSpawnSeconds)
-        {
-            if (_startSpawnSeconds == 0.3f)
-                yield return new WaitForSeconds(60);
-            
-            yield return timeBetweenChanges;
-            _startSpawnSeconds -= spawnTimeChangeValue;
-        }
-    }
-
-    public void OnLevelEnded()
-    {
-        StopCoroutine(_changeSpawnRateRoutine);
-        StopCoroutine(_spawnRoutine);
-    }
+    private void OnHardLevelTimeStarted() => _spawnSeconds = _spawnSecondsOnHardLevelTime;
 }

@@ -9,7 +9,7 @@ public class Entity : MonoBehaviour
     
     [field: SerializeField] public Health Health { get; private set; }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _comboCounter = FindObjectOfType<ComboCounter>();
         Health.OnDied += OnDied;
