@@ -9,23 +9,28 @@ public sealed class ToShopWhenCollectMinSpawnSeconds : MonoBehaviour
     [SerializeField] private Animator _displayNewCanvas;
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private SceneData _shop;
+    [SerializeField] private LevelTimer _levelTimer;
     private bool _wasAnimationPlayed;
+
+    private void OnEnable()
+    {
+        _levelTimer.LevelCompleted += OnLevelCompleted;
+    }
+
+    private void OnDisable()
+    {
+        _levelTimer.LevelCompleted -= OnLevelCompleted;
+    }
 
     private void Update()
     {
-        if(_wasAnimationPlayed)
+        if (_wasAnimationPlayed)
             return;
+    }
 
-        if (_enemySpawner.IsMinSpawnSeconds)
-        {
-            _enemySpawner.OnLevelEnded();
-
-            if (FindObjectsOfType<Zombie>().Length == 0)
-            {
-                Debug.Log("GameOver");
-                StartCoroutine(GoToShop());
-            }
-        }
+    private void OnLevelCompleted()
+    {
+        StartCoroutine(GoToShop());
     }
 
     private IEnumerator GoToShop()

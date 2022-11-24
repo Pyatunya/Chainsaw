@@ -5,27 +5,34 @@ using Random = UnityEngine.Random;
 
 public sealed class EnemySpawner : MonoBehaviour
 {
-    [SerializeField, Min(0.1f)] private float _startSpawnSeconds = 1f;
-    [SerializeField, Min(0.1f)] private float _targetSpawnSeconds = 0.45f;
     [SerializeField] private Entity[] _prefabs;
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private Score _score;
+    [SerializeField] private LevelTimer _levelTimer;
 
-    public bool IsMinSpawnSeconds => _startSpawnSeconds <= _targetSpawnSeconds;
-    
+    private float _startSpawnSeconds = 0.3f;
+    private float _difficultSpawnSeconds = 0.15f;
     private readonly Dictionary<Entity, IndependentPool<Entity>> _pools = new();
     private Coroutine _changeSpawnRateRoutine;
     private Coroutine _spawnRoutine;
 
     private void Start()
     {
+        _levelTimer.LevelCompleted += OnLevelCompleted;
+        _levelTimer.LevelDifficultIncreased += OnLevelDifficultIncreased;
+
         foreach (var prefab in _prefabs)
         {
             _pools.Add(prefab, new IndependentPool<Entity>(new GameObjectsFactory<Entity>(prefab)));
         }
 
-        _changeSpawnRateRoutine = StartCoroutine(ChangeSpawnRate());
         _spawnRoutine = StartCoroutine(Spawn());
+    }
+
+    private void OnDisable()
+    {
+        _levelTimer.LevelCompleted -= OnLevelCompleted;
+        _levelTimer.LevelDifficultIncreased -= OnLevelDifficultIncreased;
     }
 
     private IEnumerator Spawn()
@@ -42,24 +49,13 @@ public sealed class EnemySpawner : MonoBehaviour
         }
     }
 
-    private IEnumerator ChangeSpawnRate()
+    public void OnLevelCompleted()
     {
-        const float spawnTimeChangeValue = 0.1f;
-        var timeBetweenChanges = new WaitForSeconds(4f);
-
-        while (_startSpawnSeconds >= _targetSpawnSeconds)
-        {
-            if (_startSpawnSeconds == 0.3f)
-                yield return new WaitForSeconds(60);
-            
-            yield return timeBetweenChanges;
-            _startSpawnSeconds -= spawnTimeChangeValue;
-        }
+        StopCoroutine(_spawnRoutine);
     }
 
-    public void OnLevelEnded()
+    private void OnLevelDifficultIncreased()
     {
-        StopCoroutine(_changeSpawnRateRoutine);
-        StopCoroutine(_spawnRoutine);
+        _startSpawnSeconds = _difficultSpawnSeconds;
     }
 }

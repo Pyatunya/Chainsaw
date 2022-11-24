@@ -27,6 +27,7 @@ public class Entity : MonoBehaviour
 
     private void OnDied()
     {
+        Debug.Log("OnDied");
         _comboCounter.Increase();
         _score?.Add(_addScoreCount);
         gameObject.SetActive(false);
