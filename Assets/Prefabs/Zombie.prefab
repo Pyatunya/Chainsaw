@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6827e129c5f14685b54cb672f22d6df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 5
+  _damage: 1
 --- !u!114 &8885449577304539054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   _healthView: {fileID: -4224631044682675446}
+  _isPlayer: 0
 --- !u!114 &-4224631044682675446
 MonoBehaviour:
   m_ObjectHideFlags: 0

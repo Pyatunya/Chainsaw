@@ -507,8 +507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-  - {fileID: 11400000, guid: 835a9e0330c6524438c21c1e8e953381, type: 2}
-  - {fileID: 11400000, guid: f2115562e08e958439ba0dbe466bef2f, type: 2}
+  - {fileID: 11400000, guid: 10f72daadd63b3f44a278b6312b0bc21, type: 2}
+  - {fileID: 11400000, guid: 1dcf2ad2dc6d88248aa30d0f1e9382a6, type: 2}
   _itemContainer: {fileID: 5340527617740722547}
   _upgradePrefab: {fileID: 4524247501642793084, guid: d4cb1f4cc026e7744ad8d8141fff1a2e, type: 3}
   _shoppingCart: {fileID: 5340527617052580242}
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5340527617253721591}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999559
+  m_Size: 0.99999344
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1367,7 +1367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00010047076}
+  m_AnchoredPosition: {x: 0, y: 0.000103867955}
   m_SizeDelta: {x: 0, y: 347.42}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5340527617740722557
@@ -3764,8 +3764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -378.45}
-  m_SizeDelta: {x: 74.41, y: 41.09}
+  m_AnchoredPosition: {x: 42.722, y: -378.45}
+  m_SizeDelta: {x: 85.445, y: 41.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5340527619029080718
 MonoBehaviour:
@@ -3814,14 +3814,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 36.75
   m_fontSizeBase: 45
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

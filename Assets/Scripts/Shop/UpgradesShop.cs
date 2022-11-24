@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradesShop : MonoBehaviour
+public sealed class UpgradesShop : MonoBehaviour
 {
-    [SerializeField] private List<UpgradeViewData> _data;
+    [SerializeField] private List<UpgradeHealthViewData> _data;
     [SerializeField] private GameObject _itemContainer;
     [SerializeField] private UpgradeView _upgradePrefab;
     [SerializeField] private ShoppingCart _shoppingCart;
@@ -12,23 +12,13 @@ public class UpgradesShop : MonoBehaviour
     {
         foreach (var data in _data)
         {
-            AddItem(data);
+            AddHealthUpgrade(data);
         }
     }
 
-    private void AddItem(UpgradeViewData data)
+    private void AddHealthUpgrade(UpgradeHealthViewData data)
     {
         var upgrade = Instantiate(_upgradePrefab, _itemContainer.transform);
-        upgrade.Init(data, new NullUpgrade(), _shoppingCart);
-    }
-}
-
-public sealed class NullUpgrade : IUpgrade
-{
-    public bool HasUsed { get; private set; }
-
-    public void Use()
-    {
-        HasUsed = true;
+        upgrade.Init(data, new SaveUpgrade<Health, int>(new BinaryStorage(), data.HealthCount, $"{data.Price} {data.HealthCount} {data.Description} {data.FullDescription}"), _shoppingCart);
     }
 }
