@@ -42,11 +42,8 @@ public class Player : Entity
     private void MoveTo(Entity closest, float force)
     {
         IsAttacking = true;
-
         Vector3 direction = (closest.transform.position - transform.position).normalized;
-
         _rigidbody.AddForce(direction * force);
-
         StartCoroutine(SetFalseIsAttacking());
     }
 

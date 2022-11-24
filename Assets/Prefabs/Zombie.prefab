@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7220a278d93550b48b1deb0dd2704c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 8885449577304539054}
   _addScoreCount: 25
+  <Health>k__BackingField: {fileID: 8885449577304539054}
   _speed: 4
 --- !u!114 &-2060088906701148051
 MonoBehaviour:

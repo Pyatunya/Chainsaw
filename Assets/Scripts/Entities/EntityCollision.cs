@@ -29,7 +29,7 @@ public sealed class EntityCollision : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerHealth player))
+        if (collision.gameObject.TryGetComponent(out PlayerHealth _))
         {
             _collisionTime = 0f;
         }

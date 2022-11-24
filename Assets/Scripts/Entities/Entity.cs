@@ -3,15 +3,16 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    [SerializeField] private Health _health;
     [SerializeField, Min(1)] private int _addScoreCount = 25;
     private ComboCounter _comboCounter;
     private IScore _score;
+    
+    [field: SerializeField] public Health Health { get; private set; }
 
     private void OnEnable()
     {
-        _health.OnDied += OnDied;
         _comboCounter = FindObjectOfType<ComboCounter>();
+        Health.OnDied += OnDied;
     }
 
     public void Init(IScore score)
@@ -22,7 +23,7 @@ public class Entity : MonoBehaviour
         _score = score ?? throw new ArgumentNullException(nameof(score));
     }
 
-    private void OnDisable() => _health.OnDied -= OnDied;
+    private void OnDisable() => Health.OnDied -= OnDied;
 
     private void OnDied()
     {
