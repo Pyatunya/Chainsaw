@@ -10,6 +10,7 @@ public sealed class UpgradePanel : MonoBehaviour
     
     public void Show(string description, Sprite icon)
     {
+        gameObject.SetActive(true);
         _text.text = description;
         _icon.sprite = icon ?? throw new ArgumentNullException(nameof(icon));
     }
