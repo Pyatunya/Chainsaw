@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Linq;
 using Shooter.LoadSystem;
 using UnityEngine;
 
@@ -16,12 +15,16 @@ public sealed class ToShopWhenCollectMinSpawnSeconds : MonoBehaviour
     {
         if(_wasAnimationPlayed)
             return;
-        
-        if (_enemySpawner.IsMinSpawnSeconds && FindObjectsOfType<Zombie>().Length == 0)
-        {
-            Debug.Log("GameOver");
 
-            StartCoroutine(GoToShop());
+        if (_enemySpawner.IsMinSpawnSeconds)
+        {
+            _enemySpawner.OnLevelEnded();
+
+            if (FindObjectsOfType<Zombie>().Length == 0)
+            {
+                Debug.Log("GameOver");
+                StartCoroutine(GoToShop());
+            }
         }
     }
 

@@ -10,7 +10,6 @@ public sealed class EnemySpawner : MonoBehaviour
     [SerializeField] private Entity[] _prefabs;
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private Score _score;
-    [SerializeField] private LevelTime _levelTime;
 
     public bool IsMinSpawnSeconds => _startSpawnSeconds <= _targetSpawnSeconds;
     
@@ -20,8 +19,6 @@ public sealed class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-       _levelTime.LevelTimedOut += OnLevelTimedOut;
-
         foreach (var prefab in _prefabs)
         {
             _pools.Add(prefab, new IndependentPool<Entity>(new GameObjectsFactory<Entity>(prefab)));
@@ -30,8 +27,6 @@ public sealed class EnemySpawner : MonoBehaviour
         _changeSpawnRateRoutine = StartCoroutine(ChangeSpawnRate());
         _spawnRoutine = StartCoroutine(Spawn());
     }
-
-    private void OnDisable() => _levelTime.LevelTimedOut -= OnLevelTimedOut;
 
     private IEnumerator Spawn()
     {
@@ -50,16 +45,19 @@ public sealed class EnemySpawner : MonoBehaviour
     private IEnumerator ChangeSpawnRate()
     {
         const float spawnTimeChangeValue = 0.1f;
-        var timeBetweenChanges = new WaitForSeconds(3f);
+        var timeBetweenChanges = new WaitForSeconds(4f);
 
         while (_startSpawnSeconds >= _targetSpawnSeconds)
         {
+            if (_startSpawnSeconds == 0.3f)
+                yield return new WaitForSeconds(60);
+            
             yield return timeBetweenChanges;
             _startSpawnSeconds -= spawnTimeChangeValue;
         }
     }
 
-    private void OnLevelTimedOut()
+    public void OnLevelEnded()
     {
         StopCoroutine(_changeSpawnRateRoutine);
         StopCoroutine(_spawnRoutine);

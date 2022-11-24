@@ -49,7 +49,7 @@ public class Player : Entity
 
     private IEnumerator SetFalseIsAttacking()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.4f);
         IsAttacking = false;
     }
 

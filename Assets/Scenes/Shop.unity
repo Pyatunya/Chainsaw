@@ -331,7 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f225ed1c0743b8bc26fab9fd74b508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 5340527618546122082}
+  _texts:
+  - {fileID: 5340527618546122082}
 --- !u!1 &1139372725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1131,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5340527617253721591}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999803
+  m_Size: 0.7008172
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1639,7 +1640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000032955286}
+  m_AnchoredPosition: {x: 0, y: 4.0728226}
   m_SizeDelta: {x: 0, y: 347.42}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5340527617740722557
@@ -3002,7 +3003,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184c9685df34379ae06617edcdf10be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 5340527618546122082}
+  _texts:
+  - {fileID: 5340527618546122082}
 --- !u!222 &5340527618546122092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4000,7 +4002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184c9685df34379ae06617edcdf10be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 5340527619029080718}
+  _texts: []
 --- !u!1 &5340527619029080716
 GameObject:
   m_ObjectHideFlags: 0

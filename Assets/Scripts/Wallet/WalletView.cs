@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
 public sealed class WalletView : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _text;
+    [SerializeField] private TMP_Text[] _texts;
 
     private readonly List<(int, string)> _digitsPrefixes = new()
     {
@@ -40,6 +41,7 @@ public sealed class WalletView : MonoBehaviour
             }
         }
 
-        _text.text = text;
+        _texts.ToList().ForEach(text => text.text = count.ToString());
+        _texts[0].text = text;
     }
 }

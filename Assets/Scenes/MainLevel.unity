@@ -174,7 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184c9685df34379ae06617edcdf10be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 31103456}
+  _texts:
+  - {fileID: 31103456}
+  - {fileID: 584495710}
 --- !u!114 &31103456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,7 +673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f225ed1c0743b8bc26fab9fd74b508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 182508137}
+  _texts:
+  - {fileID: 182508137}
+  - {fileID: 1337867721}
 --- !u!114 &182508137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,7 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184c9685df34379ae06617edcdf10be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 584495710}
+  _texts: []
 --- !u!114 &584495710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1660,7 +1664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54df534594b23aa418567691d1bbd3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startSpawnSeconds: 0.75
+  _startSpawnSeconds: 0.6
   _targetSpawnSeconds: 0.1
   _prefabs:
   - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
@@ -1681,7 +1685,6 @@ MonoBehaviour:
   - {fileID: 1359268222}
   - {fileID: 1292421286}
   _score: {fileID: 1515121554}
-  _levelTime: {fileID: 1515121559}
 --- !u!4 &623599262
 Transform:
   m_ObjectHideFlags: 0
@@ -2305,7 +2308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184c9685df34379ae06617edcdf10be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 866133569}
+  _texts:
+  - {fileID: 866133569}
+  - {fileID: 1182212572}
 --- !u!114 &866133569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2986,7 +2991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184c9685df34379ae06617edcdf10be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 1182212572}
+  _texts: []
 --- !u!114 &1182212572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3619,7 +3624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f225ed1c0743b8bc26fab9fd74b508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 1337867721}
+  _texts: []
 --- !u!114 &1337867721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4056,7 +4061,6 @@ GameObject:
   - component: {fileID: 1515121553}
   - component: {fileID: 1515121557}
   - component: {fileID: 1515121558}
-  - component: {fileID: 1515121559}
   - component: {fileID: 1515121561}
   - component: {fileID: 1515121560}
   - component: {fileID: 1515121563}
@@ -4167,19 +4171,6 @@ MonoBehaviour:
   _view: {fileID: 1956958674}
   _countWhenNeedAddNewMoney: 5
   _addMoney: 10
---- !u!114 &1515121559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515121549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31562cf835e9f6b46ac3388bc746af49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelTime: 30
 --- !u!114 &1515121560
 MonoBehaviour:
   m_ObjectHideFlags: 0
