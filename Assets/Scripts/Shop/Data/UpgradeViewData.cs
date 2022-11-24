@@ -1,12 +1,10 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Udgrade data", menuName = "Create/Upgrade")]
-public class UpgradeViewData : ScriptableObject
+public abstract class UpgradeViewData : ScriptableObject
 {
     [field: SerializeField] public string Description { get; private set; }
     
     [field: SerializeField] public string FullDescription { get; private set; }
-
     
     [field: SerializeField] public string Title { get; private set; }
     

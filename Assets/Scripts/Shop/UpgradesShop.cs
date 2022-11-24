@@ -1,34 +1,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradesShop : MonoBehaviour
+public sealed class UpgradesShop : MonoBehaviour
 {
-    [SerializeField] private List<UpgradeViewData> _data;
+    [SerializeField] private List<UpgradePlayerHealthViewData> _healthViewData;
+    [SerializeField] private List<UpgradePlayerDamageViewData> _damageViewData;
     [SerializeField] private GameObject _itemContainer;
     [SerializeField] private UpgradeView _upgradePrefab;
     [SerializeField] private ShoppingCart _shoppingCart;
 
     private void Start()
     {
-        foreach (var data in _data)
+        foreach (var data in _healthViewData)
         {
-            AddItem(data);
+            AddHealthUpgrade(data);
+        }
+
+        foreach (var data in _damageViewData)
+        {
+            AddDamageUpgrade(data);
         }
     }
 
-    private void AddItem(UpgradeViewData data)
+    private void AddHealthUpgrade(UpgradePlayerHealthViewData data)
     {
         var upgrade = Instantiate(_upgradePrefab, _itemContainer.transform);
-        upgrade.Init(data, new NullUpgrade(), _shoppingCart);
+        upgrade.Init(data, new SaveUpgrade<Health, int>(new BinaryStorage(), data.HealthCount, $"{data.Price} {data.name} {data.HealthCount} {data.Description} {data.FullDescription}"), _shoppingCart);
     }
-}
-
-public sealed class NullUpgrade : IUpgrade
-{
-    public bool HasUsed { get; private set; }
-
-    public void Use()
+    
+    private void AddDamageUpgrade(UpgradePlayerDamageViewData data)
     {
-        HasUsed = true;
+        var upgrade = Instantiate(_upgradePrefab, _itemContainer.transform);
+        upgrade.Init(data, new SaveUpgrade<PlayerCollision, int>(new BinaryStorage(), data.Damage, $"{data.Price} {data.Damage} {data.name} {data.Description} {data.FullDescription}"), _shoppingCart);
     }
 }
