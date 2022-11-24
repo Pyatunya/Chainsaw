@@ -506,9 +506,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99267a303a955949a34025c60bf122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
+  _healthViewData:
   - {fileID: 11400000, guid: 10f72daadd63b3f44a278b6312b0bc21, type: 2}
   - {fileID: 11400000, guid: 1dcf2ad2dc6d88248aa30d0f1e9382a6, type: 2}
+  _damageViewData:
+  - {fileID: 11400000, guid: 99e8f5c53c862d6449144c7931ee9b39, type: 2}
+  - {fileID: 11400000, guid: c3d44c8be7eb09240915f25f3f5950d0, type: 2}
   _itemContainer: {fileID: 5340527617740722547}
   _upgradePrefab: {fileID: 4524247501642793084, guid: d4cb1f4cc026e7744ad8d8141fff1a2e, type: 3}
   _shoppingCart: {fileID: 5340527617052580242}
@@ -858,7 +861,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5340527617253721591}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999344
+  m_Size: 0.999979
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1367,7 +1370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000103867955}
+  m_AnchoredPosition: {x: 0, y: 0.00069681153}
   m_SizeDelta: {x: 0, y: 347.42}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5340527617740722557
