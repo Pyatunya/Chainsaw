@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using Shooter.LoadSystem;
 using UnityEngine;
 
@@ -16,8 +17,10 @@ public sealed class ToShopWhenCollectMinSpawnSeconds : MonoBehaviour
         if(_wasAnimationPlayed)
             return;
         
-        if (_enemySpawner.IsMinSpawnSeconds)
+        if (_enemySpawner.IsMinSpawnSeconds && FindObjectsOfType<Zombie>().Length == 0)
         {
+            Debug.Log("GameOver");
+
             StartCoroutine(GoToShop());
         }
     }
@@ -30,6 +33,7 @@ public sealed class ToShopWhenCollectMinSpawnSeconds : MonoBehaviour
         _clearAllInCanvas.SetBool("ToShop", false);
         _displayNewCanvas.SetBool("DisplayNewCanvas", true);
         yield return new WaitForSeconds(4.5f);
+        _displayNewCanvas.SetBool("DisplayNewCanvas", false);
         _sceneLoader.Load(_shop);
     }
 }
