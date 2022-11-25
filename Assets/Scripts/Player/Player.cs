@@ -1,13 +1,12 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
-public class Player : Entity
+public sealed class Player : Entity
 {
-    private float _moveForce = 800f;
-    private float _dashForce = 3400f;
-    private float _maxTimeForDashForce = 1f;
+    private readonly float _moveForce = 800f;
+    private readonly float _dashForce = 3400f;
+    private readonly float _maxTimeForDashForce = 1f;
 
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
@@ -15,7 +14,8 @@ public class Player : Entity
     public event UnityAction Dashing;
 
     public float MaxTimeForDashForce => _maxTimeForDashForce;
-    public bool IsAttacking { get; private set; }
+    
+    public bool IsAttacking { get; set; }
 
     private void Awake()
     {
@@ -44,13 +44,6 @@ public class Player : Entity
         IsAttacking = true;
         Vector3 direction = (closest.transform.position - transform.position).normalized;
         _rigidbody.AddForce(direction * force);
-        StartCoroutine(SetFalseIsAttacking());
-    }
-
-    private IEnumerator SetFalseIsAttacking()
-    {
-        yield return new WaitForSeconds(0.4f);
-        IsAttacking = false;
     }
 
     private float GetChargedDashForce(float chargingTime)

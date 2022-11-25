@@ -10,8 +10,8 @@ public sealed class EnemySpawner : MonoBehaviour
     [SerializeField] private Score _score;
     [SerializeField] private LevelTimer _levelTimer;
 
-    private float _spawnSeconds = 0.3f;
-    private float _spawnSecondsOnHardLevelTime = 0.15f;
+    private const float SpawnSecondsOnHardLevelTime = 0.15f;
+    private float _spawnSeconds = 0.45f;
     private readonly Dictionary<Entity, IndependentPool<Entity>> _pools = new();
     private Coroutine _spawnRoutine;
 
@@ -53,5 +53,5 @@ public sealed class EnemySpawner : MonoBehaviour
 
     private void OnLevelCompleted() => StopCoroutine(_spawnRoutine);
 
-    private void OnHardLevelTimeStarted() => _spawnSeconds = _spawnSecondsOnHardLevelTime;
+    private void OnHardLevelTimeStarted() => _spawnSeconds = SpawnSecondsOnHardLevelTime;
 }
