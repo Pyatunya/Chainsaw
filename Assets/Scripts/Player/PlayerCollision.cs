@@ -3,13 +3,13 @@
 [RequireComponent(typeof(Collider2D), typeof(Player))]
 public sealed class PlayerCollision : MonoBehaviour
 {
-    [SerializeField, Min(1)] private int _damage = 5;
     [SerializeField] private Player _player;
+    private int _damage = 1;
 
     private void OnEnable()
     {
         var storage = new StorageWithNameSaveObject<PlayerCollision, int>();
-        _damage = storage.HasSave() ? storage.Load() : _damage;
+        _damage = storage.HasSave() ? storage.Load() : 1;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -20,5 +20,10 @@ public sealed class PlayerCollision : MonoBehaviour
         }
     }
 
-    private void Attack(Health health) => health.TakeDamage(_damage);
+    private void Attack(Health health)
+    {
+        health.TakeDamage(_damage);
+        Debug.Log("ЫЫЫЫЫ");
+        _player.IsAttacking = false;
+    }
 }
