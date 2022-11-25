@@ -2,13 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LevelTimer : MonoBehaviour
+public sealed class LevelTimer : MonoBehaviour
 {
-    public bool IsHardLevel { get; private set; } = false;
-    private float _hardLevelTime = 42f;
-    private float _levelTime = 74f;
+    private readonly float _hardLevelTime = 42f;
+    private readonly float _levelTime = 74f;
+    
+    public bool IsHardLevel { get; private set; }
 
     public event UnityAction LevelCompleted;
+    
     public event UnityAction HardLevelTimeStarted;
 
     private IEnumerator Start()
