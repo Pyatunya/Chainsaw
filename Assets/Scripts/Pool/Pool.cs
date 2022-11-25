@@ -15,7 +15,8 @@ public sealed class Pool<T> : IPool<T>
 
     public T Get()
     {
-        return IsEmpty ? _factory.Create() : _objects.Pop();
+      //  return IsEmpty ? _factory.Create() : _objects.Pop();
+      return _factory.Create();
     }
 
     public void Release(T obj)
