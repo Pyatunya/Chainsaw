@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public sealed class LevelTimer : MonoBehaviour
 {
-    private readonly float _hardLevelTime = 42f;
-    private readonly float _levelTime = 74f;
+    public const float LevelTime = 74f;
+    private const float HardLevelTime = 42f;
     
     public bool IsHardLevel { get; private set; }
 
@@ -15,12 +15,12 @@ public sealed class LevelTimer : MonoBehaviour
 
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(_hardLevelTime);
+        yield return new WaitForSeconds(HardLevelTime);
         HardLevelTimeStarted?.Invoke();
         IsHardLevel = true;
         Debug.Log("HardLevel Started");
         
-        yield return new WaitForSeconds(_levelTime);
+        yield return new WaitForSeconds(LevelTime);
         LevelCompleted?.Invoke();
         Debug.Log("GameOver");
     }
