@@ -23,7 +23,6 @@ public sealed class PlayerCollision : MonoBehaviour
     private void Attack(Health health)
     {
         health.TakeDamage(_damage);
-        Debug.Log("ЫЫЫЫЫ");
         _player.IsAttacking = false;
     }
 }

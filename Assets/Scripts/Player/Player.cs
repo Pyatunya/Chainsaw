@@ -1,13 +1,12 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
-public class Player : Entity
+public sealed class Player : Entity
 {
-    private float _moveForce = 800f;
-    private float _dashForce = 3400f;
-    private float _maxTimeForDashForce = 1f;
+    private readonly float _moveForce = 800f;
+    private readonly float _dashForce = 3400f;
+    private readonly float _maxTimeForDashForce = 1f;
 
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
