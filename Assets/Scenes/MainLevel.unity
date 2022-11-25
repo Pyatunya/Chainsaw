@@ -5664,6 +5664,10 @@ PrefabInstance:
       propertyPath: _healthView
       value: 
       objectReference: {fileID: 7897066368288001030}
+    - target: {fileID: 2195493277566510118, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2762435604846317625, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _player
       value: 
