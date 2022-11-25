@@ -32,6 +32,6 @@ public class AudioVolume : MonoBehaviour
         _volumeText.text = $"{Mathf.RoundToInt(value * 100f)}%";
     }
 
-    private float ToVolume(float value) => Mathf.Lerp(-40, 20, value);
+    private float ToVolume(float value) => Mathf.Lerp(-60, 0, value);
     
 }
