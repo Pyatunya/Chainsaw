@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -4224631044682675446}
   - component: {fileID: 8226392663527715616}
   - component: {fileID: 7128484677242191412}
+  - component: {fileID: 378767045687087423}
   m_Layer: 6
   m_Name: Zombie
   m_TagString: Untagged
@@ -153,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addScoreCount: 25
   <Health>k__BackingField: {fileID: 8885449577304539054}
-  _speed: 4
 --- !u!114 &-2060088906701148051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7231dbb354664d1ab86575fdf7a0b63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 1
+  _value: 3
   _healthView: {fileID: -4224631044682675446}
   _isPlayer: 0
 --- !u!114 &-4224631044682675446
@@ -226,3 +226,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
+--- !u!114 &378767045687087423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133123651038987949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b39d60995a149aaa8f6815889a060ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blinkSeconds: 0.1
