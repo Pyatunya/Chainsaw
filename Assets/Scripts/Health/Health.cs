@@ -11,6 +11,8 @@ public sealed class Health : MonoBehaviour
 
     public event Action OnDied;
 
+    public event Action OnDamaged;
+    
     private void Awake()
     {
         _maxValue = _value;
@@ -37,7 +39,8 @@ public sealed class Health : MonoBehaviour
 
         _value = Mathf.Max(0, _value - damage);
         _healthView.Visualize(_value, _maxValue);
-
+        OnDamaged?.Invoke();
+        
         if (_value == 0)
             Die();
     }
