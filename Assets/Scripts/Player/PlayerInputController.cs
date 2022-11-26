@@ -12,8 +12,8 @@ public class PlayerInputController : MonoBehaviour
     private bool _isDashCharging;
 
     public event Action DashChargingStarted;
-    
     public event Action DashChargingCompleted;
+    public event Action Attacked;
 
     private void Awake() => _player = GetComponent<Player>();
 
@@ -32,6 +32,7 @@ public class PlayerInputController : MonoBehaviour
             }
             else
             {
+                Attacked?.Invoke();
                 _player.Attack();
             }
 

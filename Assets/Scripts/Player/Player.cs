@@ -16,6 +16,8 @@ public sealed class Player : Entity
     public float MaxTimeForDashForce => _maxTimeForDashForce;
     
     public bool IsAttacking { get; private set; }
+    
+    public Vector3 MoveDirection { get; private set; }
 
     protected override void Enable()
     {
@@ -43,6 +45,7 @@ public sealed class Player : Entity
     {
         IsAttacking = true;
         Vector3 direction = (closest.transform.position - transform.position).normalized;
+        MoveDirection = direction;
         _rigidbody.AddForce(direction * force);
     }
 
