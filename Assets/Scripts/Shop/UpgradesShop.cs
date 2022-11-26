@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public sealed class UpgradesShop : MonoBehaviour
 {
+    [SerializeField] private UINavigation _uiNavigation;
     [SerializeField] private List<UpgradePlayerHealthViewData> _healthViewData;
     [SerializeField] private List<UpgradePlayerDamageViewData> _damageViewData;
     [SerializeField] private GameObject _itemContainer;
@@ -46,7 +47,9 @@ public sealed class UpgradesShop : MonoBehaviour
         
         for (var i = 0; i < count; i++)
         {
-            list.Add(Instantiate(_upgradePrefab, _itemContainer.transform));
+            var upgradeView = Instantiate(_upgradePrefab, _itemContainer.transform);
+            list.Add(upgradeView);
+            _uiNavigation.Add(upgradeView.GetComponent<Image>());
         }
 
         return list;
