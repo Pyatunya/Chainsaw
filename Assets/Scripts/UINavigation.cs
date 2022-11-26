@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,7 @@ public  sealed class UINavigation : MonoBehaviour
 {
     [SerializeField] private Image _posych;
     [SerializeField] private List<Image> _uiElements;
-    [SerializeField] private float _needTimeForClick = 1f;
+    [SerializeField] private float _needTimeForClick = 0.5f;
     
     private int _index;
     private float _time;
@@ -14,37 +15,43 @@ public  sealed class UINavigation : MonoBehaviour
     private void Start()
     {
         _posych.transform.position = _uiElements[0].transform.position;
+        StartCoroutine(HandInput());
     }
 
     public void Add(Image element) => _uiElements.Add(element);
 
-    private void Update()
+    private IEnumerator HandInput()
     {
-        if (Input.GetKey(KeyCode.F))
+        while (true)
         {
-            _time += Time.deltaTime;
-        }
-        
-        if (Input.GetKeyUp(KeyCode.F))
-        {
-            if (_time >= _needTimeForClick)
+            if (Input.GetKey(KeyCode.F))
             {
-                if (_uiElements[_index].TryGetComponent(out Button button))
-                {
-                    button.onClick.Invoke();
-                }
+                _time += Time.deltaTime;
             }
-            
-            else
+        
+            if (Input.GetKeyUp(KeyCode.F))
             {
-                _index = GetNextIndex(_index);
-                _posych.transform.position = _uiElements[_index].transform.position;
+                if (_time >= _needTimeForClick)
+                {
+                    if (_uiElements[_index].gameObject.TryGetComponent(out Button button))
+                    {
+                        button.onClick.Invoke();
+                    }
+                }
+            
+                else
+                {
+                    _index = GetNextIndex(_index);
+                    _posych.transform.position = _uiElements[_index].transform.position;
+                }
+
+                _time = 0f;
             }
 
-            _time = 0f;
+            yield return null;
         }
     }
-
+    
     private int GetNextIndex(int currentIndex)
     {
         if (currentIndex == _uiElements.Count - 1)
