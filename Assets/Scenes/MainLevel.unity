@@ -5094,6 +5094,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7897066368288001031}
     - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _dashClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f9c8a6a1c736d174fb4beb1d04b3464a, type: 3}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1190136410}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: <Health>k__BackingField
       value: 
       objectReference: {fileID: 7897066368288001031}
