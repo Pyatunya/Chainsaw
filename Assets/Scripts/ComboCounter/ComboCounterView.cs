@@ -15,6 +15,11 @@ public sealed class ComboCounterView : MonoBehaviour
             _textShake.Play();
         }
         
+        else if(_textShake.IsPlaying(_textShake.name))
+        {
+            _textShake.Stop(_textShake.name);
+        }
+        
         if (count == 0)
             _text.text = string.Empty;
     }
