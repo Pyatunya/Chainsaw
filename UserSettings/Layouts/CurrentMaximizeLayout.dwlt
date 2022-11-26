@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 28239
+  controlID: 28559
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 28240
+  controlID: 28560
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 28241
+  controlID: 28561
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 290.4
     height: 438.4
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -225,8 +225,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a2350100
-      m_LastClickedID: 79266
+      m_SelectedIDs: 70350100
+      m_LastClickedID: 79216
       m_ExpandedIDs: f6c1feff8ac4feff20c5feffc4c5feff1ec6feffc2c6feff8cc7feff0e0cffffc014ffff0e23ffff5623fffff62affff3e6fffffe26fffff3671ffff3a85ffffe685ffff2e86ffffd286ffff6688ffffbc9dffff28acffff8eacffff8caffffff2bdffff06beffff02c5ffff1ecaffff62d1ffff94d8ffffecf3ffffc2f5ffff20fbffff18800000b2830000c4a7000034a80000eca8000032a90000bedd000004de0000f8e100003ee2000054e300009ae30000b4e70000cae8000010e9000066e9000098ea0000a4ee000090020100c4030100d80901001a1c0100da1c0100fa1c01000c1d01003a36010064360100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 0
     width: 588
     height: 438.4
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -721,8 +721,8 @@ MonoBehaviour:
     y: 0
     width: 294.40002
     height: 438.4
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -797,22 +797,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Art/SFX/Main SFX
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Art/SFX/Main SFX
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Users\Farid\Downloads\SGJ-2022-Autumn-master\Chainsaw
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 82630000
-    m_LastClickedID: 25474
-    m_ExpandedIDs: 000000004463000046630000486300004a6300004c6300004e6300005063000056630000686300008c63000000ca9a3b
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: 721b0100
+    m_LastClickedID: 72562
+    m_ExpandedIDs: 000000004463000046630000486300004a6300004c6300004e630000506300005663000068630000746300008c63000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -865,9 +865,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: a2350100
-    m_LastClickedInstanceID: 79266
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 70350100
+    m_LastClickedInstanceID: 79216
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000000000003a610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -954,7 +954,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 79266
+  m_LastSelectedObjectID: 79216
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1016,7 +1016,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 710.80005
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
