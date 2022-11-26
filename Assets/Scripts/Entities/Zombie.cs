@@ -9,6 +9,8 @@ public class Zombie : Entity
     private Rigidbody2D _rigidbody;
     private LevelTimer _levelTimer;
 
+    public Vector2 MoveDirection { get; private set; }
+
     private void Awake()
     {
         _levelTimer ??= FindObjectOfType<LevelTimer>();
@@ -33,6 +35,7 @@ public class Zombie : Entity
             return;
 
         Vector2 direction = (_player.transform.position - transform.position).normalized;
+        MoveDirection = direction;
         _rigidbody.MovePosition(_rigidbody.position + direction * _speed * Time.fixedDeltaTime);
     }
 }
