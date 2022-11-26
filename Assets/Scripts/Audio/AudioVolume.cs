@@ -29,6 +29,7 @@ public class AudioVolume : MonoBehaviour
     public void ChangeSoundVolume(float value)
     {
         _soundMixer.SetFloat(GroupName, ToVolume(value));
+        Slider.value = value;
         _storage.Save(value);
         _volumeText.text = $"{Mathf.RoundToInt(value * 100f)}%";
     }

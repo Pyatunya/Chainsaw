@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 33928
+  controlID: 50001
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 33929
+  controlID: 50002
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 33930
+  controlID: 50003
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,10 +224,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 57.200012}
-      m_SelectedIDs: 721e0100
-      m_LastClickedID: 73330
-      m_ExpandedIDs: 5ab3feffe6d4feffc8e7feff26e8feff560dffff600dffff6c0dffffca0dffff6e0effff040fffffa210ffff7e3dffffbc3effff1a7fffff2a8fffffe090ffff56ddffff60ddffff6addffff76ddffffd4ddffffa0deffff7ef8ffff28fbffffd2640000826500009c650000668800003aae000054ae0000e6b5000000b6000040dd0000fede0000880d0100921e0100aa1e0100c81e0100f61e0100fe1e0100d21f01003a200100
+      scrollPos: {x: 0, y: 137.20001}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: e29ffeff2cb5feffe6d4feffc8e7feff26e8feff560dffff600dffff6c0dffffca0dffff6e0effff040fffffa210ffff7e3dffffbc3effff1a7fffff2a8fffffe090ffff56ddffff60ddffff6addffff76ddffffd4ddffffa0deffff7ef8ffff28fbffffd2640000826500009c650000668800003aae000054ae0000e6b5000000b6000040dd0000fede0000880d0100921e0100aa1e0100c81e0100f61e0100fe1e0100d21f01000e2001003a200100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -558,9 +558,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.3286656, y: -1.4348438, z: 939.93646}
+    m_Target: {x: 0.2023564, y: -1.9000225, z: 507.13474}
     speed: 2
-    m_Value: {x: -1.3286656, y: -1.4348438, z: 939.93646}
+    m_Value: {x: -37.26753, y: 91.31386, z: -0.48162076}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -611,9 +611,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 4.410696
     speed: 2
-    m_Value: 0.8660254
+    m_Value: 168.45926
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -814,21 +814,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Users\Farid\Downloads\SGJ-2022-Autumn-master\Chainsaw
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: fa650000
-    m_LastClickedID: 26106
+    scrollPos: {x: 0, y: 247}
+    m_SelectedIDs: 18660000
+    m_LastClickedID: 26136
     m_ExpandedIDs: 0000000026630000286300002a6300002c6300002e63000030630000326300003663000038630000f865000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -882,9 +882,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 721e0100
-    m_LastClickedInstanceID: 73330
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000000000003a6100006a610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -971,7 +971,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 73330
+  m_LastSelectedObjectID: 73764
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52

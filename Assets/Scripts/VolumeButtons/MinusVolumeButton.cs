@@ -7,7 +7,9 @@ public sealed class MinusVolumeButton : MonoBehaviour
     [SerializeField] private AudioVolume _audioVolume;
     private Button _button;
 
-    private void Start()
+    private float Value => _audioVolume.Slider.value;
+
+    private void OnEnable()
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(OnClick);
@@ -15,6 +17,9 @@ public sealed class MinusVolumeButton : MonoBehaviour
 
     private void OnClick()
     {
-        _audioVolume.ChangeSoundVolume(_audioVolume.Slider.value - 0.1f);
+        _audioVolume.ChangeSoundVolume(Value - 0.05f);
     }
+    
+    private void OnDestroy() => _button.onClick.RemoveListener(OnClick);
+
 }

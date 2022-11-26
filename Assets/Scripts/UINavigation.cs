@@ -27,7 +27,6 @@ public  sealed class UINavigation : MonoBehaviour
         
         if (Input.GetKeyUp(KeyCode.F))
         {
-            _time = 0f;
             if (_time >= _needTimeForClick)
             {
                 if (_uiElements[_index].TryGetComponent(out Button button))
@@ -39,9 +38,10 @@ public  sealed class UINavigation : MonoBehaviour
             else
             {
                 _index = GetNextIndex(_index);
-                Debug.Log(_index);
                 _posych.transform.position = _uiElements[_index].transform.position;
             }
+
+            _time = 0f;
         }
     }
 
