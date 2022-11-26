@@ -13,7 +13,7 @@ public sealed class UpgradeSelector : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            var hit = Physics2D.Raycast(mousePosition, Vector2.up);
+            var hit = Physics2D.Raycast(mousePosition, Vector2.zero);
             
             if (hit.transform != null)
             {
