@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184c9685df34379ae06617edcdf10be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 148001106}
+  _texts: []
 --- !u!114 &148001106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184c9685df34379ae06617edcdf10be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 381221366}
+  _texts: []
 --- !u!222 &381221368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1347,7 +1347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54df534594b23aa418567691d1bbd3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnSeconds: 0.4
   _prefabs:
   - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
   _spawnPoints:
@@ -1367,6 +1366,7 @@ MonoBehaviour:
   - {fileID: 1359268222}
   - {fileID: 1292421286}
   _score: {fileID: 2053968949}
+  _levelTimer: {fileID: 0}
 --- !u!4 &623599262
 Transform:
   m_ObjectHideFlags: 0
@@ -1562,7 +1562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f225ed1c0743b8bc26fab9fd74b508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 381221366}
+  _texts: []
 --- !u!114 &821228271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2734,7 +2734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184c9685df34379ae06617edcdf10be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 2053968951}
+  _texts: []
 --- !u!114 &2053968951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,7 +3287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8449008087ae425288ae24d38c73e1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scrollbar: {fileID: 1375384240}
+  _slider: {fileID: 0}
 --- !u!114 &8178673613065001782
 MonoBehaviour:
   m_ObjectHideFlags: 0

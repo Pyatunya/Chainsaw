@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public sealed class UpgradesShop : MonoBehaviour
@@ -11,26 +13,39 @@ public sealed class UpgradesShop : MonoBehaviour
 
     private void Start()
     {
-        foreach (var data in _healthViewData)
-        {
-            AddHealthUpgrade(data);
-        }
+        AddHealthUpgrade();
+        AddDamageUpgrade();
+    }
 
-        foreach (var data in _damageViewData)
+    private void AddHealthUpgrade()
+    {
+        AddSaveUpgrades<Health, int, UpgradePlayerHealthViewData>(data => data.HealthCount, _healthViewData);
+    }
+
+    private void AddDamageUpgrade()
+    {
+        AddSaveUpgrades<PlayerCollision, int, UpgradePlayerDamageViewData>(data => data.Damage, _damageViewData);
+    }
+
+    private void AddSaveUpgrades<TStorageType, TSaveType, TData>(Func<TData, TSaveType> saveTypeProvider, IReadOnlyList<TData> dataList) where TData : UpgradeViewData
+    {
+        var upgradeViews = CreateViews(dataList.Count);
+        for (var i = 0; i < dataList.Count; i++)
         {
-            AddDamageUpgrade(data);
+            var worseUpgradesSwitch = new WorseUpgradesSwitch(upgradeViews.ToList().GetRange(0, i));
+            var data = dataList[i];
+            var path = $"{data.Price} {data.name} {data.Title} {data.Icon.name} {data.Description} {data.FullDescription}";
+            var upgradeView = upgradeViews.ElementAt(i);
+            upgradeView.Init(data, new SaveUpgrade<TStorageType, TSaveType>(new BinaryStorage(), saveTypeProvider.Invoke(data), worseUpgradesSwitch, path), _shoppingCart);
         }
     }
 
-    private void AddHealthUpgrade(UpgradePlayerHealthViewData data)
+    private IEnumerable<UpgradeView> CreateViews(int count)
     {
-        var upgrade = Instantiate(_upgradePrefab, _itemContainer.transform);
-        upgrade.Init(data, new SaveUpgrade<Health, int>(new BinaryStorage(), data.HealthCount, $"{data.Price} {data.name} {data.HealthCount} {data.Description} {data.FullDescription}"), _shoppingCart);
-    }
-    
-    private void AddDamageUpgrade(UpgradePlayerDamageViewData data)
-    {
-        var upgrade = Instantiate(_upgradePrefab, _itemContainer.transform);
-        upgrade.Init(data, new SaveUpgrade<PlayerCollision, int>(new BinaryStorage(), data.Damage, $"{data.Price} {data.Damage} {data.name} {data.Description} {data.FullDescription}"), _shoppingCart);
+        Debug.Log(count);
+        for (var i = 0; i < count; i++)
+        {
+            yield return Instantiate(_upgradePrefab, _itemContainer.transform);
+        }
     }
 }

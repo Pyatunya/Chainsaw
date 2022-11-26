@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7231dbb354664d1ab86575fdf7a0b63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 3
+  _value: 1
   _healthView: {fileID: -4224631044682675446}
   _isPlayer: 0
 --- !u!114 &-4224631044682675446
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e3e6b7a683461db5e235a6f12e8333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _returnMovementDistance: 5
+  _returnMovementDistance: 1
 --- !u!1001 &2346461660911236025
 PrefabInstance:
   m_ObjectHideFlags: 0
