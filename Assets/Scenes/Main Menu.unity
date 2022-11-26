@@ -933,6 +933,22 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5637198585708684311, guid: 8e185a19b3ab60541bc1766879ad6db9, type: 3}
+      propertyPath: _damageViewData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c3d44c8be7eb09240915f25f3f5950d0, type: 2}
+    - target: {fileID: 5637198585708684311, guid: 8e185a19b3ab60541bc1766879ad6db9, type: 3}
+      propertyPath: _damageViewData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 99e8f5c53c862d6449144c7931ee9b39, type: 2}
+    - target: {fileID: 5637198585708684311, guid: 8e185a19b3ab60541bc1766879ad6db9, type: 3}
+      propertyPath: _healthViewData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1dcf2ad2dc6d88248aa30d0f1e9382a6, type: 2}
+    - target: {fileID: 5637198585708684311, guid: 8e185a19b3ab60541bc1766879ad6db9, type: 3}
+      propertyPath: _healthViewData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 10f72daadd63b3f44a278b6312b0bc21, type: 2}
     - target: {fileID: 5637198585811251525, guid: 8e185a19b3ab60541bc1766879ad6db9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1

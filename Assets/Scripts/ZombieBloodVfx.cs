@@ -16,7 +16,7 @@ public class ZombieBloodVfx : MonoBehaviour
         _health.OnDied -= OnDied;
     }
 
-    public void OnDied()
+    private void OnDied()
     {
         if (_zombie.MoveDirection != Vector2.zero)
         {

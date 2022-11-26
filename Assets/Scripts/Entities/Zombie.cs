@@ -1,26 +1,28 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Zombie : Entity
+public sealed class Zombie : Entity
 {
+    private const float SpeedOnHardLevelTime = 10f;
     private float _speed = 4f;
-    private float _speedOnHardLevelTime = 10f;
     private Player _player;
     private Rigidbody2D _rigidbody;
     private LevelTimer _levelTimer;
+    
+    public bool CanMove { get; private set; }
 
     public Vector2 MoveDirection { get; private set; }
 
-    private void Awake()
-    {
-        _levelTimer ??= FindObjectOfType<LevelTimer>();
-    }
+    private void Awake() => _levelTimer ??= FindObjectOfType<LevelTimer>();
 
-    protected override void OnEnable()
+    public void StopMovement() => CanMove = false;
+
+    public void ContinueMovement() => CanMove = true;
+
+    protected override void Enable()
     {
-        base.OnEnable();
         if (_levelTimer.IsHardLevel)
-            _speed = _speedOnHardLevelTime;
+            _speed = SpeedOnHardLevelTime;
     }
 
     private void Start()
@@ -31,7 +33,7 @@ public class Zombie : Entity
 
     private void FixedUpdate()
     {
-        if (_player == null)
+        if (_player == null || CanMove == false)
             return;
 
         Vector2 direction = (_player.transform.position - transform.position).normalized;

@@ -17,12 +17,12 @@ public sealed class Player : Entity
     
     public bool IsAttacking { get; set; }
 
-    private void Awake()
+    protected override void Enable()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _targetSearcher = GetComponent<TargetSearcher>();
     }
-
+    
     public void Attack()
     {
         if (_targetSearcher.TryFindTarget(out Entity closest))
@@ -53,4 +53,7 @@ public sealed class Player : Entity
         float result = deltaForce;
         return result;
     }
+
+    public void StopAttack() => IsAttacking = false;
+    
 }

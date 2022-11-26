@@ -9,9 +9,10 @@ public class PlayerVoiceover : MonoBehaviour
 
     private bool _canPlay = true;
 
+    private bool CanPlay => _canPlay && GetChanceToPlay();
+
     private void OnEnable()
     {
-        Debug.Log(_inputController == null);
         _inputController.DashChargingCompleted += OnDashChargingStarted;
     }
 
@@ -24,29 +25,26 @@ public class PlayerVoiceover : MonoBehaviour
 
     private void PlayRandomAudio()
     {
-        if (_canPlay)
+        if (CanPlay)
         {
-            if (GetChanceToPlay())
-            {
-                int number = Random.Range(0, _audioClips.Length);
-                _audioSource.PlayOneShot(_audioClips[number]);
-                StartCoroutine(StartDelay());
-            }
+            int number = Random.Range(0, _audioClips.Length);
+            _audioSource.PlayOneShot(_audioClips[number]);
+            StartCoroutine(StartDelay());
         }
     }
 
     private IEnumerator StartDelay()
     {
         _canPlay = false;
-        float delaySeconds = 3f;
+        var delaySeconds = 3f;
         yield return new WaitForSeconds(delaySeconds);
         _canPlay = true;
     }
 
     private bool GetChanceToPlay()
     {
-        int luckyNumber = 1;
-        int number = Random.Range(0, 3);
+        const int luckyNumber = 1;
+        var number = Random.Range(0, 3);
         return number == luckyNumber;
     }
 }

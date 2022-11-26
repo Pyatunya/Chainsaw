@@ -1,28 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public sealed class EntityCollision : MonoBehaviour
+public sealed class ZombieCollision : MonoBehaviour
 {
     [SerializeField, Min(1)] private int _damage = 5;
-
+    [SerializeField] private Zombie _zombie;
+    
+    private const float AttackDelay = 0.3f;
+    private float _inCollisionTime = 0f;
     private ComboCounter _comboCounter;
-    private float _attackDelay = 0.3f;
-    private float _collisionTime = 0f;
 
+    public event Action OnAttacked;
+    
     private void OnEnable() => _comboCounter = FindObjectOfType<ComboCounter>();
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerHealth player))
         {
-            _collisionTime += Time.deltaTime;
+            _inCollisionTime += Time.deltaTime;
 
-            if (_collisionTime > _attackDelay)
+            if (_inCollisionTime > AttackDelay && gameObject.activeSelf)
             {
-                if (gameObject.activeSelf)
-                    Attack(player.Health);
-
-                _collisionTime = 0f;
+                Attack(player.Health);
+                _inCollisionTime = 0f;
             }
         }
     }
@@ -31,12 +33,13 @@ public sealed class EntityCollision : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerHealth _))
         {
-            _collisionTime = 0f;
+            _inCollisionTime = 0f;
         }
     }
 
     private void Attack(Health health)
     {
+        _zombie.StopMovement();
         health.TakeDamage(_damage);
         _comboCounter.ResetToZero();
     }
