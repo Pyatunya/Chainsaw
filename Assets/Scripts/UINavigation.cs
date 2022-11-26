@@ -7,6 +7,7 @@ public sealed class UINavigation : MonoBehaviour
     [SerializeField] private Image _posych;
     [SerializeField] private List<Image> _uiElements;
     [SerializeField] private float _needTimeForClick = 0.5f;
+    [SerializeField] private Animator _posychStaying;
 
     private int _index;
     private float _time;
@@ -26,10 +27,13 @@ public sealed class UINavigation : MonoBehaviour
         if (Input.GetKey(KeyCode.F))
         {
             _time += Time.unscaledDeltaTime;
+            if (_time >= 0.15f)
+                _posychStaying.SetBool("Posych Staying", true);
         }
 
         if (Input.GetKeyUp(KeyCode.F))
         {
+            _posychStaying.SetBool("Posych Staying", false);
             if (_time >= _needTimeForClick)
             {
                 if (_uiElements[_index].gameObject.TryGetComponent(out Button button))
