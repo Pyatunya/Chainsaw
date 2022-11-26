@@ -1,19 +1,19 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Player))]
 public class PlayerInputController : MonoBehaviour
 {
     [SerializeField] private float _dashLockTime = 0.5f;
-    [SerializeField] private DashSecondsView _dashSecondsView;
 
     private readonly KeyCode _key = KeyCode.F;
     private Player _player;
     private float _time;
-    private bool _isDashCharging = false;
+    private bool _isDashCharging;
 
-    public event UnityAction DashChargingStarted;
-    public event UnityAction DashChargingCompleted;
+    public event Action DashChargingStarted;
+    
+    public event Action DashChargingCompleted;
 
     private void Awake() => _player = GetComponent<Player>();
 
@@ -41,7 +41,6 @@ public class PlayerInputController : MonoBehaviour
 
     private void ChargeDash()
     {
-        _dashSecondsView.Visualize(_time);
         if (Input.GetKey(_key))
         {
             _time += Time.deltaTime;
