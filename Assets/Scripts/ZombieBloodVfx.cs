@@ -18,7 +18,10 @@ public class ZombieBloodVfx : MonoBehaviour
 
     public void OnDied()
     {
-        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, _zombie.MoveDirection);
-        Instantiate(_bloodVfx, transform.position, rotation).Play();
+        if (_zombie.MoveDirection != Vector2.zero)
+        {
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, _zombie.MoveDirection);
+            Instantiate(_bloodVfx, transform.position, rotation).Play();
+        }
     }
 }
