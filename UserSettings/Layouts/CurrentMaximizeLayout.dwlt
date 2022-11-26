@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 55894
+  controlID: 56352
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 55895
+  controlID: 56353
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 55896
+  controlID: 56354
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +227,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 30620000
       m_LastClickedID: 0
-      m_ExpandedIDs: 144ffeffe265feffe29ffeff2cb5feffe6d4feffc8e7feff26e8feff560dffff600dffff6c0dffffca0dffff6e0effff040fffffa210ffff7e3dffffbc3effff1a7fffff2a8fffffe090ffff56ddffff60ddffff6addffff76ddffffd4ddffffa0deffff7ef8ffff28fbffffd2640000826500009c650000668800003aae000054ae0000e6b5000000b6000040dd0000fede0000880d0100921e0100aa1e0100c81e0100f61e0100fe1e0100d21f01000e200100f68901001e8b0100
+      m_ExpandedIDs: 8446feff3a47feff5a48feff6049feff144ffeffe265feffe29ffeff2cb5feffe6d4feffc8e7feff26e8feff560dffff600dffff6c0dffffca0dffff6e0effff040fffffa210ffff7e3dffffbc3effff1a7fffff2a8fffffe090ffff56ddffff60ddffff6addffff76ddffffd4ddffffa0deffff7ef8ffff28fbffffd2640000826500009c650000668800003aae000054ae0000e6b5000000b6000040dd0000fede0000880d0100921e0100aa1e0100c81e0100f61e0100fe1e0100d21f01000e200100f68901001e8b010012a10100c4a40100f6a50100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 0
     width: 588
     height: 432.8
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 247}
+    scrollPos: {x: 0, y: 67}
     m_SelectedIDs: fa650000
     m_LastClickedID: 26106
     m_ExpandedIDs: 0000000026630000286300002a6300002c6300002e63000030630000326300003663000038630000f865000000ca9a3b
@@ -991,8 +991,8 @@ MonoBehaviour:
     y: 0
     width: 363.19995
     height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
