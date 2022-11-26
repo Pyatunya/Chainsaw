@@ -239,7 +239,7 @@ MonoBehaviour:
   - {fileID: 5637198586647936288}
   - {fileID: 232548401}
   - {fileID: 219639076}
-  _needTimeForClick: 1
+  _needTimeForClick: 0.5
 --- !u!1 &105137092
 GameObject:
   m_ObjectHideFlags: 0

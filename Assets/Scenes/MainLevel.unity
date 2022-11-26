@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 160238966}
   - component: {fileID: 160238968}
   - component: {fileID: 160238967}
+  - component: {fileID: 160238969}
   m_Layer: 5
   m_Name: EndGamePanel
   m_TagString: Untagged
@@ -489,6 +490,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160238965}
   m_CullTransparentMesh: 1
+--- !u!114 &160238969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160238965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f6235519e9a024485e3900e94c17f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _posych: {fileID: 1114470430}
+  _uiElements:
+  - {fileID: 1976353997}
+  - {fileID: 1073115702}
+  _needTimeForClick: 0.5
 --- !u!1 &182508134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,7 +3788,6 @@ GameObject:
   - component: {fileID: 1515121560}
   - component: {fileID: 1515121563}
   - component: {fileID: 1515121565}
-  - component: {fileID: 1515121566}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3945,23 +3962,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bar: {fileID: 596399076}
---- !u!114 &1515121566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515121549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f6235519e9a024485e3900e94c17f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _posych: {fileID: 1114470430}
-  _uiElements:
-  - {fileID: 1976353997}
-  - {fileID: 1073115702}
-  _needTimeForClick: 1
 --- !u!1 &1517460854
 GameObject:
   m_ObjectHideFlags: 0

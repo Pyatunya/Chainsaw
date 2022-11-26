@@ -20,6 +20,9 @@ public sealed class UINavigation : MonoBehaviour
 
     private void Update()
     {
+        if(gameObject.activeInHierarchy == false)
+            return;
+        
         if (Input.GetKey(KeyCode.F))
         {
             _time += Time.unscaledDeltaTime;
