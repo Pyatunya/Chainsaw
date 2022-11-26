@@ -6,28 +6,30 @@ using UnityEngine.UI;
 public class AudioVolume : MonoBehaviour
 {
     [SerializeField] private AudioMixer _soundMixer;
-    [SerializeField] private Slider _soundSlider;
     [SerializeField] private TMP_Text _volumeText;
     
     private readonly StorageWithNameSaveObject<AudioVolume, float> _storage = new ();
     private const string GroupName = "Master";
 
+    [field: SerializeField] public Slider Slider { get; private set; }
+    
     private void Start() => Init();
 
     private void Init()
     {
-        _soundSlider.onValueChanged.AddListener(ChangeSoundVolume);
+        Slider.onValueChanged.AddListener(ChangeSoundVolume);
         var value = _storage.HasSave() ? _storage.Load() : 0.5f;
-        _soundSlider.value = _storage.HasSave() ? value :  0.5f;
-        _soundMixer.SetFloat(GroupName, ToVolume(_soundSlider.value));
+        Slider.value = _storage.HasSave() ? value :  0.5f;
+        _soundMixer.SetFloat(GroupName, ToVolume(Slider.value));
         _volumeText.text = $"{Mathf.RoundToInt(value * 100f)}%";
     }
 
-    private void OnDisable() => _soundSlider.onValueChanged.RemoveListener(ChangeSoundVolume);
+    private void OnDisable() => Slider.onValueChanged.RemoveListener(ChangeSoundVolume);
 
-    private void ChangeSoundVolume(float value)
+    public void ChangeSoundVolume(float value)
     {
         _soundMixer.SetFloat(GroupName, ToVolume(value));
+        Slider.value = value;
         _storage.Save(value);
         _volumeText.text = $"{Mathf.RoundToInt(value * 100f)}%";
     }
