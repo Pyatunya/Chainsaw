@@ -21,17 +21,32 @@ public sealed class SceneLoaderWithScreen : ISceneLoader
 
     private void LoadNext(AsyncOperation operation)
     {
-        _nextSceneLoad = SceneManager.LoadSceneAsync(_nextScene.Name);
         ChangeLoadText();
         _loadScreen.completed -= LoadNext;
     }
 
     private async void ChangeLoadText()
     {
+        var time = 0f;
+        
+        while (time < 2f)
+        {
+            await Task.Yield();
+            Visualize(Mathf.Lerp(0, 1, time / 2f));
+            time += Time.deltaTime;
+        }
+        
+        _nextSceneLoad = SceneManager.LoadSceneAsync(_nextScene.Name);
         while (!_nextSceneLoad.isDone)
         {
             await Task.Yield();
-            LoadText.SetInterest(_nextSceneLoad.progress);
+            Visualize(_nextSceneLoad.progress);
         }
+    }
+
+    private void Visualize(float progress)
+    {
+        LoadingInterest.Visualize(progress);
+        LoadingBar.Visualize(progress);
     }
 }

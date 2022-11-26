@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9678836a47b4f0419863f582913b21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mode: 0
-  _loaderScene: {fileID: 0}
+  _mode: 1
+  _loadingScreen: {fileID: 11400000, guid: f82a39f566dc46f469faa3d71b7fdd5b, type: 2}
 --- !u!4 &34932695
 Transform:
   m_ObjectHideFlags: 0
