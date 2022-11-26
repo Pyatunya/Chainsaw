@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public sealed class ProgressBar : MonoBehaviour
 {
-    [SerializeField] private Slider _bar;
+    [SerializeField] private Image _bar;
 
     private IEnumerator Start()
     {
@@ -14,7 +14,7 @@ public sealed class ProgressBar : MonoBehaviour
         {
             yield return null;
             elapsed += Time.deltaTime;
-            _bar.value = Mathf.Lerp(0, 1, elapsed / LevelTimer.LevelTime);
+            _bar.fillAmount = Mathf.Lerp(0, 1, elapsed / LevelTimer.LevelTime);
         }
     }
 }
