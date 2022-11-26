@@ -14,7 +14,7 @@ public sealed class UpgradesShop : MonoBehaviour
     private void Start()
     {
         AddHealthUpgrade();
-        AddDamageUpgrade();
+        AddDamageUpgrades();
     }
 
     private void AddHealthUpgrade()
@@ -22,7 +22,7 @@ public sealed class UpgradesShop : MonoBehaviour
         AddSaveUpgrades<Health, int, UpgradePlayerHealthViewData>(data => data.HealthCount, _healthViewData);
     }
 
-    private void AddDamageUpgrade()
+    private void AddDamageUpgrades()
     {
         AddSaveUpgrades<PlayerCollision, int, UpgradePlayerDamageViewData>(data => data.Damage, _damageViewData);
     }
@@ -32,20 +32,23 @@ public sealed class UpgradesShop : MonoBehaviour
         var upgradeViews = CreateViews(dataList.Count);
         for (var i = 0; i < dataList.Count; i++)
         {
-            var worseUpgradesSwitch = new WorseUpgradesSwitch(upgradeViews.ToList().GetRange(0, i));
+            var worseUpgradesSwitch = new WorseUpgradesSwitch(upgradeViews.GetRange(0, i));
             var data = dataList[i];
             var path = $"{data.Price} {data.name} {data.Title} {data.Icon.name} {data.Description} {data.FullDescription}";
-            var upgradeView = upgradeViews.ElementAt(i);
+            var upgradeView = upgradeViews[i];
             upgradeView.Init(data, new SaveUpgrade<TStorageType, TSaveType>(new BinaryStorage(), saveTypeProvider.Invoke(data), worseUpgradesSwitch, path), _shoppingCart);
         }
     }
 
-    private IEnumerable<UpgradeView> CreateViews(int count)
+    private List<UpgradeView> CreateViews(int count)
     {
-        Debug.Log(count);
+        var list = new List<UpgradeView>();
+        
         for (var i = 0; i < count; i++)
         {
-            yield return Instantiate(_upgradePrefab, _itemContainer.transform);
+            list.Add(Instantiate(_upgradePrefab, _itemContainer.transform));
         }
+
+        return list;
     }
 }
