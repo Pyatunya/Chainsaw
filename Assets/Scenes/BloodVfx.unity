@@ -443,7 +443,7 @@ RectTransform:
   - {fileID: 1073115700}
   - {fileID: 1976353995}
   m_Father: {fileID: 1623630216}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1670,7 +1670,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1623630216}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4279,8 +4279,8 @@ RectTransform:
   - {fileID: 866133567}
   - {fileID: 182508135}
   - {fileID: 1956958673}
-  - {fileID: 160238966}
   - {fileID: 767444627}
+  - {fileID: 160238966}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4617,6 +4617,7 @@ GameObject:
   - component: {fileID: 1956958676}
   - component: {fileID: 1956958675}
   - component: {fileID: 1956958674}
+  - component: {fileID: 1956958677}
   m_Layer: 5
   m_Name: ComboCount
   m_TagString: Untagged
@@ -4633,15 +4634,15 @@ RectTransform:
   m_GameObject: {fileID: 1956958672}
   m_LocalRotation: {x: 0, y: 0, z: -0.08715578, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 1, z: 1}
+  m_LocalScale: {x: 0.52137, y: 0.82983, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1623630216}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 128, y: 76.111176}
+  m_AnchorMin: {x: 0.108749986, y: 0.13422222}
+  m_AnchorMax: {x: 0.108749986, y: 0.13422222}
+  m_AnchoredPosition: {x: -81, y: -68.888824}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1956958674
@@ -4657,6 +4658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1956958675}
+  _textShake: {fileID: 0}
 --- !u!114 &1956958675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4677,9 +4679,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4756,6 +4756,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956958672}
   m_CullTransparentMesh: 1
+--- !u!111 &1956958677
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956958672}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 1f02b2db4d6caa54fb5383cc876c89d8, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 1f02b2db4d6caa54fb5383cc876c89d8, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1976353994
 GameObject:
   m_ObjectHideFlags: 0
