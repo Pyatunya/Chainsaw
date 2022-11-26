@@ -5061,6 +5061,34 @@ PrefabInstance:
       propertyPath: _healthView
       value: 
       objectReference: {fileID: 7897066368288001030}
+    - target: {fileID: 1176634442114274164, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176634442114274164, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176634442114274164, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176634442114274164, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 1219730216, guid: 93f437ea89055864380c4f35f7512f83, type: 3}
+    - target: {fileID: 1176634442114274165, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176634442114274165, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176634442114274165, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1181554397346907714, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _audioSource
       value: 
