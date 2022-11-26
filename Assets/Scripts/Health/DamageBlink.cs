@@ -1,17 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer), typeof(Health))]
 public sealed class DamageBlink : MonoBehaviour
 {
     [SerializeField] private float _blinkSeconds = 1.5f;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    
     private Coroutine _onDamaging;
-    private SpriteRenderer _spriteRenderer;
     private Health _health;
 
     private void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         _health = GetComponent<Health>();
         _health.OnDamaged += OnDamaged;
     }
@@ -33,7 +32,7 @@ public sealed class DamageBlink : MonoBehaviour
         while (elapsed < _blinkSeconds)
         {
             elapsed += Time.deltaTime;
-            _spriteRenderer.color = Color.Lerp(Color.white, color, elapsed / _blinkSeconds);
+            _spriteRenderer.color = Color.Lerp(Color.red, color, elapsed / _blinkSeconds);
             yield return null;
         }
 

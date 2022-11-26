@@ -39,6 +39,7 @@ public sealed class ZombieCollision : MonoBehaviour
 
     private void Attack(Health health)
     {
+        OnAttacked?.Invoke();
         _zombie.StopMovement();
         health.TakeDamage(_damage);
         _comboCounter.ResetToZero();

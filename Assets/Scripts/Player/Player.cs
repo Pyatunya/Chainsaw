@@ -4,6 +4,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
 public sealed class Player : Entity
 {
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _dashClip;
     private readonly float _moveForce = 800f;
     private readonly float _dashForce = 3400f;
     private readonly float _maxTimeForDashForce = 1f;
@@ -16,6 +18,8 @@ public sealed class Player : Entity
     public float MaxTimeForDashForce => _maxTimeForDashForce;
     
     public bool IsAttacking { get; private set; }
+    
+    public Vector3 MoveDirection { get; private set; }
 
     protected override void Enable()
     {
@@ -33,6 +37,7 @@ public sealed class Player : Entity
     {
         if (_targetSearcher.TryFindTarget(out Entity closest))
         {
+            _audioSource.PlayOneShot(_dashClip);
             Dashing?.Invoke();
             float chargedDashForce = GetChargedDashForce(chargingTimeForDashForce);
             MoveTo(closest, chargedDashForce);
@@ -43,6 +48,7 @@ public sealed class Player : Entity
     {
         IsAttacking = true;
         Vector3 direction = (closest.transform.position - transform.position).normalized;
+        MoveDirection = direction;
         _rigidbody.AddForce(direction * force);
     }
 
