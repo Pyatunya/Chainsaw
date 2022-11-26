@@ -5181,6 +5181,22 @@ PrefabInstance:
       propertyPath: <Health>k__BackingField
       value: 
       objectReference: {fileID: 7897066368288001031}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _attackClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _attackClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d0ec69a70673d4449bfe03b7166c088, type: 3}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _attackClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8502c92daa08978459a2175d52f27109, type: 3}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _attackClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 76c62ed8669906b49b1c4655c2273e27, type: 3}
     - target: {fileID: 7640625594194428935, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _dashSecondsView
       value: 
