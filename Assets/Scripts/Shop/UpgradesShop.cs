@@ -34,7 +34,7 @@ public sealed class UpgradesShop : MonoBehaviour
         {
             var worseUpgradesSwitch = new WorseUpgradesSwitch(upgradeViews.GetRange(0, i));
             var data = dataList[i];
-            var path = $"{data.Price} {data.name} {data.Title} {data.Icon.name} {data.Description} {data.FullDescription}";
+            var path = $"{data.Price} {data.name} {data.Title} {data.Icon.name} g {data.Description} {data.FullDescription}";
             var upgradeView = upgradeViews[i];
             upgradeView.Init(data, new SaveUpgrade<TStorageType, TSaveType>(new BinaryStorage(), saveTypeProvider.Invoke(data), worseUpgradesSwitch, path), _shoppingCart);
         }
