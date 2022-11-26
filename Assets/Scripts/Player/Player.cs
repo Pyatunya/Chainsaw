@@ -15,7 +15,7 @@ public sealed class Player : Entity
 
     public float MaxTimeForDashForce => _maxTimeForDashForce;
     
-    public bool IsAttacking { get; set; }
+    public bool IsAttacking { get; private set; }
 
     protected override void Enable()
     {
