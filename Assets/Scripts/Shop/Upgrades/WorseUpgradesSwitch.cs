@@ -13,6 +13,12 @@ public sealed class WorseUpgradesSwitch : IWorseUpgradesSwitch
 
     public void Off()
     {
-        _upgradeViews.ToList().ForEach(view => view.Use());
+        _upgradeViews.ToList().ForEach(Use);
+    }
+
+    private void Use(IUpgradeView view)
+    {
+        view.Use();
+        view.Upgrade.Use();
     }
 }
