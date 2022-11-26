@@ -32,7 +32,7 @@ public sealed class DamageBlink : MonoBehaviour
         while (elapsed < _blinkSeconds)
         {
             elapsed += Time.deltaTime;
-            _spriteRenderer.color = Color.Lerp(Color.white, color, elapsed / _blinkSeconds);
+            _spriteRenderer.color = Color.Lerp(Color.red, color, elapsed / _blinkSeconds);
             yield return null;
         }
 
