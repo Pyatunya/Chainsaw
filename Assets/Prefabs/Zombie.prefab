@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8226392663527715616}
   - component: {fileID: 7128484677242191412}
   - component: {fileID: 378767045687087423}
+  - component: {fileID: 8851729030344015120}
   m_Layer: 6
   m_Name: Zombie
   m_TagString: Untagged
@@ -37,7 +38,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1068719737966393801}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -209,7 +211,6 @@ MonoBehaviour:
   _health: {fileID: 8885449577304539054}
   _chance: 80
   _loot: {fileID: 6158314075022282871, guid: 23b4f6bc7795cdc4eaec89944b455825, type: 3}
-  _vfx: {fileID: 5207895295306248532, guid: 4ffd0612af673204aa980d86c9dd0a38, type: 3}
 --- !u!58 &7128484677242191412
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -239,3 +240,85 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blinkSeconds: 0.1
+--- !u!114 &8851729030344015120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133123651038987949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135ba7c2a53383c47b47d4531b807c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zombie: {fileID: -1506822977903473609}
+  _bloodVfx: {fileID: 5218904204270493298}
+  _health: {fileID: 8885449577304539054}
+--- !u!1001 &2346461660911236025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2133123651038987945}
+    m_Modifications:
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770541859127601542, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+      propertyPath: m_Name
+      value: BloodDirectionalVfx
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+--- !u!4 &1068719737966393801 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+  m_PrefabInstance: {fileID: 2346461660911236025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5218904204270493298 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7565215919282728395, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
+  m_PrefabInstance: {fileID: 2346461660911236025}
+  m_PrefabAsset: {fileID: 0}

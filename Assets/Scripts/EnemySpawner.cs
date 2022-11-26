@@ -11,6 +11,7 @@ public sealed class EnemySpawner : MonoBehaviour
     [SerializeField] private LevelTimer _levelTimer;
 
     private const float SpawnSecondsOnHardLevelTime = 0.15f;
+    private const float SpawnDelayOnLevelStart = 2f;
     private float _spawnSeconds = 0.45f;
     private readonly Dictionary<Entity, IndependentPool<Entity>> _pools = new();
     private Coroutine _spawnRoutine;
@@ -39,6 +40,8 @@ public sealed class EnemySpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        yield return new WaitForSeconds(SpawnDelayOnLevelStart);
+
         while (true)
         {
             yield return new WaitForSeconds(_spawnSeconds);
