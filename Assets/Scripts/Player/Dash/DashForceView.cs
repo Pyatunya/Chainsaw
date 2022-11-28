@@ -6,7 +6,7 @@ public class DashForceView : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
     [SerializeField] private Player _player;
-    [SerializeField] private PlayerInputController _playerInputController;
+    [SerializeField] private PlayerDashInput _playerDashInput;
 
     private Coroutine _chargingUpRoutine;
     private Coroutine _chargingDownRoutine;
@@ -14,14 +14,14 @@ public class DashForceView : MonoBehaviour
     private void OnEnable()
     {
         _slider.value = 0f;
-        _playerInputController.DashChargingStarted += OnDashChargingStarted;
-        _playerInputController.DashChargingCompleted += OnDashChargingCompleted;
+        _playerDashInput.DashChargingStarted += OnDashChargingStarted;
+        _playerDashInput.DashChargingCompleted += OnDashChargingCompleted;
     }
 
     private void OnDisable()
     {
-        _playerInputController.DashChargingStarted -= OnDashChargingStarted;
-        _playerInputController.DashChargingCompleted -= OnDashChargingCompleted;
+        _playerDashInput.DashChargingStarted -= OnDashChargingStarted;
+        _playerDashInput.DashChargingCompleted -= OnDashChargingCompleted;
     }
 
     private IEnumerator ChargingUp()

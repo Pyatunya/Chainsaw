@@ -3891,7 +3891,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1515121551}
-  - component: {fileID: 1515121555}
   - component: {fileID: 1515121552}
   - component: {fileID: 1515121554}
   - component: {fileID: 1515121553}
@@ -3938,7 +3937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 200468564}
   _player: {fileID: 7897066368288001020}
-  _playerInputController: {fileID: 7897066368288001033}
+  _playerDashInput: {fileID: 7897066368288001044}
 --- !u!114 &1515121553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3966,19 +3965,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 31103455}
---- !u!114 &1515121555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515121549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22eecc1ed06d4457859f03fac2a80fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _text: {fileID: 0}
 --- !u!114 &1515121557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5202,6 +5188,10 @@ PrefabInstance:
       value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1181554397346907714, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _dashInput
+      value: 
+      objectReference: {fileID: 7897066368288001044}
+    - target: {fileID: 1181554397346907714, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 1190136410}
@@ -5241,6 +5231,10 @@ PrefabInstance:
       propertyPath: _slider
       value: 
       objectReference: {fileID: 200468564}
+    - target: {fileID: 2762435604846317625, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _playerDashInput
+      value: 
+      objectReference: {fileID: 7897066368288001044}
     - target: {fileID: 2762435604846317625, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _playerInputController
       value: 
@@ -5340,7 +5334,7 @@ PrefabInstance:
     - target: {fileID: 7640625594194428935, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _dashSecondsView
       value: 
-      objectReference: {fileID: 1515121555}
+      objectReference: {fileID: 0}
     - target: {fileID: 7640625594194428957, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5361,6 +5355,10 @@ PrefabInstance:
       propertyPath: _comboCounter
       value: 
       objectReference: {fileID: 1515121558}
+    - target: {fileID: 9062470178259422076, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _playerDashInput
+      value: 
+      objectReference: {fileID: 7897066368288001044}
     - target: {fileID: 9086367529121275969, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _spriteRenderer
       value: 
@@ -5434,5 +5432,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 2113669468}
   _spriteRenderer: {fileID: 2113669467}
-  _inputController: {fileID: 7897066368288001033}
+  _dashInput: {fileID: 7897066368288001044}
   _player: {fileID: 7897066368288001020}
+--- !u!114 &7897066368288001044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708368715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a9697534164f8d83b34a43446c2f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

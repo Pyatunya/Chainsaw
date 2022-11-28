@@ -5,23 +5,22 @@ public class PlayerAnimator : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private PlayerInputController _inputController;
+    [SerializeField] private PlayerDashInput _dashInput;
     [SerializeField] private Player _player;
-
-    private bool _isAttackingAnimation = false;
+    private bool _isAttackingAnimation;
 
     private void OnEnable()
     {
-        _inputController.DashChargingStarted += OnDashChargingStarted;
-        _inputController.DashChargingCompleted += OnDashChargingCompleted;
-        _inputController.Attacked += OnAttacked;
+        _dashInput.DashChargingStarted += OnDashChargingStarted;
+        _dashInput.DashChargingCompleted += OnDashChargingCompleted;
+        _player.Attacked += OnAttacked;
     }
 
     private void OnDisable()
     {
-        _inputController.DashChargingStarted -= OnDashChargingStarted;
-        _inputController.DashChargingCompleted -= OnDashChargingCompleted;
-        _inputController.Attacked -= OnAttacked;
+        _dashInput.DashChargingStarted -= OnDashChargingStarted;
+        _dashInput.DashChargingCompleted -= OnDashChargingCompleted;
+        _player.Attacked -= OnAttacked;
     }
 
     private void Update()

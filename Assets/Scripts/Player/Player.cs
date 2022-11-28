@@ -1,6 +1,7 @@
-using System.Collections;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
 public sealed class Player : Entity
@@ -15,10 +16,14 @@ public sealed class Player : Entity
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
 
-    public event UnityAction Dashing;
+    public event Action Attacked;
+    
+    public event Action Dashing;
 
-    public float MaxTimeForDashForce { get; private set; } = 1f;
+    public float MaxTimeForDashForce => 1f;
+    
     public bool IsAttacking { get; private set; }
+    
     public Vector3 MoveDirection { get; private set; }
 
     protected override void Enable()
@@ -31,6 +36,7 @@ public sealed class Player : Entity
     {
         if (_targetSearcher.TryFindTarget(out Entity closest))
         {
+            Attacked?.Invoke();
             MoveTo(closest, _moveForce);
             PlayRandomAttakAudio();
         }
