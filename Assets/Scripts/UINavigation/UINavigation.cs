@@ -34,7 +34,7 @@ public sealed class UINavigation : MonoBehaviour
             
             if (_time >= _needTimeForClick)
             {
-                if (_uiElements[_index].gameObject.TryGetComponent(out Button button))
+                if (_uiElements[_index].gameObject.TryGetComponent(out UnityEngine.UI.Button button))
                 {
                     button.onClick.Invoke();
                 }

@@ -1432,6 +1432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 623599262}
   - component: {fileID: 623599261}
+  - component: {fileID: 623599263}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1451,25 +1452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54df534594b23aa418567691d1bbd3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabs:
-  - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
-  _spawnPoints:
-  - {fileID: 293790393}
-  - {fileID: 2052956839}
-  - {fileID: 1671913562}
-  - {fileID: 1881343834}
-  - {fileID: 594090943}
-  - {fileID: 1300929831}
-  - {fileID: 316681979}
-  - {fileID: 2044025228}
-  - {fileID: 743983804}
-  - {fileID: 1452352645}
-  - {fileID: 556359422}
-  - {fileID: 711976694}
-  - {fileID: 713688891}
-  - {fileID: 1359268222}
-  - {fileID: 1292421286}
-  _score: {fileID: 1515121554}
+  _spawners:
+  - {fileID: 623599263}
   _levelTimer: {fileID: 1515121564}
 --- !u!4 &623599262
 Transform:
@@ -1501,6 +1485,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &623599263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623599260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3995bb339b19402dab8541c38999f4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints:
+  - {fileID: 293790393}
+  - {fileID: 2052956839}
+  - {fileID: 1671913562}
+  - {fileID: 1881343834}
+  - {fileID: 594090943}
+  - {fileID: 1300929831}
+  - {fileID: 316681979}
+  - {fileID: 2044025228}
+  - {fileID: 743983804}
+  - {fileID: 1452352645}
+  - {fileID: 556359422}
+  - {fileID: 711976694}
+  - {fileID: 713688891}
+  - {fileID: 1359268222}
+  - {fileID: 1292421286}
+  _prefabs:
+  - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+  _levelTimer: {fileID: 1515121564}
+  _score: {fileID: 1515121554}
+  _comboCounter: {fileID: 1515121558}
+  _player: {fileID: 7897066368288001020}
 --- !u!1 &683838570
 GameObject:
   m_ObjectHideFlags: 0

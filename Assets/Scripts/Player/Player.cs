@@ -38,7 +38,7 @@ public sealed class Player : Entity
         {
             Attacked?.Invoke();
             MoveTo(closest, _moveForce);
-            PlayRandomAttakAudio();
+            PlayRandomAttakckAudio();
         }
     }
 
@@ -71,7 +71,7 @@ public sealed class Player : Entity
 
     public void StopAttack() => IsAttacking = false;
 
-    private void PlayRandomAttakAudio()
+    private void PlayRandomAttakckAudio()
     {
         int number = Random.Range(0, _attackClips.Length);
         _audioSource.PlayOneShot(_attackClips[number]);

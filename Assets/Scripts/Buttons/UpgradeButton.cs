@@ -1,25 +1,16 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public sealed class UpgradeButton : MonoBehaviour
+public sealed class UpgradeButton : Button
 {
     [SerializeField] private ShoppingCart _shoppingCart;
     [SerializeField] private Wallet _wallet;
     [SerializeField] private TMP_Text _notEnoughMoney;
     
-    private Button _button;
-
-    private void Start()
-    {
-        _button = GetComponent<Button>();
-        _button.onClick.AddListener(Upgrade);
-    }
-
-    private void OnDestroy() => _button.onClick.RemoveListener(Upgrade);
-
+    protected override void OnClick() => Upgrade();
+    
     private void Upgrade()
     {
         var price = _shoppingCart.Price;

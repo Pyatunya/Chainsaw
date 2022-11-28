@@ -1,8 +1,7 @@
-﻿using System;
-using Tools;
+﻿using Tools;
 using UnityEngine;
 
-public sealed class ComboCounter : MonoBehaviour
+public sealed class ComboCounter : MonoBehaviour, IComboCounter
 {
     [SerializeField] private Wallet _wallet;
     [SerializeField] private ComboCounterView _view;

@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class ZombieAnimator : MonoBehaviour
+public sealed class ZombieAnimator : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private Zombie _zombie;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private ZombieCollision _zombieCollision;
 
-    private bool _isWalkingRight = false;
-    private bool _isWalkingUp = false;
+    private bool _isWalkingRight;
+    private bool _isWalkingUp;
 
     private void OnEnable()
     {

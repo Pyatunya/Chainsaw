@@ -31,9 +31,11 @@ public sealed class PlayerDashInput : PlayerChargingAttackInput
             }
         }
 
-        if (Input.GetKeyUp(Key) && _isDashCharging)
+        if (Input.GetKeyUp(Key))
         {
-            Dash();
+            if (_isDashCharging)
+                Dash();
+            
             _time = 0;
         }
     }
