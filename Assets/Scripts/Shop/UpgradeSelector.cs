@@ -1,22 +1,19 @@
+using System;
 using UnityEngine;
 
 public sealed class UpgradeSelector : MonoBehaviour
 {
     [SerializeField] private UpgradePanel _panel;
-    private Camera _camera;
     private UpgradeView _upgrade;
-
-    private void Start() => _camera = Camera.main;
-
-    public void TrySelect(UpgradeView upgradeView)
+    
+    public void Select(UpgradeView upgradeView)
     {
+        if (upgradeView == null)
+            throw new ArgumentNullException(nameof(upgradeView));
+        
         var fullDescription = upgradeView.Data.FullDescription;
-        Select(upgradeView);
         _panel.Show(fullDescription, upgradeView.Data.Icon);
-    }
 
-    private void Select(UpgradeView upgradeView)
-    {
         if (upgradeView.CanSelect)
         {
             upgradeView.Select();

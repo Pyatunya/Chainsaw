@@ -9,7 +9,9 @@ public sealed class ToShopWhenCollectMinSpawnSeconds : MonoBehaviour
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private SceneData _shop;
     [SerializeField] private LevelTimer _levelTimer;
-
+    private readonly int _displayNewCanvasId = Animator.StringToHash("DisplayNewCanvas");
+    private readonly int _toShopId = Animator.StringToHash("ToShop");
+    
     private void OnEnable()
     {
         _levelTimer.LevelCompleted += OnLevelCompleted;
@@ -29,12 +31,12 @@ public sealed class ToShopWhenCollectMinSpawnSeconds : MonoBehaviour
             yield return null;
         }
         
-        _clearAllInCanvas.SetBool("ToShop", true);
+        _clearAllInCanvas.SetBool(_toShopId, true);
         yield return new WaitForSeconds(2.3f);
-        _clearAllInCanvas.SetBool("ToShop", false);
-        _displayNewCanvas.SetBool("DisplayNewCanvas", true);
+        _clearAllInCanvas.SetBool(_toShopId, false);
+        _displayNewCanvas.SetBool(_displayNewCanvasId, true);
         yield return new WaitForSeconds(4.5f);
-        _displayNewCanvas.SetBool("DisplayNewCanvas", false);
+        _displayNewCanvas.SetBool(_displayNewCanvasId, false);
         _sceneLoader.Load(_shop);
     }
 }

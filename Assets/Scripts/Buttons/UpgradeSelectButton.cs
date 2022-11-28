@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
-[RequireComponent(typeof(UpgradeView))]
-[RequireComponent(typeof(Button))]
+[RequireComponent(typeof(Button), typeof(UpgradeView))]
 public sealed class UpgradeSelectButton : MonoBehaviour
 {
-    private Button _button;
+    private UnityEngine.UI.Button _button;
     private UpgradeView _upgradeView;
     private UpgradeSelector _upgradeSelector;
     
-    private void OnEnable()
+    public void OnEnable()
     {
         _upgradeSelector = FindObjectOfType<UpgradeSelector>();
         _upgradeView = GetComponent<UpgradeView>();
-        _button = GetComponent<Button>();
+        _button = GetComponent<UnityEngine.UI.Button>();
         _button.onClick.AddListener(OnClick);
     }
     
@@ -21,6 +19,6 @@ public sealed class UpgradeSelectButton : MonoBehaviour
 
     private void OnClick()
     {
-        _upgradeSelector.TrySelect(_upgradeView);
+        _upgradeSelector.Select(_upgradeView);
     }
 }

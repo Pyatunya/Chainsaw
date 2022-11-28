@@ -1,19 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public sealed class EnemySpawner : MonoBehaviour
+public sealed class EnemySpawnerRoot : MonoBehaviour
 {
-    [SerializeField] private Entity[] _prefabs;
-    [SerializeField] private Transform[] _spawnPoints;
-    [SerializeField] private Score _score;
+    [SerializeField] private EnemySpawner[] _spawners;
     [SerializeField] private LevelTimer _levelTimer;
 
     private const float SpawnSecondsOnHardLevelTime = 0.15f;
     private const float SpawnDelayOnLevelStart = 2f;
     private float _spawnSeconds = 0.45f;
-    private readonly Dictionary<Entity, IndependentPool<Entity>> _pools = new();
     private Coroutine _spawnRoutine;
 
     private void OnEnable()
@@ -28,13 +24,8 @@ public sealed class EnemySpawner : MonoBehaviour
         _levelTimer.LevelCompleted -= OnLevelCompleted;
     }
 
-    private void Start()
+    public void StartSpawn()
     {
-        foreach (var prefab in _prefabs)
-        {
-            _pools.Add(prefab, new IndependentPool<Entity>(new GameObjectsFactory<Entity>(prefab)));
-        }
-
         _spawnRoutine = StartCoroutine(Spawn());
     }
 
@@ -45,12 +36,8 @@ public sealed class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_spawnSeconds);
-            var prefab = _prefabs[Random.Range(0, _prefabs.Length)];
-            var entity = _pools[prefab].Get();
-
-            entity.Init(_score);
-            entity.gameObject.SetActive(true);
-            entity.transform.position = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
+            var spawner = _spawners[Random.Range(0, _spawners.Length)];
+            spawner.Create();
         }
     }
 

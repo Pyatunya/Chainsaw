@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerVoiceover : MonoBehaviour
+public sealed class PlayerVoiceover : MonoBehaviour
 {
-    [SerializeField] private PlayerInputController _inputController;
+    [SerializeField] private PlayerDashInput _dashInput;
     [SerializeField] private AudioClip[] _audioClips;
     [SerializeField] private AudioSource _audioSource;
 
@@ -13,12 +13,12 @@ public class PlayerVoiceover : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputController.DashChargingCompleted += OnDashChargingStarted;
+        _dashInput.DashChargingCompleted += OnDashChargingStarted;
     }
 
     private void OnDisable()
     {
-        _inputController.DashChargingCompleted -= OnDashChargingStarted;
+        _dashInput.DashChargingCompleted -= OnDashChargingStarted;
     }
 
     private void OnDashChargingStarted() => PlayRandomAudio();
