@@ -8,20 +8,17 @@ public sealed class Player : Entity
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _dashClip;
     [SerializeField] private AudioClip[] _attackClips;
+
     private readonly float _moveForce = 800f;
     private readonly float _dashForce = 3400f;
-    private readonly float _maxTimeForDashForce = 1f;
 
     private TargetSearcher _targetSearcher;
     private Rigidbody2D _rigidbody;
-    private bool _isAttackAudioPlaying = false;
 
     public event UnityAction Dashing;
 
-    public float MaxTimeForDashForce => _maxTimeForDashForce;
-
+    public float MaxTimeForDashForce { get; private set; } = 1f;
     public bool IsAttacking { get; private set; }
-
     public Vector3 MoveDirection { get; private set; }
 
     protected override void Enable()
@@ -60,7 +57,7 @@ public sealed class Player : Entity
 
     private float GetChargedDashForce(float chargingTime)
     {
-        float dashForceCoefficient = Mathf.Min(chargingTime, _maxTimeForDashForce) / _maxTimeForDashForce;
+        float dashForceCoefficient = Mathf.Min(chargingTime, MaxTimeForDashForce) / MaxTimeForDashForce;
         float deltaForce = _dashForce * dashForceCoefficient;
         float result = deltaForce;
         return result;
@@ -70,19 +67,7 @@ public sealed class Player : Entity
 
     private void PlayRandomAttakAudio()
     {
-        if (_isAttackAudioPlaying == false)
-        {
-            int number = Random.Range(0, _attackClips.Length);
-            _audioSource.PlayOneShot(_attackClips[number]);
-            _isAttackAudioPlaying = true;
-            StartCoroutine(WaitAttackAnimDelay());
-        }
-    }
-
-    private IEnumerator WaitAttackAnimDelay()
-    {
-        float time = 0.5f;
-        yield return new WaitForSeconds(time);
-        _isAttackAudioPlaying = false;
+        int number = Random.Range(0, _attackClips.Length);
+        _audioSource.PlayOneShot(_attackClips[number]);
     }
 }

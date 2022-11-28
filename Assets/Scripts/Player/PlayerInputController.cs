@@ -4,10 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] private float _dashLockTime = 0.5f;
-
     private readonly KeyCode _key = KeyCode.F;
+
     private Player _player;
+    private float _dashLockTime = 0.5f;
     private float _time;
     private bool _isDashCharging;
 

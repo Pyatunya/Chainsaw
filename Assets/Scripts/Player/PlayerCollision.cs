@@ -4,6 +4,7 @@
 public sealed class PlayerCollision : MonoBehaviour
 {
     [SerializeField] private Player _player;
+
     private int _damage = 1;
 
     private void OnEnable()

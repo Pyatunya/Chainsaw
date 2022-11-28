@@ -10,6 +10,7 @@ public class AudioVolume : MonoBehaviour
     
     private readonly StorageWithNameSaveObject<AudioVolume, float> _storage = new ();
     private const string GroupName = "Master";
+    private const float DefaultValue = 0.5f;
 
     [field: SerializeField] public Slider Slider { get; private set; }
     
@@ -18,8 +19,8 @@ public class AudioVolume : MonoBehaviour
     private void Init()
     {
         Slider.onValueChanged.AddListener(ChangeSoundVolume);
-        var value = _storage.HasSave() ? _storage.Load() : 0.5f;
-        Slider.value = _storage.HasSave() ? value :  0.5f;
+        var value = _storage.HasSave() ? _storage.Load() : DefaultValue;
+        Slider.value = _storage.HasSave() ? value : DefaultValue;
         _soundMixer.SetFloat(GroupName, ToVolume(Slider.value));
         _volumeText.text = $"{Mathf.RoundToInt(value * 100f)}%";
     }
