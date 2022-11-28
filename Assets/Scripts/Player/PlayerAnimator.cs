@@ -25,7 +25,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        _spriteRenderer.flipX = _player.MoveDirection.x >= 0;
+        _spriteRenderer.flipX = _player.Movement.MoveDirection.x >= 0;
     }
 
     private void OnDashChargingStarted()

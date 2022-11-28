@@ -1,36 +1,27 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TargetSearcher))]
+[RequireComponent(typeof(TargetSearcher))]
 public sealed class Player : Entity
 {
-    [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AudioClip _dashClip;
-    [SerializeField] private AudioClip[] _attackClips;
+    [SerializeField] private PlayerSoundView _soundView;
 
     private readonly float _moveForce = 800f;
     private readonly float _dashForce = 3400f;
-
+    private readonly DashForceCalculator _dashForceCalculator = new();
     private TargetSearcher _targetSearcher;
-    private Rigidbody2D _rigidbody;
 
     public event Action Attacked;
     
     public event Action Dashing;
+    
+    [field: SerializeField] public PlayerMovement Movement { get; private set; }
 
-    public float MaxTimeForDashForce => 1f;
+    public readonly float MaxTimeForDashForce = 1f;
     
     public bool IsAttacking { get; private set; }
-    
-    public Vector3 MoveDirection { get; private set; }
 
-    protected override void Enable()
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        _targetSearcher = GetComponent<TargetSearcher>();
-    }
+    protected override void Enable() => _targetSearcher = GetComponent<TargetSearcher>();
 
     public void Attack()
     {
@@ -38,7 +29,7 @@ public sealed class Player : Entity
         {
             Attacked?.Invoke();
             MoveTo(closest, _moveForce);
-            PlayRandomAttakckAudio();
+            _soundView.PlayRandomAttack();
         }
     }
 
@@ -46,34 +37,19 @@ public sealed class Player : Entity
     {
         if (_targetSearcher.TryFindTarget(out Entity closest))
         {
-            _audioSource.PlayOneShot(_dashClip);
             Dashing?.Invoke();
-            float chargedDashForce = GetChargedDashForce(chargingTimeForDashForce);
+            float  chargedDashForce = _dashForceCalculator.CalculateFrom(chargingTimeForDashForce, _dashForce, MaxTimeForDashForce);
             MoveTo(closest, chargedDashForce);
+            _soundView.PlayDash();
         }
     }
 
-    private void MoveTo(Entity closest, float force)
+    private void MoveTo(Entity closest, float chargedDashForce)
     {
         IsAttacking = true;
-        Vector3 direction = (closest.transform.position - transform.position).normalized;
-        MoveDirection = direction;
-        _rigidbody.AddForce(direction * force);
+        Movement.MoveTo(closest, chargedDashForce);
     }
-
-    private float GetChargedDashForce(float chargingTime)
-    {
-        float dashForceCoefficient = Mathf.Min(chargingTime, MaxTimeForDashForce) / MaxTimeForDashForce;
-        float deltaForce = _dashForce * dashForceCoefficient;
-        float result = deltaForce;
-        return result;
-    }
-
+    
     public void StopAttack() => IsAttacking = false;
-
-    private void PlayRandomAttakckAudio()
-    {
-        int number = Random.Range(0, _attackClips.Length);
-        _audioSource.PlayOneShot(_attackClips[number]);
-    }
+    
 }

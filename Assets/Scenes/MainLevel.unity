@@ -3919,6 +3919,7 @@ GameObject:
   - component: {fileID: 1515121560}
   - component: {fileID: 1515121563}
   - component: {fileID: 1515121565}
+  - component: {fileID: 1515121566}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4041,7 +4042,7 @@ MonoBehaviour:
   _clearAllInCanvas: {fileID: 1623630217}
   _displayNewCanvas: {fileID: 1517460855}
   _sceneLoader: {fileID: 1515121560}
-  _shop: {fileID: 11400000, guid: a1225f53d863c7f44a0fcd30c9b29152, type: 2}
+  _shop: {fileID: 11400000, guid: 8445f74592c332e4aa5da0ffb7752617, type: 2}
   _levelTimer: {fileID: 1515121564}
 --- !u!114 &1515121563
 MonoBehaviour:
@@ -4080,6 +4081,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bar: {fileID: 596399076}
+--- !u!114 &1515121566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515121549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584078fa5ffb4ebb89ae057975929b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bestScore: {fileID: 1515121553}
+  _enemySpawnerRoot: {fileID: 623599261}
+  _playerHealth: {fileID: 7897066368288001031}
 --- !u!1 &1517460854
 GameObject:
   m_ObjectHideFlags: 0
@@ -5326,9 +5342,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 4812ed13457edb64bbe5113bea1f0a6e, type: 3}
     - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _soundView
+      value: 
+      objectReference: {fileID: 7897066368288001053}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 1190136410}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _playerSoundView
+      value: 
+      objectReference: {fileID: 7897066368288001053}
     - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: <Health>k__BackingField
       value: 
@@ -5337,6 +5361,10 @@ PrefabInstance:
       propertyPath: _attackClips.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: <Movement>k__BackingField
+      value: 
+      objectReference: {fileID: 7897066368288001052}
     - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _attackClips.Array.data[0]
       value: 
@@ -5464,3 +5492,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a9697534164f8d83b34a43446c2f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7897066368288001052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708368715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74475496e9d4c44ab5b61bdc9c97068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7897066368288001053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708368715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68061038356146ee8c063d4a954a17be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 1190136410}
+  _attackClips:
+  - {fileID: 8300000, guid: be021a047b4390148963ac1c4159ac3a, type: 3}
+  - {fileID: 8300000, guid: f42b31e157804a84186b6d0c17638de3, type: 3}
+  - {fileID: 8300000, guid: b84d7c784bbbd254c92cbb780180ab77, type: 3}
+  _dashClip: {fileID: 8300000, guid: 4812ed13457edb64bbe5113bea1f0a6e, type: 3}

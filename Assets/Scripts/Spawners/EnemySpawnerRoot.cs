@@ -24,7 +24,7 @@ public sealed class EnemySpawnerRoot : MonoBehaviour
         _levelTimer.LevelCompleted -= OnLevelCompleted;
     }
 
-    private void Start()
+    public void StartSpawn()
     {
         _spawnRoutine = StartCoroutine(Spawn());
     }

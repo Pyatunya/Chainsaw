@@ -15,6 +15,13 @@ public sealed class BestScore : MonoBehaviour
         _score.OnChanged += TryIncrease;
     }
 
+    public void Init(int record)
+    {
+        _record = record;
+        _view.Visualize(_record);
+        _score.OnChanged += TryIncrease;
+    }
+
     private void TryIncrease(int count)
     {
         if(_record < count)
