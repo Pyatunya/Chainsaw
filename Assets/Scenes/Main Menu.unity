@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 34932697}
   - component: {fileID: 34932698}
   - component: {fileID: 34932699}
+  - component: {fileID: 34932700}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -227,7 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f6235519e9a024485e3900e94c17f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _posych: {fileID: 735559420}
   _uiElements:
   - {fileID: 561365746}
   - {fileID: 123016524}
@@ -240,7 +240,21 @@ MonoBehaviour:
   - {fileID: 232548401}
   - {fileID: 219639076}
   _needTimeForClick: 0.5
-  _posychStaying: {fileID: 735559422}
+  _cursor: {fileID: 34932700}
+--- !u!114 &34932700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34932693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e262b256dba0424ea5e60b6dcc10ab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _posych: {fileID: 735559420}
+  _posychAnimator: {fileID: 735559422}
 --- !u!1 &105137092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 4.43}
+  m_AnchoredPosition: {x: 0, y: 4.4300003}
   m_SizeDelta: {x: 0, y: -8.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613223775
@@ -1771,18 +1785,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1070810909}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 205994591}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1794,6 +1796,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 252147761}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &766835527
 MonoBehaviour:
@@ -2032,7 +2046,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
     m_PressedColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2046,7 +2060,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 947137289}
   m_OnClick:
     m_PersistentCalls:
@@ -2793,7 +2807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.53}
+  m_AnchoredPosition: {x: 0, y: 2.5299988}
   m_SizeDelta: {x: 0, y: -5.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274939165

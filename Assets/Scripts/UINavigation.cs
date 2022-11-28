@@ -4,36 +4,34 @@ using UnityEngine.UI;
 
 public sealed class UINavigation : MonoBehaviour
 {
-    [SerializeField] private Image _posych;
     [SerializeField] private List<Image> _uiElements;
     [SerializeField] private float _needTimeForClick = 0.5f;
-    [SerializeField] private Animator _posychStaying;
-
+    [SerializeField] private UiNavigationCursor _cursor;
+    
+    private readonly UINavigationIndex _navigationIndex = new();
     private int _index;
     private float _time;
 
-    private void Start()
-    {
-        _posych.transform.position = _uiElements[0].transform.position;
-    }
+    private void Start() => _cursor.TranslateTo(_uiElements[0].transform.position);
 
     public void Add(Image element) => _uiElements.Add(element);
 
     private void Update()
     {
-        if(gameObject.activeInHierarchy == false)
+        if (gameObject.activeInHierarchy == false)
             return;
-        
+
         if (Input.GetKey(KeyCode.F))
         {
             _time += Time.unscaledDeltaTime;
             if (_time >= 0.15f)
-                _posychStaying.SetBool("Posych Staying", true);
+                _cursor.PlayAnimation();
         }
 
         if (Input.GetKeyUp(KeyCode.F))
         {
-            _posychStaying.SetBool("Posych Staying", false);
+            _cursor.StopAnimation();
+            
             if (_time >= _needTimeForClick)
             {
                 if (_uiElements[_index].gameObject.TryGetComponent(out Button button))
@@ -44,44 +42,11 @@ public sealed class UINavigation : MonoBehaviour
 
             else
             {
-                _index = GetNextIndex(_index);
-                _posych.transform.position = _uiElements[_index].transform.position;
+                _index = _navigationIndex.GetNextFrom(_uiElements, _index);
+                _cursor.TranslateTo(_uiElements[_index].transform.position);
             }
 
             _time = 0f;
-        }
-    }
-
-    private int GetNextIndex(int currentIndex)
-    {
-        if (currentIndex == _uiElements.Count - 1)
-        {
-            return 0;
-        }
-
-        else
-        {
-            if (_uiElements[currentIndex + 1].gameObject.activeInHierarchy == false)
-                return GetActiveElementIndex(currentIndex);
-
-            return currentIndex + 1;
-        }
-    }
-
-    private int GetActiveElementIndex(int start)
-    {
-        if (start == _uiElements.Count - 1)
-            return 0;
-
-        if (_uiElements[start + 1].gameObject.activeInHierarchy == false)
-        {
-            start += 1;
-            return GetActiveElementIndex(start);
-        }
-
-        else
-        {
-            return start;
         }
     }
 }
