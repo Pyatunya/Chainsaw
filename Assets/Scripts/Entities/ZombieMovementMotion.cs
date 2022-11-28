@@ -12,7 +12,7 @@ public sealed class ZombieMovementMotion : MonoBehaviour
     {
         _zombieCollision = GetComponent<ZombieCollision>();
         _zombie = GetComponent<Zombie>();
-        _player = FindObjectOfType<Player>().transform;
+        _player = FindObjectOfType<Player>().gameObject.transform;
         _zombieCollision.OnAttacked += OnAttacked;
     }
 

@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 160238968}
   - component: {fileID: 160238967}
   - component: {fileID: 160238969}
+  - component: {fileID: 160238970}
   m_Layer: 5
   m_Name: EndGamePanel
   m_TagString: Untagged
@@ -502,12 +503,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f6235519e9a024485e3900e94c17f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _posych: {fileID: 1114470430}
   _uiElements:
   - {fileID: 1976353997}
   - {fileID: 1073115702}
   _needTimeForClick: 0.5
-  _posychStaying: {fileID: 1114470433}
+  _cursor: {fileID: 160238970}
+--- !u!114 &160238970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160238965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e262b256dba0424ea5e60b6dcc10ab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _posych: {fileID: 1114470430}
+  _posychAnimator: {fileID: 1114470433}
 --- !u!1 &182508134
 GameObject:
   m_ObjectHideFlags: 0
