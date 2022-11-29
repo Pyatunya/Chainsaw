@@ -29,6 +29,13 @@ public sealed class Player : Entity
         {
             Attacked?.Invoke();
             MoveTo(closest, _moveForce);
+            _targetSearcher.ZombieSearch(out Collider2D[] hitEnemies);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<Health>().TakeDamage(1);
+            }
+
             _soundView.PlayRandomAttack();
         }
     }

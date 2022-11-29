@@ -6,6 +6,13 @@ public sealed class TargetSearcher : MonoBehaviour
 {
     [SerializeField, Min(0.1f)] private float _radius;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private Transform _attackPoint;
+    [SerializeField] private float _attackRange;
+
+    public void ZombieSearch(out Collider2D[] hitEnemies)
+    {
+        hitEnemies = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _layerMask);
+    }
 
     public bool TryFindTarget(out Entity closest)
     {
