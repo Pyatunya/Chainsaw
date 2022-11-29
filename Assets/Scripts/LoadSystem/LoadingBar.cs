@@ -13,6 +13,7 @@ public sealed class LoadingBar : MonoBehaviour
 
     public static void Visualize(float value)
     {
-        _bar.fillAmount = value;
+        if (_bar != null)
+            _bar.fillAmount = value;
     }
 }
