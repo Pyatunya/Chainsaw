@@ -13,7 +13,7 @@ public sealed class Player : Entity
 
     public event Action Attacked;
     
-    public event Action Dashing;
+    public event Action<float> Dashing;
     
     [field: SerializeField] public PlayerMovement Movement { get; private set; }
 
@@ -37,7 +37,7 @@ public sealed class Player : Entity
     {
         if (_targetSearcher.TryFindTarget(out Entity closest))
         {
-            Dashing?.Invoke();
+            Dashing?.Invoke(chargingTimeForDashForce);
             float  chargedDashForce = _dashForceCalculator.CalculateFrom(chargingTimeForDashForce, _dashForce, MaxTimeForDashForce);
             MoveTo(closest, chargedDashForce);
             _soundView.PlayDash();

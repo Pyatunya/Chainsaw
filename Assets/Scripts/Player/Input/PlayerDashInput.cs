@@ -9,7 +9,6 @@ public sealed class PlayerDashInput : PlayerChargingAttackInput
     private bool _isDashCharging;
 
     public event Action DashChargingStarted;
-
     public event Action DashChargingCompleted;
 
     public override bool IsCharging => _isDashCharging;
