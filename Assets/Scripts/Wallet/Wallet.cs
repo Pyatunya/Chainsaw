@@ -31,7 +31,7 @@ public sealed class Wallet : MonoBehaviour
 
     public void Take(int money)
     {
-        if (money <= 0)
+        if (money < 0)
             throw new ArgumentOutOfRangeException(nameof(money));
 
         if (CanTake(money) == false)

@@ -5,7 +5,6 @@ public sealed class Health : MonoBehaviour
 {
     [SerializeField] private int _value;
     [SerializeField] private HealthView _healthView;
-    [SerializeField] private bool _isPlayer;
     
     private int _maxValue;
 
@@ -13,15 +12,14 @@ public sealed class Health : MonoBehaviour
 
     public event Action OnDamaged;
     
-    private void Awake()
+    private void Awake() => _maxValue = _value;
+
+    public void Init(int maxValue)
     {
-        _maxValue = _value;
+        if (maxValue <= 0) 
+            throw new ArgumentOutOfRangeException(nameof(maxValue));
         
-        if(_isPlayer)
-        {
-            var storage = new StorageWithNameSaveObject<Health, int>();
-            _maxValue = storage.HasSave() ? storage.Load() : _maxValue;
-        }
+        _maxValue = maxValue;
     }
 
     private void OnEnable()

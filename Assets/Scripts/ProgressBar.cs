@@ -14,7 +14,7 @@ public sealed class ProgressBar : MonoBehaviour
         {
             yield return null;
             elapsed += Time.deltaTime;
-            _bar.fillAmount = Mathf.Lerp(0, 1, elapsed / LevelTimer.LevelTime);
+            _bar.fillAmount = Mathf.Lerp(0, 1, elapsed / LevelTimer.TotalLevelTime);
         }
     }
 }
