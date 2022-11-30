@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public sealed class ProgressBar : MonoBehaviour
 {
     [SerializeField] private Image _bar;
+    [SerializeField] private LevelTimer _levelTimer;
 
     private IEnumerator Start()
     {
@@ -14,7 +15,7 @@ public sealed class ProgressBar : MonoBehaviour
         {
             yield return null;
             elapsed += Time.deltaTime;
-            _bar.fillAmount = Mathf.Lerp(0, 1, elapsed / LevelTimer.TotalLevelTime);
+            _bar.fillAmount = Mathf.Lerp(0, 1, elapsed / _levelTimer.TimeToEnd);
         }
     }
 }
