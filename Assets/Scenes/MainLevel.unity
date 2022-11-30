@@ -1059,6 +1059,65 @@ Transform:
   m_Father: {fileID: 623599262}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &321188658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321188659}
+  - component: {fileID: 321188660}
+  m_Layer: 0
+  m_Name: Waves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &321188659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321188658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515121551}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &321188660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321188658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598735702693464183724aa74486248b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zombieSpawner: {fileID: 623599263}
+  _levelTimer: {fileID: 1515121564}
+  _waveData:
+  - <Prefabs>k__BackingField:
+    - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+    <NeedTimeToStart>k__BackingField: 0
+  - <Prefabs>k__BackingField:
+    - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+    - {fileID: -1506822977903473609, guid: ac4ececa76132dc4c8dda19d3f0f511c, type: 3}
+    <NeedTimeToStart>k__BackingField: 10
+  - <Prefabs>k__BackingField:
+    - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+    - {fileID: -1506822977903473609, guid: ac4ececa76132dc4c8dda19d3f0f511c, type: 3}
+    - {fileID: -1506822977903473609, guid: b91a7ad300323c94db08da0202266941, type: 3}
+    <NeedTimeToStart>k__BackingField: 20
 --- !u!1 &504758751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,7 +1468,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -1454,7 +1513,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawners:
   - {fileID: 623599263}
-  _levelTimer: {fileID: 1515121564}
 --- !u!4 &623599262
 Transform:
   m_ObjectHideFlags: 0
@@ -1513,8 +1571,6 @@ MonoBehaviour:
   - {fileID: 713688891}
   - {fileID: 1359268222}
   - {fileID: 1292421286}
-  _prefabs:
-  - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
   _levelTimer: {fileID: 1515121564}
   _score: {fileID: 1515121554}
   _comboCounter: {fileID: 1515121558}
@@ -2538,7 +2594,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b0008d88c4c420a4888be707f1998c94, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3918,7 +3974,6 @@ GameObject:
   - component: {fileID: 1515121564}
   - component: {fileID: 1515121560}
   - component: {fileID: 1515121563}
-  - component: {fileID: 1515121565}
   - component: {fileID: 1515121566}
   m_Layer: 0
   m_Name: GameManager
@@ -3938,7 +3993,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 321188659}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4068,19 +4124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed497a14ca31c649b5d858107a61c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1515121565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515121549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c825158bee4a83befabfa1589229ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bar: {fileID: 596399076}
+  _needEnd: 0
+  <TimeToEnd>k__BackingField: 114
 --- !u!114 &1515121566
 MonoBehaviour:
   m_ObjectHideFlags: 0
