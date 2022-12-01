@@ -5458,10 +5458,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7640625594194428956, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
-      propertyPath: _radius
-      value: 14.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7640625594194428956, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _attackPoint
       value: 
       objectReference: {fileID: 1965273476}
@@ -5592,7 +5588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74475496e9d4c44ab5b61bdc9c97068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   _timeToReachEntity: 0.4
+=======
+>>>>>>> parent of 55d01c8 (New Movement Done)
 --- !u!114 &7897066368288001053
 MonoBehaviour:
   m_ObjectHideFlags: 0

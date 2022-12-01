@@ -1,11 +1,8 @@
-﻿using System.Threading.Tasks;
-using Cysharp.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public sealed class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _timeToReachEntity = 0.5f;
     private Rigidbody2D _rigidbody;
 
     public Vector3 MoveDirection { get; private set; }
@@ -14,6 +11,7 @@ public sealed class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
+<<<<<<< HEAD
 
     public void DashTo(Entity closest, float force)
     {
@@ -45,5 +43,13 @@ public sealed class PlayerMovement : MonoBehaviour
             _rigidbody.transform.position = Vector2.Lerp(position, closest.position, time / timeToReachEntity);
             await Task.Yield();
         }
+=======
+    
+    public void MoveTo(Entity closest, float force)
+    {
+        Vector3 direction = (closest.transform.position - transform.position).normalized;
+        MoveDirection = direction;
+        _rigidbody.AddForce(direction * force);
+>>>>>>> parent of 55d01c8 (New Movement Done)
     }
 }
