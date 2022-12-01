@@ -9,6 +9,9 @@ public sealed class PlusVolumeButton : Button
 
     protected override void OnClick()
     {
+        if (Value == 1)
+            return;
+
         _audioVolume.ChangeSoundVolume(Value + 0.05f);
     }
 }
