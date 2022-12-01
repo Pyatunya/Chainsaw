@@ -22,13 +22,13 @@ public sealed class Player : Entity
 
     protected override void Enable() => _targetSearcher = GetComponent<TargetSearcher>();
 
-    public void Attack()
+    public async void Attack()
     {
         if (_targetSearcher.TryFindTarget(out Entity closest))
         {
             Attacked?.Invoke();
             IsAttacking = true;
-            Movement.MoveTo(closest);
+            await Movement.MoveTo(closest);
             _targetSearcher.ZombieSearch(out Collider2D[] hitEnemies);
 
             foreach (Collider2D enemy in hitEnemies)
