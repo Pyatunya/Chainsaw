@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Zombie))]
 public sealed class ZombieMovementMotion : MonoBehaviour
 {
-    [SerializeField] private float _returnMovementDistance = 5f;
+    [SerializeField] private ZombieAnimator _zombieAnimator;
     private Zombie _zombie;
     private Coroutine _returnMovement;
     
@@ -14,7 +14,11 @@ public sealed class ZombieMovementMotion : MonoBehaviour
         _zombie.Health.OnDamaged += OnAttacked;
     }
 
-    private void OnAttacked() => _zombie.StopMovement();
+    private void OnAttacked()
+    {
+        _zombieAnimator.Disable();
+        _zombie.StopMovement();
+    }
 
     private void OnDestroy()
     {
@@ -34,7 +38,8 @@ public sealed class ZombieMovementMotion : MonoBehaviour
 
     private IEnumerator TryReturnMovement()
     {
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.5f);
+        _zombieAnimator.Enable();
         _zombie.ContinueMovement();
         _returnMovement = null;
     }
