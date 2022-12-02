@@ -136,8 +136,6 @@ GameObject:
   - component: {fileID: 34932696}
   - component: {fileID: 34932697}
   - component: {fileID: 34932698}
-  - component: {fileID: 34932699}
-  - component: {fileID: 34932700}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -216,45 +214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _texts:
   - {fileID: 5637198586338038688}
---- !u!114 &34932699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34932693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f6235519e9a024485e3900e94c17f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uiElements:
-  - {fileID: 561365746}
-  - {fileID: 123016524}
-  - {fileID: 244092345}
-  - {fileID: 947137289}
-  - {fileID: 766835527}
-  - {fileID: 298934869131410326}
-  - {fileID: 5637198586425636008}
-  - {fileID: 5637198586647936288}
-  - {fileID: 232548401}
-  - {fileID: 219639076}
-  _needTimeForClick: 0.5
-  _cursor: {fileID: 34932700}
---- !u!114 &34932700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34932693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e262b256dba0424ea5e60b6dcc10ab20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _posych: {fileID: 735559420}
-  _posychAnimator: {fileID: 735559422}
 --- !u!1 &105137092
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +378,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 123016524}
   m_OnClick:
     m_PersistentCalls:
@@ -468,7 +427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1584984196, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -684,7 +643,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 219639076}
   m_OnClick:
     m_PersistentCalls:
@@ -819,7 +778,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 232548401}
   m_OnClick:
     m_PersistentCalls:
@@ -956,7 +915,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 244092345}
   m_OnClick:
     m_PersistentCalls:
@@ -981,7 +940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1584984196, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1264,8 +1223,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 735559418}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1354,7 +1312,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 561365746}
   m_OnClick:
     m_PersistentCalls:
@@ -1391,7 +1349,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1584984196, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1643,27 +1601,6 @@ Transform:
   m_Father: {fileID: 205994595}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &735559418 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-  m_PrefabInstance: {fileID: 5314430308151840764}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &735559420 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5314430308590973184, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-  m_PrefabInstance: {fileID: 5314430308151840764}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &735559422 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2521691790142986303, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-  m_PrefabInstance: {fileID: 5314430308151840764}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &756104549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,7 +1788,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 766835527}
   m_OnClick:
     m_PersistentCalls:
@@ -1900,7 +1837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1584984196, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2132,7 +2069,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 947137289}
   m_OnClick:
     m_PersistentCalls:
@@ -3995,107 +3932,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3357856812465773289}
   m_CullTransparentMesh: 1
---- !u!1001 &5314430308151840764
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 512372420}
-    m_Modifications:
-    - target: {fileID: 5314430308590973184, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -14089027, guid: 5cda0245ac7a43446bd3a0f7219daa0a, type: 3}
-    - target: {fileID: 5314430308590973189, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_Name
-      value: Posych
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 126
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 94
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314430308590973190, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9633a0ac3e1d31047bf873c0d47fd199, type: 3}
 --- !u!114 &5637198585346868706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4977,7 +4813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99267a303a955949a34025c60bf122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiNavigation: {fileID: 34932699}
   _healthViewData:
   - {fileID: 11400000, guid: 1dcf2ad2dc6d88248aa30d0f1e9382a6, type: 2}
   - {fileID: 11400000, guid: 10f72daadd63b3f44a278b6312b0bc21, type: 2}
@@ -5156,7 +4991,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1584984196, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5234,7 +5069,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 5637198586425636008}
   m_OnClick:
     m_PersistentCalls:
@@ -5599,7 +5434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1584984196, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7aa53db5265c5ec419764c122dc7f4c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5677,7 +5512,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 5637198586647936288}
   m_OnClick:
     m_PersistentCalls:
