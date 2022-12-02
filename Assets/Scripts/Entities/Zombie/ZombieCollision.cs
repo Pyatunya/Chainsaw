@@ -39,6 +39,6 @@ public sealed class ZombieCollision : MonoBehaviour
         OnAttacked?.Invoke();
         _zombie.StopMovement();
         health.TakeDamage(_damage);
-       _zombie.ComboCounter.ResetToZero();
+        _zombie.ComboCounter.ResetToZero();
     }
 }
