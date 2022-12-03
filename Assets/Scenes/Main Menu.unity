@@ -3862,7 +3862,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 298934869131410326}
   m_OnClick:
     m_PersistentCalls:
@@ -5308,7 +5308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99267a303a955949a34025c60bf122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiNavigation: {fileID: 0}
   _healthViewData:
   - {fileID: 11400000, guid: 1dcf2ad2dc6d88248aa30d0f1e9382a6, type: 2}
   - {fileID: 11400000, guid: 10f72daadd63b3f44a278b6312b0bc21, type: 2}
