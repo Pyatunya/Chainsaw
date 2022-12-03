@@ -5454,9 +5454,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: b84d7c784bbbd254c92cbb780180ab77, type: 3}
     - target: {fileID: 7640625594194428935, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _attackCooldown
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640625594194428935, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _dashSecondsView
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7640625594194428935, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _playerChargingAttackInputs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640625594194428935, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _playerChargingAttackInputs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7897066368288001044}
     - target: {fileID: 7640625594194428956, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _attackPoint
       value: 
