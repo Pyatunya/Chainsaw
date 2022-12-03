@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 public sealed class EnemySpawnerRoot : MonoBehaviour
 {
     private const float SpawnDelay = 2f;
-    private const float SpawnSeconds = 0.45f;
+    private const float SpawnSeconds = 1.25f;
 
     public WaveData WaveData { get; private set; }
     
