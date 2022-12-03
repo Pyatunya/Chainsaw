@@ -1069,21 +1069,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598735702693464183724aa74486248b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zombieSpawner: {fileID: 623599263}
+  _enemySpawnerRoot: {fileID: 623599261}
   _levelTimer: {fileID: 1515121564}
   _waveData:
-  - <Prefabs>k__BackingField:
-    - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+  - <Spawners>k__BackingField:
+    - {fileID: 623599263}
     <NeedTimeToStart>k__BackingField: 0
-  - <Prefabs>k__BackingField:
-    - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
-    - {fileID: -1506822977903473609, guid: ac4ececa76132dc4c8dda19d3f0f511c, type: 3}
+    <EnemySpawnCountAtOnce>k__BackingField: 1
+  - <Spawners>k__BackingField:
+    - {fileID: 623599263}
+    - {fileID: 1556365373}
     <NeedTimeToStart>k__BackingField: 10
-  - <Prefabs>k__BackingField:
-    - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
-    - {fileID: -1506822977903473609, guid: ac4ececa76132dc4c8dda19d3f0f511c, type: 3}
-    - {fileID: -1506822977903473609, guid: b91a7ad300323c94db08da0202266941, type: 3}
+    <EnemySpawnCountAtOnce>k__BackingField: 1
+  - <Spawners>k__BackingField:
+    - {fileID: 623599263}
+    - {fileID: 1556365373}
+    - {fileID: 699566199}
     <NeedTimeToStart>k__BackingField: 20
+    <EnemySpawnCountAtOnce>k__BackingField: 1
 --- !u!1 &504758751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,8 +1480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54df534594b23aa418567691d1bbd3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawners:
-  - {fileID: 623599263}
 --- !u!4 &623599262
 Transform:
   m_ObjectHideFlags: 0
@@ -1506,6 +1507,8 @@ Transform:
   - {fileID: 713688891}
   - {fileID: 1359268222}
   - {fileID: 1292421286}
+  - {fileID: 1556365372}
+  - {fileID: 699566198}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1541,6 +1544,8 @@ MonoBehaviour:
   _score: {fileID: 1515121554}
   _comboCounter: {fileID: 1515121558}
   _player: {fileID: 7897066368288001020}
+  _prefabs:
+  - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
 --- !u!1 &683838570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1583,74 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &699566197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699566198}
+  - component: {fileID: 699566199}
+  m_Layer: 0
+  m_Name: ThirdWaveSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &699566198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699566197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 623599262}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699566199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699566197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3995bb339b19402dab8541c38999f4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints:
+  - {fileID: 293790393}
+  - {fileID: 2052956839}
+  - {fileID: 1671913562}
+  - {fileID: 1881343834}
+  - {fileID: 594090943}
+  - {fileID: 1300929831}
+  - {fileID: 316681979}
+  - {fileID: 2044025228}
+  - {fileID: 743983804}
+  - {fileID: 1452352645}
+  - {fileID: 556359422}
+  - {fileID: 711976694}
+  - {fileID: 713688891}
+  - {fileID: 1359268222}
+  - {fileID: 1292421286}
+  _levelTimer: {fileID: 1515121564}
+  _score: {fileID: 1515121554}
+  _comboCounter: {fileID: 1515121558}
+  _player: {fileID: 7897066368288001020}
+  _prefabs:
+  - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+  - {fileID: -1506822977903473609, guid: b91a7ad300323c94db08da0202266941, type: 3}
+  - {fileID: -1506822977903473609, guid: ac4ececa76132dc4c8dda19d3f0f511c, type: 3}
 --- !u!1 &708368715 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7640625594194428957, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
@@ -4129,6 +4202,73 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!1 &1556365371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556365372}
+  - component: {fileID: 1556365373}
+  m_Layer: 0
+  m_Name: SecondWaveSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1556365372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556365371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 623599262}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1556365373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556365371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3995bb339b19402dab8541c38999f4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints:
+  - {fileID: 293790393}
+  - {fileID: 2052956839}
+  - {fileID: 1671913562}
+  - {fileID: 1881343834}
+  - {fileID: 594090943}
+  - {fileID: 1300929831}
+  - {fileID: 316681979}
+  - {fileID: 2044025228}
+  - {fileID: 743983804}
+  - {fileID: 1452352645}
+  - {fileID: 556359422}
+  - {fileID: 711976694}
+  - {fileID: 713688891}
+  - {fileID: 1359268222}
+  - {fileID: 1292421286}
+  _levelTimer: {fileID: 1515121564}
+  _score: {fileID: 1515121554}
+  _comboCounter: {fileID: 1515121558}
+  _player: {fileID: 7897066368288001020}
+  _prefabs:
+  - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+  - {fileID: -1506822977903473609, guid: b91a7ad300323c94db08da0202266941, type: 3}
 --- !u!1 &1582146879
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,25 +4,32 @@ using Random = UnityEngine.Random;
 
 public sealed class EnemySpawnerRoot : MonoBehaviour
 {
-    [SerializeField] private EnemySpawner[] _spawners;
+    private const float SpawnDelay = 2f;
+    private const float SpawnSeconds = 0.45f;
 
-    private const float BeforeGameStartedSeconds = 2f;
-    private const float SpawnSeconds = 1.25f;
+    public WaveData WaveData { get; private set; }
+    
+    public void StartSpawn() => StartCoroutine(Spawn());
 
-    public void StartSpawn()
+    public void SwitchWave(WaveData waveData)
     {
-        StartCoroutine(Spawn());
+        WaveData = waveData;
     }
-
+    
     private IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(BeforeGameStartedSeconds);
+        yield return new WaitForSeconds(SpawnDelay);
 
         while (true)
         {
-            yield return new WaitForSeconds(SpawnSeconds);
-            var spawner = _spawners[Random.Range(0, _spawners.Length)];
-            spawner.Create();
+            for (var i = 0; i < WaveData.EnemySpawnCountAtOnce; i++)
+            {
+                yield return new WaitForSeconds(SpawnSeconds);
+                var spawners = WaveData.Spawners;
+                var spawner = spawners[Random.Range(0, spawners.Length)];
+                spawner.Create();
+                
+            }
         }
     }
 }
