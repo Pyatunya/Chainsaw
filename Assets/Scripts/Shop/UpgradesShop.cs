@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public sealed class UpgradesShop : MonoBehaviour
 {
-    [SerializeField] private UINavigation _uiNavigation;
     [SerializeField] private List<UpgradePlayerHealthViewData> _healthViewData;
     [SerializeField] private List<UpgradePlayerDamageViewData> _damageViewData;
     [SerializeField] private GameObject _itemContainer;
@@ -49,7 +48,6 @@ public sealed class UpgradesShop : MonoBehaviour
         {
             var upgradeView = Instantiate(_upgradePrefab, _itemContainer.transform);
             list.Add(upgradeView);
-            _uiNavigation.Add(upgradeView.GetComponent<Image>());
         }
 
         return list;
