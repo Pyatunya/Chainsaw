@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 8851729030344015120}
   - component: {fileID: 4677800302795488126}
   - component: {fileID: 778770947}
+  - component: {fileID: -1755801231227488034}
   m_Layer: 6
   m_Name: Zombie
   m_TagString: Untagged
@@ -231,14 +232,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d322b39456413e4685c7e420d5d44f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 8989654327093075632}
   _zombie: {fileID: -1506822977903473609}
-  _spriteRenderer: {fileID: 7648515858109276250}
   _zombieCollision: {fileID: -2060088906701148051}
+  <SpriteRenderer1>k__BackingField: {fileID: 7648515858109276250}
+  <Animator>k__BackingField: {fileID: 8989654327093075632}
+--- !u!114 &-1755801231227488034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133123651038987949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce050075a8dd4ed08f0bed35220a12cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zombieAnimation: {fileID: 778770947}
   _health: {fileID: 8885449577304539054}
   _dieAnimationsBoolNames:
   - Die 1
   _dieSprite: {fileID: 515578695, guid: 574cc334a58dd6b4cbb51943ed471146, type: 3}
+  _boxCollider: {fileID: 2133123651038987947}
+  _rigidbody: {fileID: 2133123651038987946}
 --- !u!1 &8642221317014167825
 GameObject:
   m_ObjectHideFlags: 0

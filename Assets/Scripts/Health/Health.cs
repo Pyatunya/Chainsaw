@@ -3,7 +3,7 @@ using UnityEngine;
 
 public sealed class Health : MonoBehaviour
 {
-    [SerializeField] private int _value;
+    [SerializeField, Min(1)] private int _value;
     [SerializeField] private HealthView _healthView;
     
     private int _maxValue;
