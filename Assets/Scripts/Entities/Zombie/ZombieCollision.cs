@@ -16,6 +16,12 @@ public sealed class ZombieCollision : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerHealth player))
         {
+            if (_zombie.CanMove == false)
+            {
+                _inCollisionTime = 0;
+                return;
+            }
+            
             _inCollisionTime += Time.deltaTime;
 
             if (_inCollisionTime > AttackDelay && gameObject.activeSelf)

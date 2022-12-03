@@ -5409,6 +5409,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7640625594194428931, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _health
       value: 
@@ -5501,6 +5505,18 @@ PrefabInstance:
       propertyPath: _playerDashInput
       value: 
       objectReference: {fileID: 7897066368288001044}
+    - target: {fileID: 9086367529121275969, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086367529121275969, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086367529121275969, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9086367529121275969, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _spriteRenderer
       value: 

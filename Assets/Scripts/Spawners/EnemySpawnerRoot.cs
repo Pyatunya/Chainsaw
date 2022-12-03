@@ -6,8 +6,8 @@ public sealed class EnemySpawnerRoot : MonoBehaviour
 {
     [SerializeField] private EnemySpawner[] _spawners;
 
-    private const float SpawnDelay = 2f;
-    private const float SpawnSeconds = 0.45f;
+    private const float BeforeGameStartedSeconds = 2f;
+    private const float SpawnSeconds = 1.25f;
 
     public void StartSpawn()
     {
@@ -16,7 +16,7 @@ public sealed class EnemySpawnerRoot : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(SpawnDelay);
+        yield return new WaitForSeconds(BeforeGameStartedSeconds);
 
         while (true)
         {

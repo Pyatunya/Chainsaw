@@ -31,6 +31,10 @@ public sealed class ZombieAnimator : MonoBehaviour
         _animator.SetBool("CanMove", _zombie.CanMove);
     }
 
+    public void Disable() => _animator.enabled = false;
+    
+    public void Enable() => _animator.enabled = true;
+
     private void OnAttacked()
     {
         _animator.Play("ZombieAttack", -1, 0);

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(TargetSearcher))]
-public sealed class Player : Entity
+public sealed class Player : MonoBehaviour
 {
     [SerializeField] private PlayerSoundView _soundView;
 
@@ -21,7 +21,7 @@ public sealed class Player : Entity
     
     public bool IsAttacking { get; private set; }
 
-    protected override void Enable() => _targetSearcher = GetComponent<TargetSearcher>();
+    private void OnEnable() => _targetSearcher = GetComponent<TargetSearcher>();
 
     public void Attack()
     {
