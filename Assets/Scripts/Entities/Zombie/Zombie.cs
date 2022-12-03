@@ -4,7 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public sealed class Zombie : Entity
 {
-    private float _speed = 4f;
+    [SerializeField] private float _speed = 4f;
+
     private Rigidbody2D _rigidbody;
     
     public bool CanMove { get; private set; }

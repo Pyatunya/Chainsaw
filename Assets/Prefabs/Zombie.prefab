@@ -106,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addScoreCount: 25
   <Health>k__BackingField: {fileID: 8885449577304539054}
+  _speed: 2
 --- !u!114 &-2060088906701148051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   _healthView: {fileID: -4224631044682675446}
-  _isPlayer: 0
 --- !u!114 &-4224631044682675446
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,10 +20,10 @@ public sealed class ZombieMovementMotion : MonoBehaviour
     {
         if(_zombie.CanMove)
             return;
-        
+
         var distance = (_zombie.Player.transform.position - transform.position).magnitude;
-        
-        if(distance >= _returnMovementDistance)
+
+        if (distance >= _returnMovementDistance)
         {
             _zombie.ContinueMovement();
         }

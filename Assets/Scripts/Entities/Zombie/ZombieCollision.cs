@@ -11,8 +11,10 @@ public sealed class ZombieCollision : MonoBehaviour
     private float _inCollisionTime = 0f;
 
     public event Action OnAttacked;
-    
-    private void OnTriggerStay2D(Collider2D collision)
+
+    public int Damage => _damage;
+
+private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerHealth player))
         {
@@ -39,6 +41,6 @@ public sealed class ZombieCollision : MonoBehaviour
         OnAttacked?.Invoke();
         _zombie.StopMovement();
         health.TakeDamage(_damage);
-       _zombie.ComboCounter.ResetToZero();
+        _zombie.ComboCounter.ResetToZero();
     }
 }

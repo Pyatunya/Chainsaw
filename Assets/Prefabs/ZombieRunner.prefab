@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 4677800302795488126}
   - component: {fileID: 778770947}
   m_Layer: 6
-  m_Name: Zombie 2
+  m_Name: ZombieRunner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addScoreCount: 25
   <Health>k__BackingField: {fileID: 8885449577304539054}
+  _speed: 5
 --- !u!114 &-2060088906701148051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7231dbb354664d1ab86575fdf7a0b63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 1
+  _value: 3
   _healthView: {fileID: -4224631044682675446}
 --- !u!114 &-4224631044682675446
 MonoBehaviour:
