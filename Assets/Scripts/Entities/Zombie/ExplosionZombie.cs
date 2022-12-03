@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking.Types;
 
 public class ExplosionZombie : MonoBehaviour
 {
@@ -14,31 +12,14 @@ public class ExplosionZombie : MonoBehaviour
 
     private float _elapsedTimeExplosion = 0;
     private bool _hasExploded = false;
-    private bool _isDamageReceived = false;
-
-    private void Update()
-    {
-        _elapsedTimeExplosion += Time.deltaTime;
-
-        if (_elapsedTimeExplosion >= _explosionTime && _hasExploded == false && _isDamageReceived == false)
-        {
-            print("обнуление");
-            _hasExploded = true;
-            SelfDestructs();
-        }
-
-        if (_isDamageReceived && _elapsedTimeExplosion >= _explosionTimeOnDamage && _hasExploded == false)
-        {
-            print("получает урон");
-            _hasExploded = true;
-            SelfDestructs();
-        }
-    }
+    private Coroutine _startSelfDestructsRoutine;
 
     private void OnEnable()
     {
         _health.OnDied += OnDie;
         _health.OnDamaged += OnDamaged;
+        _hasExploded = false;
+        _startSelfDestructsRoutine = StartCoroutine(StartSelfDestructs(_explosionTime));
     }
 
     private void OnDisable()
@@ -47,36 +28,47 @@ public class ExplosionZombie : MonoBehaviour
         _health.OnDamaged -= OnDamaged;
     }
 
-    private void OnDie()
+    private IEnumerator StartSelfDestructs(float time)
     {
-        print("Умер");
-
-        Attack();
+        yield return new WaitForSeconds(time);
+        SelfDestructs();
     }
 
-    private void Attack()
+    private void OnDie()
     {
-        Collider2D[] explosionRadius = Physics2D.OverlapCircleAll(transform.position, _explosionRadius);
-
-        for (int i = 0; i < explosionRadius.Length; i++)
+        if (_hasExploded == false)
         {
-            if (explosionRadius[i].TryGetComponent(out Health health))
+            _hasExploded = true;
+            Explode();
+        }
+    }
+
+    private void Explode()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _explosionRadius);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider != GetComponent<BoxCollider2D>())
             {
-                print("все получают урон");
-                health.TakeDamage(_zombieCollision.Damage);
+                if (collider.TryGetComponent<Health>(out Health health))
+                {
+                    health.TakeDamage(_zombieCollision.Damage);
+                }
             }
         }
     }
 
     private void OnDamaged()
     {
-        _isDamageReceived = true;
-        _elapsedTimeExplosion = 0;
+        if (_startSelfDestructsRoutine != null)
+            StopCoroutine(_startSelfDestructsRoutine);
+
+        _startSelfDestructsRoutine = StartCoroutine(StartSelfDestructs(_explosionTimeOnDamage));
     }
 
     private void SelfDestructs()
     {
-        print("Получаю урон от себя");
         _health.TakeDamage(_zombieCollision.Damage);
     }
 

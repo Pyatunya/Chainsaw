@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public sealed class Zombie : Entity
 {
-    [SerializeField] private float _speed = 4f;
+    [SerializeField] private float _speed = 1f;
 
     private Rigidbody2D _rigidbody;
     
@@ -14,13 +14,13 @@ public sealed class Zombie : Entity
     
     public Player Player { get; private set; }
     
-    public void Init(Player player, float speed)
+    public void Init(Player player)
     {
-        if (speed <= 0) 
-            throw new ArgumentOutOfRangeException(nameof(speed));
+        // if (speed <= 0) 
+        //     throw new ArgumentOutOfRangeException(nameof(speed));
         
         Player = player ?? throw new ArgumentNullException(nameof(player));
-        _speed = speed;
+        // _speed = speed;
     }
 
     private void Start()

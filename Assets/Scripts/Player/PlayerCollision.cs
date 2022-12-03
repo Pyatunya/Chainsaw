@@ -7,6 +7,8 @@ public sealed class PlayerCollision : MonoBehaviour
 
     private int _damage = 1;
 
+    public int Damage => _damage;
+
     private void OnEnable()
     {
         var storage = new StorageWithNameSaveObject<PlayerCollision, int>();

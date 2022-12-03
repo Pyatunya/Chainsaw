@@ -21,8 +21,8 @@ public sealed class LevelTimer : MonoBehaviour
         }
     }
 
-    public float GetSpeedFromCurrentTime()
-    {
-        return Mathf.Min(Time, 10f);
-    }
+    // public float GetSpeedFromCurrentTime()
+    // {
+    //     return Mathf.Min(Time, 10f);
+    // }
 }

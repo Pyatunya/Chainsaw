@@ -5,6 +5,7 @@ using UnityEngine;
 public sealed class Player : Entity
 {
     [SerializeField] private PlayerSoundView _soundView;
+    [SerializeField] private PlayerCollision _playerCollision;
 
     private readonly float _moveForce = 800f;
     private readonly float _dashForce = 3400f;
@@ -33,7 +34,7 @@ public sealed class Player : Entity
 
             foreach (Collider2D enemy in hitEnemies)
             {
-                enemy.GetComponent<Health>().TakeDamage(1);
+                enemy.GetComponent<Health>().TakeDamage(_playerCollision.Damage);
             }
 
             _soundView.PlayRandomAttack();

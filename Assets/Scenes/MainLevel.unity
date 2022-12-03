@@ -1571,7 +1571,6 @@ MonoBehaviour:
   - {fileID: 713688891}
   - {fileID: 1359268222}
   - {fileID: 1292421286}
-  _levelTimer: {fileID: 1515121564}
   _score: {fileID: 1515121554}
   _comboCounter: {fileID: 1515121558}
   _player: {fileID: 7897066368288001020}
@@ -5263,7 +5262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 545199964967693104, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _value
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 545199964967693104, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _healthView
@@ -5425,6 +5424,10 @@ PrefabInstance:
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 1190136410}
+    - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+      propertyPath: _playerCollision
+      value: 
+      objectReference: {fileID: 7897066368288001057}
     - target: {fileID: 7640625594194428934, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: _playerSoundView
       value: 
@@ -5606,3 +5609,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f42b31e157804a84186b6d0c17638de3, type: 3}
   - {fileID: 8300000, guid: b84d7c784bbbd254c92cbb780180ab77, type: 3}
   _dashClip: {fileID: 8300000, guid: 4812ed13457edb64bbe5113bea1f0a6e, type: 3}
+--- !u!114 &7897066368288001057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9009377954239230135, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
+  m_PrefabInstance: {fileID: 545199963882786810}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708368715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3aa677788b247aa93af9bceac63cd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
