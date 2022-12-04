@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <script src='https://yandex.ru/games/sdk/v2'></script>
+  <script> YaGames.init().then(ysdk => { sdk = ysdk; }); </script>
+  <script>function showFullScreenAdv() { sdk.adv.showFullscreenAdv({ callbacks: { onClose: function (wasShown) { window.unityInstance.SendMessage('YandexSDK', 'OnInterstitialShown'); }, onError: function (error) { window.unityInstance.SendMessage('YandexSDK', 'OnInterstitialError', error); } } }); }</script>
+  <script>function showRewardedAdv(placement) { sdk.adv.showRewardedVideo({ callbacks: { onOpen: () => { window.unityInstance.SendMessage('YandexSDK', 'OnRewardedOpen', placement); }, onRewarded: () => { window.unityInstance.SendMessage('YandexSDK', 'OnRewarded', placement); }, onClose: () => { window.unityInstance.SendMessage('YandexSDK', 'OnRewardedClose', placement); }, onError: (e) => { window.unityInstance.SendMessage('YandexSDK', 'OnRewardedError', placement); } } }); } </script>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity WebGL Player | {{{ PRODUCT_NAME }}}</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+</head>
+
+<body style="overflow: hidden">
+  <div id="unity-container" style="width: 100%; height: 100%">
+    <canvas id="unity-canvas" width=auto height=auto></canvas>
+    <div id="unity-loading-bar">
+      <div id="unity-logo"></div>
+      <div id="unity-progress-bar-empty">
+        <div id="unity-progress-bar-full"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+    var progressBarFull = document.querySelector("#unity-progress-bar-full");
+    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+    var warningBanner = document.querySelector("#unity-warning");
+
+    // Shows a temporary message banner/ribbon for a few seconds, or
+    // a permanent error message on top of the canvas if type=='error'.
+    // If type=='warning', a yellow highlight color is used.
+    // Modify or remove this function to customize the visually presented
+    // way that non-critical warnings and error messages are presented to the
+    // user.
+    function unityShowBanner(msg, type) {
+      function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+      }
+      var div = document.createElement('div');
+      div.innerHTML = msg;
+      warningBanner.appendChild(div);
+      if (type == 'error') div.style = 'background: red; padding: 10px;';
+      else {
+        if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+        setTimeout(function () {
+          warningBanner.removeChild(div);
+          updateBannerVisibility();
+        }, 5000);
+      }
+      updateBannerVisibility();
+    }
+
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+    var config = {
+      dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+      frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+      #if USE_WASM
+        codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+      #endif
+#if MEMORY_FILENAME
+        memoryUrl: buildUrl + "/{{{ MEMORY_FILENAME }}}",
+      #endif
+#if SYMBOLS_FILENAME
+        symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
+      #endif
+        streamingAssetsUrl: "StreamingAssets",
+      companyName: {{{ JSON.stringify(COMPANY_NAME) }}},
+    productName: "Eta shtuka poka ne rabotaet, nu i ladno",
+      productVersion: "etat tozhe",
+        showBanner: unityShowBanner,
+      };
+
+    // By default Unity keeps WebGL canvas render target size matched with
+    // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+    // Set this to false if you want to decouple this synchronization from
+    // happening inside the engine, and you would instead like to size up
+    // the canvas DOM size and WebGL render target sizes yourself.
+    // config.matchWebGLToCanvasSize = false;
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      // To lower canvas resolution on mobile devices to gain some
+      // performance, uncomment the following line:
+      // config.devicePixelRatio = 1;
+
+      canvas.style.width = "100vw";
+      canvas.style.height = "100vh";
+    } else {
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
+    }
+
+    #if BACKGROUND_FILENAME
+    canvas.style.background = "url('" + buildUrl + "/{{{ BACKGROUND_FILENAME.replace(/'/g, '%27') }}}') center / cover";
+    #endif
+    loadingBar.style.display = "block";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = 100 * progress + "%";
+      }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+        showFullScreenAdv();
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+          window.unityInstance.SendMessage('YandexSDK', 'OnGetPlayerPlatform', 'phone');
+        }
+        else {
+          window.unityInstance.SendMessage('YandexSDK', 'OnGetPlayerPlatform', 'desktop');
+        }
+        loadingBar.style.display = "none";
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
+  <script>
+    function auth() {
+      initPlayer();
+    }
+    function initPlayer() {
+      return sdk.getPlayer().then(_player => {
+        player = _player;
+        if (_player.getMode() === 'lite') {
+          // sdk.auth.openAuthDialog().then(() => {
+
+          // });
+        }
+        console.log("Initialized");
+        window.unityInstance.SendMessage('YandexSDK', 'OnPlayerAuthenticated');
+      }).catch(err => {
+        console.log("cant init");
+      });
+    }
+    function setPlayerData(dataStr) {
+      player.setData({
+        "data": dataStr
+      }).then(() => {
+        console.log("saved");
+      }).catch(() => {
+        console.log("not saved");
+      });
+    }
+    function getPlayerData() {
+      player.getData(["data"]).then(data => {
+        if (data.data.length != 0) {
+          var dataStr = data.data;
+          console.log("ok");
+          console.log(dataStr);
+          window.unityInstance.SendMessage('YandexSDK', 'OnGetPlayerData', dataStr);
+        }
+        else {
+          console.log("chota est");
+          var dataStr = 'none';
+          window.unityInstance.SendMessage('YandexSDK', 'OnGetPlayerData', dataStr);
+        }
+      }).catch((err) => {
+        console.log("ne ok");
+        var dataStr = 'none';
+        window.unityInstance.SendMessage('YandexSDK', 'OnGetPlayerData', dataStr);
+      });
+    }
+    function openRateUs() {
+      sdk.feedback.canReview()
+        .then(({ value, reason }) => {
+          if (value) {
+            sdk.feedback.requestReview()
+              .then(({ feedbackSent }) => {
+                console.log(feedbackSent);
+              })
+          } else {
+            console.log(reason)
+          }
+        })
+    }
+  </script>
+</body>
+
+</html>
