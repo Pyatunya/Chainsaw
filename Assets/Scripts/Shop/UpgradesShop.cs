@@ -1,23 +1,30 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public sealed class UpgradesShop : MonoBehaviour
 {
     [SerializeField] private List<UpgradePlayerHealthViewData> _healthViewData;
     [SerializeField] private List<UpgradePlayerDamageViewData> _damageViewData;
+    [SerializeField] private List<UpgradePlayerDashDamageViewData> _damageDashViewData;
+
     [SerializeField] private GameObject _itemContainer;
     [SerializeField] private UpgradeView _upgradePrefab;
     [SerializeField] private ShoppingCart _shoppingCart;
 
     private void Start()
     {
-        AddHealthUpgrade();
+        AddHealthUpgrades();
         AddDamageUpgrades();
+        AddDashDamageUpgrades();
     }
 
-    private void AddHealthUpgrade()
+    private void AddDashDamageUpgrades()
+    {
+        AddSaveUpgrades<DashAoeDamager, int, UpgradePlayerDashDamageViewData>(data => data.Damage, _damageDashViewData);
+    }
+
+    private void AddHealthUpgrades()
     {
         AddSaveUpgrades<Health, int, UpgradePlayerHealthViewData>(data => data.HealthCount, _healthViewData);
     }

@@ -5,16 +5,18 @@ using UnityEngine;
 public sealed class DashAoeDamager : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField, Min(1)] private int _damage = 5;
-    
-    private float _time = 0.5f;
-    private float _startRadius = 0.7f;
-    private float _maxRadius = 1.5f;
+    private int _damage;
+
+    private const float Time = 0.5f;
+    private const float StartRadius = 0.7f;
+    private const float MaxRadius = 1.5f;
     private CircleCollider2D _circleCollider;
     private Coroutine _activateZoneRoutine;
 
     private void Awake()
     {
+        var storage = new StorageWithNameSaveObject<DashAoeDamager, int>();
+        _damage = storage.HasSave() ? storage.Load() : 5;
         _circleCollider = GetComponent<CircleCollider2D>();
         _player.Dashing += OnDashing;
     }
@@ -22,18 +24,15 @@ public sealed class DashAoeDamager : MonoBehaviour
     private void Start()
     {
         _circleCollider.isTrigger = true;
-        _circleCollider.radius = _startRadius;
+        _circleCollider.radius = StartRadius;
         _circleCollider.enabled = false;
     }
 
-    private void OnDisable()
-    {
-        _player.Dashing -= OnDashing;
-    }
+    private void OnDisable() => _player.Dashing -= OnDashing;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.TryGetComponent<Health>(out Health health))
+        if (collider.TryGetComponent(out Health health))
         {
             Attack(health);
         }
@@ -50,22 +49,19 @@ public sealed class DashAoeDamager : MonoBehaviour
         if (_activateZoneRoutine != null)
             StopCoroutine(_activateZoneRoutine);
 
-        WaitForSeconds timer = new WaitForSeconds(_time);
+        WaitForSeconds timer = new WaitForSeconds(Time);
         _circleCollider.enabled = true;
         yield return timer;
 
         _circleCollider.enabled = false;
     }
 
-    private void Attack(Health health)
-    {
-        health.TakeDamage(_damage);
-    }
+    private void Attack(Health health) => health.TakeDamage(_damage);
 
     private void CalculateAndSetRadius(float chargeTime)
     {
         float chargeCoefficient = Mathf.Min(chargeTime, _player.MaxTimeForDashForce) / _player.MaxTimeForDashForce;
-        float radius = ((_maxRadius - _startRadius) * chargeCoefficient) + _startRadius;
+        float radius = ((MaxRadius - StartRadius) * chargeCoefficient) + StartRadius;
         _circleCollider.radius = radius;
     }
 }
