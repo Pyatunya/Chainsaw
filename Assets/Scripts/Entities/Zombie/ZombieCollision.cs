@@ -6,7 +6,7 @@ public sealed class ZombieCollision : MonoBehaviour
     [SerializeField] private int _damage = 5;
     [SerializeField] private Zombie _zombie;
     
-    private const float AttackDelay = 0.3f;
+    private const float AttackDelay = 0.25f;
     private float _inCollisionTime = 0f;
 
     public event Action OnAttacked;

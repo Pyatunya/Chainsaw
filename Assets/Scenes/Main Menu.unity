@@ -5137,6 +5137,10 @@ MonoBehaviour:
   _damageViewData:
   - {fileID: 11400000, guid: c3d44c8be7eb09240915f25f3f5950d0, type: 2}
   - {fileID: 11400000, guid: 99e8f5c53c862d6449144c7931ee9b39, type: 2}
+  _damageDashViewData:
+  - {fileID: 11400000, guid: c16c524085cfd964c9bca4f7dc8ce5f7, type: 2}
+  - {fileID: 11400000, guid: f5cb8f718f5cbcb4abfcfa01f98428ca, type: 2}
+  - {fileID: 11400000, guid: ac5b079f668e84940a9a70fc2276adf6, type: 2}
   _itemContainer: {fileID: 5637198585465280605}
   _upgradePrefab: {fileID: 4524247501642793084, guid: d4cb1f4cc026e7744ad8d8141fff1a2e, type: 3}
   _shoppingCart: {fileID: 5637198586185928892}
