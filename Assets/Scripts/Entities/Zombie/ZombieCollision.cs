@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public sealed class ZombieCollision : MonoBehaviour
 {
-    [SerializeField, Min(1)] private int _damage = 5;
+    [SerializeField] private int _damage = 5;
     [SerializeField] private Zombie _zombie;
     
     private const float AttackDelay = 0.3f;
@@ -44,7 +44,7 @@ public sealed class ZombieCollision : MonoBehaviour
     {
         OnAttacked?.Invoke();
         _zombie.StopMovement();
-        health.TakeDamage(_damage);
-       _zombie.ComboCounter.ResetToZero();
+         health.TakeDamage(_damage);
+        _zombie.ComboCounter.ResetToZero();
     }
 }

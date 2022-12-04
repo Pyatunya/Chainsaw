@@ -31,7 +31,6 @@ public abstract class Entity : MonoBehaviour, IEntity
     {
         ComboCounter?.Increase();
         _score?.Add(_addScoreCount);
-        gameObject.SetActive(false);
         Health.OnDied -= OnDied;
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 3}
-  - {fileID: 13}
+  - {fileID: 14}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 30121
+  controlID: 50487
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 30122
+  controlID: 50488
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 30123
+  controlID: 50489
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,10 +224,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 10b30000
-      m_LastClickedID: 45840
-      m_ExpandedIDs: 8eaeffff2eafffffc2afffff0eb6ffff24b8ffff68bbffffc6beffffe2cfffff84e0ffffc8f0ffff3cf3ffff52f6fffffcfaffff4a6100005e6100003e620000666500006e6500007a650000b4650000c2650000dc6500000c660000de6900001c6b0000506f00005c6f00007e6f0000966f0000a46f0000ee6f00001871000032750000ce750000f8750000707600009a760000ae76000078820000b2820000c0820000d2820000fa820000b09d0000429e0000e2aa00008eb2000096b20000a8b20000cab2000010b30000
+      scrollPos: {x: 0, y: 249.20001}
+      m_SelectedIDs: 6c210100ee21010052210100
+      m_LastClickedID: 74066
+      m_ExpandedIDs: c464fefffe65feff6e73feff0a75feff2a7bfeff8eaeffff2eafffffc2afffff0eb6ffff24b8ffff68bbffffc6beffffe2cfffff84e0ffffc8f0ffff3cf3ffff52f6fffffcfaffff4a6100005e6100003e620000666500006e6500007a650000b4650000c2650000dc6500000c660000de6900001c6b0000506f00005c6f00007e6f0000966f0000a46f0000ee6f00001871000032750000ce750000f8750000707600009a760000ae76000078820000b2820000c0820000d2820000fa820000b09d0000429e0000e2aa00008eb2000096b20000a8b20000cab2000010b300007c150100b4150100be2101007a2201009a220100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -557,9 +557,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.009537846, y: -3.541441, z: 9.98703}
+    m_Target: {x: 7.148693, y: 4.070376, z: -0.011127384}
     speed: 2
-    m_Value: {x: 64.71823, y: -107.98837, z: -0.44255728}
+    m_Value: {x: 7.2077456, y: 4.070376, z: -0.010320528}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -610,9 +610,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 0.60087574
+    m_Target: 1.8736936
     speed: 2
-    m_Value: 153.45383
+    m_Value: 1.7930082
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -688,8 +688,9 @@ MonoBehaviour:
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
+  - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -731,22 +732,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Prefabs/Zombies
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Prefabs/Zombies
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Farid\Downloads\Chainsaw
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 34640000
-    m_LastClickedID: 25652
-    m_ExpandedIDs: 00000000306400003264000034640000b6640000b864000000ca9a3b
+    scrollPos: {x: 0, y: 199}
+    m_SelectedIDs: 76670000
+    m_LastClickedID: 26486
+    m_ExpandedIDs: 000000003064000034640000b6640000b864000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -774,7 +775,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000306400003264000034640000b864000000ca9a3b
+    m_ExpandedIDs: 000000003064000034640000b864000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -799,8 +800,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 10b30000
-    m_LastClickedInstanceID: 45840
+    m_SelectedInstanceIDs: 6c210100ee21010052210100
+    m_LastClickedInstanceID: 74092
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300003a6100001ca5000014c0000000000000c87d0000
     m_RenameOverlay:
@@ -866,6 +867,37 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: -3237396543322336831, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 506.4
+    width: 1172.6
+    height: 277
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: 74092
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: InspectorWindow
@@ -879,12 +911,12 @@ MonoBehaviour:
     height: 730.8
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 14}
+  - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &14
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}

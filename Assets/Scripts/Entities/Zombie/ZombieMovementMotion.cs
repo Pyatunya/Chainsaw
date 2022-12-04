@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Zombie))]
 public sealed class ZombieMovementMotion : MonoBehaviour
 {
-    [SerializeField] private ZombieAnimator _zombieAnimator;
+    [SerializeField] private ZombieAnimation _zombieAnimator;
     private Zombie _zombie;
     private Coroutine _returnMovement;
     
@@ -16,7 +16,7 @@ public sealed class ZombieMovementMotion : MonoBehaviour
 
     private void OnAttacked()
     {
-        _zombieAnimator.Disable();
+        _zombieAnimator.StopAll();
         _zombie.StopMovement();
     }
 

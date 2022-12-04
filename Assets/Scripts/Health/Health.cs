@@ -3,7 +3,7 @@ using UnityEngine;
 
 public sealed class Health : MonoBehaviour
 {
-    [SerializeField] private int _value;
+    [SerializeField, Min(1)] private int _value;
     [SerializeField] private HealthView _healthView;
     
     private int _maxValue;
@@ -38,14 +38,8 @@ public sealed class Health : MonoBehaviour
         _value = Mathf.Max(0, _value - damage);
         _healthView.Visualize(_value, _maxValue);
         OnDamaged?.Invoke();
-        
-        if (_value == 0)
-            Die();
-    }
 
-    private void Die()
-    {
-        OnDied?.Invoke();
-        gameObject.SetActive(false);
+        if (_value == 0) 
+            OnDied?.Invoke();
     }
 }
