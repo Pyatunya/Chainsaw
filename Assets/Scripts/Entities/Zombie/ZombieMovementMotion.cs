@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Zombie))]
 public sealed class ZombieMovementMotion : MonoBehaviour
 {
     [SerializeField] private ZombieAnimation _zombieAnimator;

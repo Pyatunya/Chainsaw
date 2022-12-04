@@ -1,16 +1,23 @@
 ﻿using System.Collections;
-using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public sealed class ZombieDieAnimation : MonoBehaviour
 {
     [SerializeField] private ZombieAnimation _zombieAnimation;
     [SerializeField] private Health _health;
     [SerializeField] private string[] _dieAnimationsBoolNames;
-    [SerializeField] private Sprite _dieSprite;
-    [SerializeField] private Rigidbody2D _rigidbody;
+    [SerializeField] private GameObject _zombieDiePrefab;
+    [SerializeField] private ZombieCollision _zombieCollision;
+    private Rigidbody2D _rigidbody;
     private Coroutine _onDying;
-    
+
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _zombieCollision = GetComponent<ZombieCollision>();
+    }
+
     private void OnEnable() => _health.OnDied += OnDied;
 
     private void OnDisable() => _health.OnDied -= OnDied;
@@ -28,9 +35,8 @@ public sealed class ZombieDieAnimation : MonoBehaviour
         _zombieAnimation.Animator.SetTrigger(dieAnimationsTriggerName);
         var colliders = GetComponents<Collider2D>();
         
-        Destroy(GetComponent<ZombieCollision>());
-        Destroy(GetComponent<Zombie>());
-        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(_zombieCollision);
+        _rigidbody.bodyType = RigidbodyType2D.Static;
         
         for (var i = 0; i < colliders.Length; i++)
         {
@@ -38,6 +44,7 @@ public sealed class ZombieDieAnimation : MonoBehaviour
         }
         
         yield return new WaitForSeconds(_zombieAnimation.Animator.GetCurrentAnimatorClipInfo(0).Length);
-        _zombieAnimation.SpriteRenderer.sprite = _dieSprite;
+        Instantiate(_zombieDiePrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

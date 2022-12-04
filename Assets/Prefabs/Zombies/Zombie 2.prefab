@@ -253,8 +253,8 @@ MonoBehaviour:
   _health: {fileID: 8885449577304539054}
   _dieAnimationsBoolNames:
   - Die 1
-  _dieSprite: {fileID: -468629634, guid: 574cc334a58dd6b4cbb51943ed471146, type: 3}
-  _rigidbody: {fileID: 2133123651038987946}
+  _zombieDiePrefab: {fileID: 2133123651038987949, guid: 8c21158d2f2eeeb42b6d9f614f440ca9, type: 3}
+  _zombieCollision: {fileID: -2060088906701148051}
 --- !u!1 &8642221317014167825
 GameObject:
   m_ObjectHideFlags: 0
