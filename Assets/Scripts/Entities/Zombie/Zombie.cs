@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public sealed class Zombie : Entity
 {
     private float _speed = 4f;

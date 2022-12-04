@@ -2,7 +2,6 @@
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(ZombieCollision))]
 public sealed class ZombieDieAnimation : MonoBehaviour
 {
     [SerializeField] private ZombieAnimation _zombieAnimation;
@@ -27,8 +26,17 @@ public sealed class ZombieDieAnimation : MonoBehaviour
         var dieAnimationsTriggerName = _dieAnimationsBoolNames[Random.Range(0, _dieAnimationsBoolNames.Length)];
         _zombieAnimation.StopAll();
         _zombieAnimation.Animator.SetTrigger(dieAnimationsTriggerName);
-        GetComponents<Collider2D>().ToList().ForEach(Destroy);
-        _rigidbody.bodyType = RigidbodyType2D.Static;
+        var colliders = GetComponents<Collider2D>();
+        
+        Destroy(GetComponent<ZombieCollision>());
+        Destroy(GetComponent<Zombie>());
+        Destroy(GetComponent<Rigidbody2D>());
+        
+        for (var i = 0; i < colliders.Length; i++)
+        {
+            Destroy(colliders[i]);
+        }
+        
         yield return new WaitForSeconds(_zombieAnimation.Animator.GetCurrentAnimatorClipInfo(0).Length);
         _zombieAnimation.SpriteRenderer.sprite = _dieSprite;
     }

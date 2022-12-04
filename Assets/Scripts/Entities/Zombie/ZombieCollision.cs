@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
 public sealed class ZombieCollision : MonoBehaviour
 {
     [SerializeField] private int _damage = 5;

@@ -22,13 +22,13 @@ public sealed class IndependentPool<T> : IPool<T> where T : MonoBehaviour
 
     public T Get()
     {
-        foreach (var item in CreatedObjects)
-        {
-            if (item.gameObject.activeInHierarchy == false)
-            {
-                Release(item);
-            }
-        }
+        // foreach (var item in CreatedObjects)
+        // {
+        //     if (item.gameObject.activeInHierarchy == false)
+        //     {
+        //         Release(item);
+        //     }
+        // }
 
         return _pool.Get();
     }

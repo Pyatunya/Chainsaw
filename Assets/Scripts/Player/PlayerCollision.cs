@@ -4,13 +4,12 @@
 public sealed class PlayerCollision : MonoBehaviour
 {
     [SerializeField] private Player _player;
-
     private int _damage = 1;
 
     private void OnEnable()
     {
         var storage = new StorageWithNameSaveObject<PlayerCollision, int>();
-        _damage = 1;
+        _damage = storage.HasSave() ? storage.Load() : 1;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
