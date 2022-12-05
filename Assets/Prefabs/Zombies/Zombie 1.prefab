@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 8851729030344015120}
   - component: {fileID: 4677800302795488126}
   - component: {fileID: 778770947}
-  - component: {fileID: 3675474705927540803}
   m_Layer: 6
   m_Name: Zombie 1
   m_TagString: Untagged
@@ -80,9 +79,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133123651038987949}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.2
   m_LinearDrag: 0
@@ -133,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7231dbb354664d1ab86575fdf7a0b63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 3
+  _value: 1
   _healthView: {fileID: -4224631044682675446}
 --- !u!114 &-4224631044682675446
 MonoBehaviour:
@@ -190,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b39d60995a149aaa8f6815889a060ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blinkSeconds: 0.25
+  _blinkSeconds: 0.1
   _spriteRenderer: {fileID: 7648515858109276250}
   _color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &8851729030344015120
@@ -220,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e3e6b7a683461db5e235a6f12e8333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zombieAnimator: {fileID: 778770947, guid: b91a7ad300323c94db08da0202266941, type: 3}
+  _zombieAnimator: {fileID: 0}
 --- !u!114 &778770947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,26 +234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zombie: {fileID: -1506822977903473609}
   _zombieCollision: {fileID: -2060088906701148051}
-  <SpriteRenderer>k__BackingField: {fileID: 7648515858109276250}
-  <Animator>k__BackingField: {fileID: 8989654327093075632}
---- !u!114 &3675474705927540803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133123651038987949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce050075a8dd4ed08f0bed35220a12cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _zombieAnimation: {fileID: 778770947}
-  _health: {fileID: 8885449577304539054}
-  _dieAnimationsBoolNames:
-  - Die 1
-  _zombieDiePrefab: {fileID: 2133123651038987949, guid: b6a0dede43cd6e34aad30864120c7135, type: 3}
-  _zombieCollision: {fileID: -2060088906701148051}
+  <SpriteRenderer>k__BackingField: {fileID: 0}
+  <Animator>k__BackingField: {fileID: 0}
 --- !u!1 &8642221317014167825
 GameObject:
   m_ObjectHideFlags: 0

@@ -1435,6 +1435,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54df534594b23aa418567691d1bbd3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawners:
+  - {fileID: 623599263}
+  _levelTimer: {fileID: 1515121564}
 --- !u!4 &623599262
 Transform:
   m_ObjectHideFlags: 0
@@ -3617,7 +3620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed497a14ca31c649b5d858107a61c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needEnd: 0
   <TimeToEnd>k__BackingField: 114
 --- !u!114 &1515121566
 MonoBehaviour:
