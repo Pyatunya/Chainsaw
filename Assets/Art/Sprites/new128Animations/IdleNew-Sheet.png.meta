@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 727de4d6ae6767d47b6423c5d809b68b
+guid: b3545ac1ad7dfd64a8859610fc08da5b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_0
+      name: IdleNew-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,41 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68e0021e2fda684e9454a8efced6e1d
-      internalID: -826250504
+      spriteID: 26ce613e49e740b4e924edbad692cf2d
+      internalID: 1619091461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d8353394630e0f48a58dd7598f2af37
-      internalID: 1555412943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_2
+      name: IdleNew-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,41 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91cbbf081ee71cc4c9523147669577e9
-      internalID: -1549929266
+      spriteID: 551284b3e8ed3c743b7da6868631e56e
+      internalID: -430026232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52ea09d566faee146864adb56d2438b6
-      internalID: -1817096465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_4
+      name: IdleNew-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,41 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe75b4bd68a464744a014ff2bbc45dee
-      internalID: 319478074
+      spriteID: 6002c7cd7fcf50d42aa1d4b609c8159d
+      internalID: 952685451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d80f105af99e2d40b112643ff042bf0
-      internalID: 1714619371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_6
+      name: IdleNew-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +194,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d946854222a67924598c53b410b8e387
-      internalID: 210573059
+      spriteID: 713bc8e2e657d4843a7ee6181016f5a8
+      internalID: 1593313979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleNew-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3e661a94196964789d9e5285bea416
+      internalID: -1110170718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleNew-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14bc1ad5fa8bc4d4489e1fa054525040
+      internalID: 2130699043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IdleNew-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282106a9e3d5c5241bbe1a65accd6b15
+      internalID: -32175381
       vertices: []
       indices: 
       edges: []
@@ -274,13 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chainsaw IdleShaded2-Sheet_3: -1817096465
-      Chainsaw IdleShaded2-Sheet_0: -826250504
-      Chainsaw IdleShaded2-Sheet_6: 210573059
-      Chainsaw IdleShaded2-Sheet_1: 1555412943
-      Chainsaw IdleShaded2-Sheet_4: 319478074
-      Chainsaw IdleShaded2-Sheet_5: 1714619371
-      Chainsaw IdleShaded2-Sheet_2: -1549929266
+      IdleNew-Sheet_3: 1593313979
+      IdleNew-Sheet_2: 952685451
+      IdleNew-Sheet_5: 2130699043
+      IdleNew-Sheet_1: -430026232
+      IdleNew-Sheet_6: -32175381
+      IdleNew-Sheet_0: 1619091461
+      IdleNew-Sheet_4: -1110170718
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
