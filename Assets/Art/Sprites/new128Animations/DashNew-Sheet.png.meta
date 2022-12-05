@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 727de4d6ae6767d47b6423c5d809b68b
+guid: 7b43807ded0a4ed498e9f9a5f76404ec
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_0
+      name: DashNew-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 160
+        height: 160
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68e0021e2fda684e9454a8efced6e1d
-      internalID: -826250504
+      spriteID: d4f9030c9bb0c9a44bc04e479d8b298c
+      internalID: 664610317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_1
+      name: DashNew-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 160
         y: 0
-        width: 64
-        height: 64
+        width: 160
+        height: 160
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,83 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d8353394630e0f48a58dd7598f2af37
-      internalID: 1555412943
+      spriteID: 1e20c396199d44e43abb65f75bec3357
+      internalID: -2127240170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91cbbf081ee71cc4c9523147669577e9
-      internalID: -1549929266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52ea09d566faee146864adb56d2438b6
-      internalID: -1817096465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe75b4bd68a464744a014ff2bbc45dee
-      internalID: 319478074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_5
+      name: DashNew-Sheet_2
       rect:
         serializedVersion: 2
         x: 320
         y: 0
-        width: 64
-        height: 64
+        width: 160
+        height: 160
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d80f105af99e2d40b112643ff042bf0
-      internalID: 1714619371
+      spriteID: 9e677ee27e1ea2a47ac76694cce4a274
+      internalID: 1495751813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chainsaw IdleShaded2-Sheet_6
+      name: DashNew-Sheet_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 480
         y: 0
-        width: 64
-        height: 64
+        width: 160
+        height: 160
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +194,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d946854222a67924598c53b410b8e387
-      internalID: 210573059
+      spriteID: 4c7ca3cebcc201543b7720f105f8a324
+      internalID: 637441872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DashNew-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d726b041b62a7449b526225be672869
+      internalID: 918144623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DashNew-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e5d09236155cb4fbb6e64118c1613a
+      internalID: 995261620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DashNew-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77db2ebd90881ba42a80dccfce04d568
+      internalID: -140434380
       vertices: []
       indices: 
       edges: []
@@ -274,13 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chainsaw IdleShaded2-Sheet_3: -1817096465
-      Chainsaw IdleShaded2-Sheet_0: -826250504
-      Chainsaw IdleShaded2-Sheet_6: 210573059
-      Chainsaw IdleShaded2-Sheet_1: 1555412943
-      Chainsaw IdleShaded2-Sheet_4: 319478074
-      Chainsaw IdleShaded2-Sheet_5: 1714619371
-      Chainsaw IdleShaded2-Sheet_2: -1549929266
+      DashNew-Sheet_0: 664610317
+      DashNew-Sheet_1: -2127240170
+      DashNew-Sheet_5: 995261620
+      DashNew-Sheet_4: 918144623
+      DashNew-Sheet_6: -140434380
+      DashNew-Sheet_2: 1495751813
+      DashNew-Sheet_3: 637441872
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
