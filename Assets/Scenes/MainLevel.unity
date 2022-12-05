@@ -4948,6 +4948,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5be23cd2af4862e4180dd63eb22f9788, type: 2}
+    - target: {fileID: 5547346281045863343, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: -140434380, guid: 7b43807ded0a4ed498e9f9a5f76404ec, type: 3}
     - target: {fileID: 7941776914102251408, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
       propertyPath: _gameLoop
       value: 
