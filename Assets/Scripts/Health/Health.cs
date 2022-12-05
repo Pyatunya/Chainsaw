@@ -22,12 +22,6 @@ public sealed class Health : MonoBehaviour
         _maxValue = maxValue;
     }
 
-    public void Heal()
-    {
-        _value = _maxValue;
-        _healthView.Visualize(_value, _maxValue);
-    }
-
     private void OnEnable()
     {
         if (_maxValue != 0)
