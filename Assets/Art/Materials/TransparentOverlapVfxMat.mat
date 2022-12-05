@@ -8,10 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TransparentOverlapVfxMat
-  m_Shader: {fileID: 4800000, guid: 0e4de98a2aa643b4385496dd7036c609, type: 3}
-  m_ValidKeywords:
-  - UNITY_UI_ALPHACLIP
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ValidKeywords: []
   m_InvalidKeywords:
+  - UNITY_UI_ALPHACLIP
   - _COLORADDSUBDIFF_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
