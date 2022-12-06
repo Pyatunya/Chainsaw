@@ -6,7 +6,7 @@ public sealed class ZombieCollision : MonoBehaviour
 {
     [SerializeField, Min(1)] private int _damage = 5;
     [SerializeField] private Zombie _zombie;
-    
+
     private const float AttackDelay = 0.3f;
     private float _inCollisionTime = 0f;
 
@@ -14,7 +14,7 @@ public sealed class ZombieCollision : MonoBehaviour
 
     public int Damage => _damage;
 
-private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerHealth player))
         {
