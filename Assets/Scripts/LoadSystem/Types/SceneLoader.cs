@@ -6,11 +6,16 @@ namespace Shooter.LoadSystem
     {
         [SerializeField] private SceneLoadMode _mode;
         [SerializeField] private SceneData _loadingScreen;
-        
+        private IFactory<ISceneLoader> _sceneLoaderFactory;
+
+        private void Awake()
+        {
+            _sceneLoaderFactory = new SceneLoaderFactory(_mode, _loadingScreen);
+        }
+
         public void Load(SceneData sceneData)
         {
-            IFactory<ISceneLoader> factory = new SceneLoaderFactory(_mode, _loadingScreen);
-            var sceneLoader = factory.Create();
+            var sceneLoader = _sceneLoaderFactory.Create();
             sceneLoader.Load(sceneData);
         }
     }

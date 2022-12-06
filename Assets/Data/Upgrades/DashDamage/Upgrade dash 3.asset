@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7c47d08894456ba8aa71c28784d8cc, type: 3}
+  m_Name: Upgrade dash 3
+  m_EditorClassIdentifier: 
+  <Description>k__BackingField: Dash Damage 3
+  <FullDescription>k__BackingField: Dash Damage 3
+  <Title>k__BackingField: Dash Damage 3
+  <Price>k__BackingField: 1000
+  <Icon>k__BackingField: {fileID: 21300000, guid: a0ada7956e04fdd45967ef1b995b51ef, type: 3}
+  <Damage>k__BackingField: 15

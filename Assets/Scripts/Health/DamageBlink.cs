@@ -5,6 +5,7 @@ public sealed class DamageBlink : MonoBehaviour
 {
     [SerializeField] private float _blinkSeconds = 1.5f;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Color _color = Color.white;
     
     private Coroutine _onDamaging;
     private Health _health;
@@ -27,12 +28,12 @@ public sealed class DamageBlink : MonoBehaviour
     {
         var color = _spriteRenderer.color;
         var elapsed = 0f;
-        _spriteRenderer.color = Color.white;
+        _spriteRenderer.color = _color;
 
         while (elapsed < _blinkSeconds)
         {
             elapsed += Time.deltaTime;
-            _spriteRenderer.color = Color.Lerp(Color.red, color, elapsed / _blinkSeconds);
+            _spriteRenderer.color = Color.Lerp(_color, color, elapsed / _blinkSeconds);
             yield return null;
         }
 

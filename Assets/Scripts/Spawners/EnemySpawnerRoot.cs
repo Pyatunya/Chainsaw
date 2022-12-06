@@ -5,24 +5,43 @@ using Random = UnityEngine.Random;
 public sealed class EnemySpawnerRoot : MonoBehaviour
 {
     [SerializeField] private EnemySpawner[] _spawners;
+    [SerializeField] private LevelTimer _levelTimer;
 
-    private const float SpawnDelay = 2f;
-    private const float SpawnSeconds = 0.45f;
+    private const float SpawnSecondsOnHardLevelTime = 0.15f;
+    private const float SpawnDelayOnLevelStart = 2f;
+    private float _spawnSeconds = 0.45f;
+    private Coroutine _spawnRoutine;
+
+    private void OnEnable()
+    {
+        _levelTimer.HardLevelTimeStarted += OnHardLevelTimeStarted;
+        _levelTimer.LevelCompleted += OnLevelCompleted;
+    }
+
+    private void OnDisable()
+    {
+        _levelTimer.HardLevelTimeStarted -= OnHardLevelTimeStarted;
+        _levelTimer.LevelCompleted -= OnLevelCompleted;
+    }
 
     public void StartSpawn()
     {
-        StartCoroutine(Spawn());
+        _spawnRoutine = StartCoroutine(Spawn());
     }
 
     private IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(SpawnDelay);
+        yield return new WaitForSeconds(SpawnDelayOnLevelStart);
 
         while (true)
         {
-            yield return new WaitForSeconds(SpawnSeconds);
+            yield return new WaitForSeconds(_spawnSeconds);
             var spawner = _spawners[Random.Range(0, _spawners.Length)];
             spawner.Create();
         }
     }
+
+    private void OnLevelCompleted() => StopCoroutine(_spawnRoutine);
+
+    private void OnHardLevelTimeStarted() => _spawnSeconds = SpawnSecondsOnHardLevelTime;
 }
