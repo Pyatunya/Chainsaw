@@ -25,22 +25,22 @@ public sealed class ZombieMovementMotion : MonoBehaviour
         _zombie.Health.OnDamaged -= OnAttacked;
     }
 
-    private void Update()
-    {
-        if(_zombie.CanMove)
-            return;
+    // private void Update()
+    // {
+    //     if(_zombie.CanMove)
+    //         return;
 
-        if(_returnMovement != null)
-            return;
+    //     if(_returnMovement != null)
+    //         return;
         
-        _returnMovement = StartCoroutine(TryReturnMovement());
-    }
+    //     _returnMovement = StartCoroutine(TryReturnMovement());
+    // }
 
-    private IEnumerator TryReturnMovement()
-    {
-        yield return new WaitForSeconds(0.5f);
-        _zombieAnimator.Enable();
-        _zombie.ContinueMovement();
-        _returnMovement = null;
-    }
+    // private IEnumerator TryReturnMovement()
+    // {
+    //     yield return new WaitForSeconds(0.5f);
+    //     _zombieAnimator.Enable();
+    //     _zombie.ContinueMovement();
+    //     _returnMovement = null;
+    // }
 }
