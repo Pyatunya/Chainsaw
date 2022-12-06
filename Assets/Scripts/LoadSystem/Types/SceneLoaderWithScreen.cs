@@ -6,37 +6,33 @@ using System.Threading.Tasks;
 public sealed class SceneLoaderWithScreen : ISceneLoader
 {
     private readonly SceneData _loaderScene;
-    private AsyncOperation _loadScreen;
     private AsyncOperation _nextSceneLoad;
     private SceneData _nextScene;
 
-    public SceneLoaderWithScreen(SceneData loaderScene) => _loaderScene = loaderScene ?? throw new ArgumentNullException(nameof(loaderScene));
+    public SceneLoaderWithScreen(SceneData loaderScene) =>
+        _loaderScene = loaderScene ?? throw new ArgumentNullException(nameof(loaderScene));
 
     public void Load(SceneData sceneData)
     {
-        _loadScreen = SceneManager.LoadSceneAsync(_loaderScene.Name, LoadSceneMode.Additive);
+        var loadScreenOperation = SceneManager.LoadSceneAsync(_loaderScene.Name, LoadSceneMode.Additive);
         _nextScene = sceneData;
-        _loadScreen.completed += LoadNext;
+        loadScreenOperation.completed += LoadNext;
     }
 
-    private void LoadNext(AsyncOperation operation)
-    {
-        ChangeLoadText();
-        _loadScreen.completed -= LoadNext;
-    }
-
-    private async void ChangeLoadText()
+    private async void LoadNext(AsyncOperation operation)
     {
         var time = 0f;
-        
-        while (time < 2f)
+        const float loadingTime = 2f;
+
+        while (time < loadingTime)
         {
             await Task.Yield();
-            Visualize(Mathf.Lerp(0, 1, time / 2f));
+            Visualize(Mathf.Lerp(0, 1, time / loadingTime));
             time += Time.deltaTime;
         }
-        
+
         _nextSceneLoad = SceneManager.LoadSceneAsync(_nextScene.Name);
+
         while (!_nextSceneLoad.isDone)
         {
             await Task.Yield();
