@@ -1069,6 +1069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321188659}
   - component: {fileID: 321188660}
+  - component: {fileID: 321188661}
   m_Layer: 0
   m_Name: Waves
   m_TagString: Untagged
@@ -1103,21 +1104,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598735702693464183724aa74486248b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zombieSpawner: {fileID: 623599263}
+  _enemySpawnerRoot: {fileID: 623599261}
   _levelTimer: {fileID: 1515121564}
   _waveData:
-  - <Prefabs>k__BackingField:
-    - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+  - <Spawners>k__BackingField:
+    - {fileID: 321188661}
     <NeedTimeToStart>k__BackingField: 0
-  - <Prefabs>k__BackingField:
-    - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
-    - {fileID: -1506822977903473609, guid: ac4ececa76132dc4c8dda19d3f0f511c, type: 3}
+    <EnemySpawnCountAtOnce>k__BackingField: 1
+  - <Spawners>k__BackingField:
+    - {fileID: 321188661}
     <NeedTimeToStart>k__BackingField: 10
-  - <Prefabs>k__BackingField:
-    - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
-    - {fileID: -1506822977903473609, guid: ac4ececa76132dc4c8dda19d3f0f511c, type: 3}
-    - {fileID: -1506822977903473609, guid: b91a7ad300323c94db08da0202266941, type: 3}
+    <EnemySpawnCountAtOnce>k__BackingField: 1
+  - <Spawners>k__BackingField:
+    - {fileID: 623599263}
+    - {fileID: 321188661}
     <NeedTimeToStart>k__BackingField: 20
+    <EnemySpawnCountAtOnce>k__BackingField: 1
+--- !u!114 &321188661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321188658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ad4916759ca224da25e9dc749cd336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zombiePrefab: {fileID: 2391180221026533706, guid: a78e8ba05e5cdbb4b8e77f0bbb969d9f, type: 3}
+  _spawnPoints:
+  - {fileID: 293790393}
+  - {fileID: 2052956839}
+  - {fileID: 1671913562}
+  - {fileID: 1881343834}
+  - {fileID: 594090943}
+  - {fileID: 1300929831}
+  - {fileID: 316681979}
+  - {fileID: 2044025228}
+  - {fileID: 743983804}
+  - {fileID: 1452352645}
+  - {fileID: 556359422}
+  - {fileID: 711976694}
+  - {fileID: 713688891}
+  - {fileID: 1359268222}
+  - {fileID: 1292421286}
+  _player: {fileID: 7897066368288001020}
 --- !u!1 &504758751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,8 +1543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54df534594b23aa418567691d1bbd3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawners:
-  - {fileID: 623599263}
 --- !u!4 &623599262
 Transform:
   m_ObjectHideFlags: 0
@@ -1574,6 +1604,8 @@ MonoBehaviour:
   _score: {fileID: 1515121554}
   _comboCounter: {fileID: 1515121558}
   _player: {fileID: 7897066368288001020}
+  _prefabs:
+  - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
 --- !u!1 &683838570
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,7 +4155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed497a14ca31c649b5d858107a61c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needEnd: 0
   <TimeToEnd>k__BackingField: 114
 --- !u!114 &1515121566
 MonoBehaviour:
@@ -5207,7 +5238,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -826250504, guid: 727de4d6ae6767d47b6423c5d809b68b, type: 3}
+  m_Sprite: {fileID: -1110170718, guid: b3545ac1ad7dfd64a8859610fc08da5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5246,8 +5277,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113669466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: -1.53, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7897066368288001042}
@@ -5283,7 +5314,7 @@ PrefabInstance:
     - target: {fileID: 1176634442114274164, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: 1219730216, guid: 93f437ea89055864380c4f35f7512f83, type: 3}
+      objectReference: {fileID: 995261620, guid: 7b43807ded0a4ed498e9f9a5f76404ec, type: 3}
     - target: {fileID: 1176634442114274165, guid: cbbd00ebc183ac44190a553b9b9cf40f, type: 3}
       propertyPath: m_LocalScale.x
       value: 3

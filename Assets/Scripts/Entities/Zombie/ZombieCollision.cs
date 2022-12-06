@@ -4,13 +4,15 @@ using UnityEngine;
 public sealed class ZombieCollision : MonoBehaviour
 {
     [SerializeField] private int _damage = 5;
-    [SerializeField] private Zombie _zombie;
+    [SerializeField] private Entity _zombie;
     
     private const float AttackDelay = 0.25f;
     private float _inCollisionTime = 0f;
 
-    public event Action OnAttacked;
+    public int Damage => _damage;
     
+    public event Action OnAttacked;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerHealth player))
@@ -42,8 +44,8 @@ public sealed class ZombieCollision : MonoBehaviour
     private void Attack(Health health)
     {
         OnAttacked?.Invoke();
-        _zombie.StopMovement();
+        _zombie?.StopMovement();
          health.TakeDamage(_damage);
-        _zombie.ComboCounter.ResetToZero();
+        _zombie?.ComboCounter?.ResetToZero();
     }
 }

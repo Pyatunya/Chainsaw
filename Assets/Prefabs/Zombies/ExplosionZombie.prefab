@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2133123651038987945}
   - component: {fileID: 2133123651038987947}
   - component: {fileID: 2133123651038987946}
+  - component: {fileID: 3514434633528910390}
   - component: {fileID: -1506822977903473609}
   - component: {fileID: -2060088906701148051}
   - component: {fileID: 8885449577304539054}
@@ -22,7 +23,7 @@ GameObject:
   - component: {fileID: 4677800302795488126}
   - component: {fileID: 778770947}
   m_Layer: 6
-  m_Name: ZombieBanshee
+  m_Name: ExplosionZombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,6 +93,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3514434633528910390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133123651038987949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d2e978775a8ff4882b099fb7fe17e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionTime: 5
+  _explosionTimeOnDamage: 2
+  _explosionRadius: 3
+  _health: {fileID: 8885449577304539054}
+  _zombieCollision: {fileID: -2060088906701148051}
 --- !u!114 &-1506822977903473609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6827e129c5f14685b54cb672f22d6df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
+  _damage: 10
   _zombie: {fileID: -1506822977903473609}
 --- !u!114 &8885449577304539054
 MonoBehaviour:
@@ -133,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7231dbb354664d1ab86575fdf7a0b63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 1
+  _value: 3
   _healthView: {fileID: -4224631044682675446}
 --- !u!114 &-4224631044682675446
 MonoBehaviour:
@@ -220,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e3e6b7a683461db5e235a6f12e8333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zombieAnimator: {fileID: 0}
+  _zombieAnimator: {fileID: 778770947}
 --- !u!114 &778770947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,8 +253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zombie: {fileID: -1506822977903473609}
   _zombieCollision: {fileID: -2060088906701148051}
-  <SpriteRenderer>k__BackingField: {fileID: 0}
-  <Animator>k__BackingField: {fileID: 0}
+  <SpriteRenderer>k__BackingField: {fileID: 7648515858109276250}
+  <Animator>k__BackingField: {fileID: 8989654327093075632}
 --- !u!1 &8642221317014167825
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +330,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -465122121, guid: 7361a67228d88ee438eeef06c361c844, type: 3}
-  m_Color: {r: 1, g: 0.107547104, b: 0.8421218, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

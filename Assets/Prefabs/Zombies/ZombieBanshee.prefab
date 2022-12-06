@@ -11,16 +11,16 @@ GameObject:
   - component: {fileID: 2133123651038987945}
   - component: {fileID: 2133123651038987947}
   - component: {fileID: 2133123651038987946}
-  - component: {fileID: -1506822977903473609}
-  - component: {fileID: -2060088906701148051}
   - component: {fileID: 8885449577304539054}
   - component: {fileID: -4224631044682675446}
   - component: {fileID: 8226392663527715616}
   - component: {fileID: 7128484677242191412}
   - component: {fileID: 378767045687087423}
-  - component: {fileID: 8851729030344015120}
-  - component: {fileID: 4677800302795488126}
   - component: {fileID: 778770947}
+  - component: {fileID: 2391180221026533706}
+  - component: {fileID: 2591380839283018101}
+  - component: {fileID: 5671655391366757097}
+  - component: {fileID: 8506722770254145447}
   m_Layer: 6
   m_Name: ZombieBanshee
   m_TagString: Untagged
@@ -42,6 +42,7 @@ Transform:
   m_Children:
   - {fileID: 1068719737966393801}
   - {fileID: 2070448663204008585}
+  - {fileID: 2207548292327862542}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58,7 +59,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.022661969, y: 0.62}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -69,7 +70,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0453237, y: 1.2115113}
   m_EdgeRadius: 0
 --- !u!50 &2133123651038987946
 Rigidbody2D:
@@ -92,35 +93,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-1506822977903473609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133123651038987949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7220a278d93550b48b1deb0dd2704c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _addScoreCount: 25
-  <Health>k__BackingField: {fileID: 8885449577304539054}
-  _speed: 2
---- !u!114 &-2060088906701148051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133123651038987949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6827e129c5f14685b54cb672f22d6df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
-  _zombie: {fileID: -1506822977903473609}
 --- !u!114 &8885449577304539054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +147,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.65}
   serializedVersion: 2
   m_Radius: 0.75
 --- !u!114 &378767045687087423
@@ -193,34 +165,6 @@ MonoBehaviour:
   _blinkSeconds: 0.1
   _spriteRenderer: {fileID: 7648515858109276250}
   _color: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &8851729030344015120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133123651038987949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 135ba7c2a53383c47b47d4531b807c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _zombie: {fileID: -1506822977903473609}
-  _bloodVfx: {fileID: 5218904204270493298}
-  _health: {fileID: 8885449577304539054}
---- !u!114 &4677800302795488126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133123651038987949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e3e6b7a683461db5e235a6f12e8333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _zombieAnimator: {fileID: 0}
 --- !u!114 &778770947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,10 +177,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d322b39456413e4685c7e420d5d44f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zombie: {fileID: -1506822977903473609}
-  _zombieCollision: {fileID: -2060088906701148051}
-  <SpriteRenderer>k__BackingField: {fileID: 0}
-  <Animator>k__BackingField: {fileID: 0}
+  _zombie: {fileID: 2391180221026533706}
+  _zombieCollision: {fileID: 8506722770254145447}
+  <SpriteRenderer>k__BackingField: {fileID: 7648515858109276250}
+  <Animator>k__BackingField: {fileID: 8989654327093075632}
+--- !u!114 &2391180221026533706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133123651038987949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e847790346ae64a9c533a768551f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addScoreCount: 25
+  <Health>k__BackingField: {fileID: 8885449577304539054}
+  _speed: 1.5
+  _distanceAttack: 5
+  _cryFactoroi: {fileID: 2591380839283018101}
+  _attackDelay: 3
+--- !u!114 &2591380839283018101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133123651038987949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b982afb50c5de804abda55eb4dde4468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cryFrefab: {fileID: 3734571680221524670, guid: 90d4e606e568f7e4ea363737f094ed94, type: 3}
+  _spawnPoint: {fileID: 2207548292327862542}
+--- !u!114 &5671655391366757097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133123651038987949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce050075a8dd4ed08f0bed35220a12cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zombieAnimation: {fileID: 778770947}
+  _health: {fileID: 8885449577304539054}
+  _dieAnimationsBoolNames:
+  - Die 1
+  _zombieDiePrefab: {fileID: 2133123651038987949, guid: b6a0dede43cd6e34aad30864120c7135, type: 3}
+  _zombieCollision: {fileID: 8506722770254145447}
+--- !u!114 &8506722770254145447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133123651038987949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6827e129c5f14685b54cb672f22d6df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _zombie: {fileID: 2391180221026533706}
+--- !u!1 &8065091934532600735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2207548292327862542}
+  m_Layer: 6
+  m_Name: Cry Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2207548292327862542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8065091934532600735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.12, y: 0.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2133123651038987945}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8642221317014167825
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8642221317014167825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -402,10 +441,5 @@ PrefabInstance:
 --- !u!4 &1068719737966393801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3333952913050471024, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
-  m_PrefabInstance: {fileID: 2346461660911236025}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &5218904204270493298 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7565215919282728395, guid: f3bb2af02a3c60046964cc508dc7fdcc, type: 3}
   m_PrefabInstance: {fileID: 2346461660911236025}
   m_PrefabAsset: {fileID: 0}

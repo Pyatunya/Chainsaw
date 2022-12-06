@@ -35,6 +35,7 @@ public sealed class Player : MonoBehaviour
             foreach (Collider2D enemy in hitEnemies)
             {
                 enemy.GetComponent<Health>().TakeDamage(_playerCollision.Damage);
+                Debug.Log(enemy.gameObject.name);
             }
 
             _soundView.PlayRandomAttack();

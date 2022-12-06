@@ -7,8 +7,9 @@ public sealed class LevelTimer : MonoBehaviour
     public const float TotalLevelTime = LevelTimeBeforeHard + HardLevelTime;
     private const float LevelTimeBeforeHard = 74f;
     private const float HardLevelTime = 42f;
-    private float _time;
     
+    public float Time1 { get; private set; }
+
     [field: SerializeField] public float TimeToEnd { get; private set; } = 114f;
     
     public event Action LevelCompleted;
@@ -17,14 +18,14 @@ public sealed class LevelTimer : MonoBehaviour
 
     private void Update()
     {
-        _time += Time.deltaTime;
+        Time1 += UnityEngine.Time.deltaTime;
 
-        if (_time >= HardLevelTime)
+        if (Time1 >= HardLevelTime)
         {
             HardLevelTimeStarted?.Invoke();
         }
         
-        if (_time >= TimeToEnd)
+        if (Time1 >= TimeToEnd)
         {
             LevelCompleted?.Invoke();
         }
@@ -32,6 +33,6 @@ public sealed class LevelTimer : MonoBehaviour
 
     public float GetSpeedFromCurrentTime()
     {
-        return Mathf.Min(_time, 10f);
+        return Mathf.Min(Time1, 10f);
     }
 }

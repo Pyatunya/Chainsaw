@@ -51,7 +51,7 @@ public class ExplosionZombie : MonoBehaviour
         {
             if (collider != GetComponent<BoxCollider2D>())
             {
-                if (collider.TryGetComponent<Health>(out Health health))
+                if (collider.TryGetComponent(out Health health))
                 {
                     health.TakeDamage(_zombieCollision.Damage);
                 }

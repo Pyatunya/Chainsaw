@@ -8,6 +8,10 @@ public abstract class Entity : MonoBehaviour, IEntity
     
     public IComboCounter ComboCounter { get; private set; }
     
+    public abstract Vector2 MoveDirection { get; }
+
+    public bool CanMove { get; private set; } = true;
+    
     [field: SerializeField] public Health Health { get; private set; }
 
     private void OnEnable()
@@ -16,6 +20,11 @@ public abstract class Entity : MonoBehaviour, IEntity
         Enable();
     }
 
+    public void StopMovement() => CanMove = false;
+    
+    public void ContinueMovement() => CanMove = true;
+
+    
     protected abstract void Enable();
 
     public void Init(IScore score, IComboCounter comboCounter)
@@ -33,4 +42,5 @@ public abstract class Entity : MonoBehaviour, IEntity
         _score?.Add(_addScoreCount);
         Health.OnDied -= OnDied;
     }
+
 }

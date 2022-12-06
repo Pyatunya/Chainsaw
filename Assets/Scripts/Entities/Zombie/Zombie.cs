@@ -5,12 +5,10 @@ using UnityEngine;
 public sealed class Zombie : Entity
 {
     [SerializeField] private float _speed = 1f;
-
+    private Vector2 _moveDirection;
     private Rigidbody2D _rigidbody;
-    
-    public bool CanMove { get; private set; }
 
-    public Vector2 MoveDirection { get; private set; }
+    public override Vector2 MoveDirection => _moveDirection;
     
     public Player Player { get; private set; }
     
@@ -20,7 +18,6 @@ public sealed class Zombie : Entity
         //     throw new ArgumentOutOfRangeException(nameof(speed));
         
         Player = player ?? throw new ArgumentNullException(nameof(player));
-        // _speed = speed;
     }
 
     private void Start()
@@ -28,9 +25,6 @@ public sealed class Zombie : Entity
         _rigidbody ??= GetComponent<Rigidbody2D>();
     }
     
-    public void StopMovement() => CanMove = false;
-
-    public void ContinueMovement() => CanMove = true;
 
     private void FixedUpdate()
     {
@@ -38,9 +32,10 @@ public sealed class Zombie : Entity
             return;
 
         Vector2 direction = (Player.transform.position - transform.position).normalized;
-        MoveDirection = direction;
+        _moveDirection = direction;
         _rigidbody.MovePosition(_rigidbody.position + direction * _speed * Time.fixedDeltaTime);
     }
+
 
     protected override void Enable()
     {
