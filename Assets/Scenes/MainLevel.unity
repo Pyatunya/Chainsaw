@@ -1504,6 +1504,23 @@ MonoBehaviour:
   _player: {fileID: 7897066368288001020}
   _prefabs:
   - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
+--- !u!1 &679874477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6573263953987812987, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+  m_PrefabInstance: {fileID: 6573263953406637857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &679874481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679874477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22774e87d7df3d4fbef639d97530bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &683838570
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,7 +3080,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -25
+  m_SortingOrder: -9999
   m_Sprite: {fileID: 21300000, guid: 67a71909a2e1a83418de908f12d53753, type: 3}
   m_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   m_FlipX: 0
@@ -4896,6 +4913,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3936401954192964824, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936401954192964825, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936401954192964825, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3936401954192964827, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4944,6 +4973,10 @@ PrefabInstance:
       propertyPath: _attackCooldown
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 4818826618996301053, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5534261698745958041, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
       propertyPath: _audioSource
       value: 
@@ -4963,6 +4996,18 @@ PrefabInstance:
     - target: {fileID: 6573263953987812986, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
       propertyPath: m_FlipY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573263953987812988, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.047
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573263953987812988, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573263954453255147, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+      propertyPath: _value
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7941776914102251408, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
       propertyPath: _gameLoop
