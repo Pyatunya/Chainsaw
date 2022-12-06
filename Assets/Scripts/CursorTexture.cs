@@ -6,7 +6,7 @@ public sealed class CursorTexture : MonoBehaviour
 
     private void Update()
     {
-        var newTexture = new Texture2D(128, 105, TextureFormat.RGBA32, false);
+        var newTexture = new Texture2D(71, 52, TextureFormat.RGBA32, false);
         newTexture.SetPixels(_texture.GetPixels());
         newTexture.Apply();
         Cursor.SetCursor(newTexture, new Vector2(100, 75), CursorMode.ForceSoftware);

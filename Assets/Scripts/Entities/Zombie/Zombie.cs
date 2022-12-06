@@ -12,7 +12,6 @@ public sealed class Zombie : Entity
 
     public Vector2 MoveDirection { get; private set; }
 
-    
     public void Init(Player player, float speed)
     {
         if (speed <= 0) 
@@ -33,7 +32,7 @@ public sealed class Zombie : Entity
 
     private void FixedUpdate()
     {
-        if (_player == null || CanMove == false)
+        if (_player == null || CanMove == false || _rigidbody.bodyType == RigidbodyType2D.Static)
             return;
 
         Vector2 direction = (_player.transform.position - transform.position).normalized;
