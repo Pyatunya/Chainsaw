@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public sealed class PlayerHealth : MonoBehaviour
+public sealed class GameLose : MonoBehaviour
 {
     [SerializeField] private GameObject _endGamePanel;
     [SerializeField] private GameLoop _gameLoop;
@@ -16,6 +16,6 @@ public sealed class PlayerHealth : MonoBehaviour
         if (_endGamePanel != null)
             _endGamePanel.gameObject.SetActive(true);
         
-        _gameLoop?.Pause();
+        _gameLoop.Pause();
     }
 }
