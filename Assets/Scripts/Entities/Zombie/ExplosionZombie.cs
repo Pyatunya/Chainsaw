@@ -10,8 +10,7 @@ public class ExplosionZombie : MonoBehaviour
     [SerializeField] private Health _health;
     [SerializeField] private ZombieCollision _zombieCollision;
 
-    private float _elapsedTimeExplosion = 0;
-    private bool _hasExploded = false;
+    private bool _hasExploded;
     private Coroutine _startSelfDestructsRoutine;
 
     private void OnEnable()

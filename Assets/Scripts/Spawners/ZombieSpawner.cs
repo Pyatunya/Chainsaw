@@ -5,7 +5,6 @@ using Random = UnityEngine.Random;
 public sealed class ZombieSpawner : EnemySpawner
 {
     [SerializeField] private Transform[] _spawnPoints;
-    // [SerializeField] private LevelTimer _levelTimer;
     [SerializeField] private Score _score;
     [SerializeField] private ComboCounter _comboCounter;
     [SerializeField] private Player _player;

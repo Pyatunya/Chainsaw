@@ -990,6 +990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321188659}
   - component: {fileID: 321188660}
+  - component: {fileID: 321188661}
   m_Layer: 0
   m_Name: Waves
   m_TagString: Untagged
@@ -1034,6 +1035,7 @@ MonoBehaviour:
   - <Spawners>k__BackingField:
     - {fileID: 623599263}
     - {fileID: 1556365373}
+    - {fileID: 321188661}
     <NeedTimeToStart>k__BackingField: 10
     <EnemySpawnCountAtOnce>k__BackingField: 1
   - <Spawners>k__BackingField:
@@ -1042,6 +1044,36 @@ MonoBehaviour:
     - {fileID: 699566199}
     <NeedTimeToStart>k__BackingField: 20
     <EnemySpawnCountAtOnce>k__BackingField: 1
+--- !u!114 &321188661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321188658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ad4916759ca224da25e9dc749cd336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zombiePrefab: {fileID: 2391180221026533706, guid: a78e8ba05e5cdbb4b8e77f0bbb969d9f, type: 3}
+  _spawnPoints:
+  - {fileID: 293790393}
+  - {fileID: 2052956839}
+  - {fileID: 1671913562}
+  - {fileID: 1881343834}
+  - {fileID: 594090943}
+  - {fileID: 1300929831}
+  - {fileID: 316681979}
+  - {fileID: 2044025228}
+  - {fileID: 743983804}
+  - {fileID: 1452352645}
+  - {fileID: 556359422}
+  - {fileID: 711976694}
+  - {fileID: 713688891}
+  - {fileID: 1359268222}
+  - {fileID: 1292421286}
+  _player: {fileID: 7897066368288001020}
 --- !u!1 &504758751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,9 +1467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54df534594b23aa418567691d1bbd3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawners:
-  - {fileID: 623599263}
-  _levelTimer: {fileID: 1515121564}
 --- !u!4 &623599262
 Transform:
   m_ObjectHideFlags: 0
@@ -1498,7 +1527,6 @@ MonoBehaviour:
   - {fileID: 713688891}
   - {fileID: 1359268222}
   - {fileID: 1292421286}
-  _levelTimer: {fileID: 1515121564}
   _score: {fileID: 1515121554}
   _comboCounter: {fileID: 1515121558}
   _player: {fileID: 7897066368288001020}
@@ -1601,13 +1629,11 @@ MonoBehaviour:
   - {fileID: 713688891}
   - {fileID: 1359268222}
   - {fileID: 1292421286}
-  _levelTimer: {fileID: 1515121564}
   _score: {fileID: 1515121554}
   _comboCounter: {fileID: 1515121558}
   _player: {fileID: 7897066368288001020}
   _prefabs:
-  - {fileID: -1506822977903473609, guid: ac4ececa76132dc4c8dda19d3f0f511c, type: 3}
-  - {fileID: -1506822977903473609, guid: b91a7ad300323c94db08da0202266941, type: 3}
+  - {fileID: -1506822977903473609, guid: bc3ed0b30bf0183439c9d9d9a5683aa9, type: 3}
   - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
 --- !u!1 &711976693
 GameObject:
@@ -3740,13 +3766,12 @@ MonoBehaviour:
   - {fileID: 713688891}
   - {fileID: 1359268222}
   - {fileID: 1292421286}
-  _levelTimer: {fileID: 1515121564}
   _score: {fileID: 1515121554}
   _comboCounter: {fileID: 1515121558}
   _player: {fileID: 7897066368288001020}
   _prefabs:
   - {fileID: -1506822977903473609, guid: 5f2396e73fe09ad44a4d76afa2324c81, type: 3}
-  - {fileID: -1506822977903473609, guid: ac4ececa76132dc4c8dda19d3f0f511c, type: 3}
+  - {fileID: -1506822977903473609, guid: bc3ed0b30bf0183439c9d9d9a5683aa9, type: 3}
 --- !u!1 &1556456888
 GameObject:
   m_ObjectHideFlags: 0
@@ -4930,6 +4955,10 @@ PrefabInstance:
       propertyPath: _attackCooldown
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 3936401954192964829, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+      propertyPath: _playerCollision
+      value: 
+      objectReference: {fileID: 7897066368288001052}
     - target: {fileID: 5534261698745958041, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
       propertyPath: _audioSource
       value: 
@@ -4984,5 +5013,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25a9697534164f8d83b34a43446c2f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7897066368288001052 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2427336036243638380, guid: bff133fbc1bbfd94b912760bf538f30d, type: 3}
+  m_PrefabInstance: {fileID: 6573263953406637857}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3aa677788b247aa93af9bceac63cd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
