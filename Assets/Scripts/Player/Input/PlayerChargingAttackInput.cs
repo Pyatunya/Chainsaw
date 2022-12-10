@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Player))]
-public abstract class PlayerChargingAttackInput : MonoBehaviour
+[RequireComponent(typeof(IPlayer))]
+public abstract class PlayerChargingAttackInput : MonoBehaviour, IPlayerChargingAttackInput
 {
-    protected Player Player { get; private set; }
+    protected IPlayer Player { get; private set; }
 
     private void Start()
     {
-        Player = GetComponent<Player>();
+        Player = GetComponent<IPlayer>();
     }
 
     public abstract bool IsCharging { get; }

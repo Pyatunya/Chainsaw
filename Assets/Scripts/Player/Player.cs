@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(TargetSearcher))]
-public sealed class Player : MonoBehaviour
+public sealed class Player : MonoBehaviour, IPlayer
 {
     [SerializeField] private PlayerSoundView _soundView;
 
