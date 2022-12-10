@@ -13,7 +13,7 @@ public sealed class ZombieCollision : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerHealth player))
+        if (collision.gameObject.TryGetComponent(out GameLose player))
         {
             if (_zombie.CanMove == false)
             {
@@ -33,7 +33,7 @@ public sealed class ZombieCollision : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerHealth _))
+        if (collision.gameObject.TryGetComponent(out GameLose _))
         {
             _inCollisionTime = 0f;
         }
