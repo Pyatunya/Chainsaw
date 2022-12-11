@@ -8,12 +8,24 @@ namespace Root
         [SerializeField] private EnemySpawnerRoot _enemySpawnerRoot;
         [SerializeField] private Health _playerHealth;
         [SerializeField] private PlayerChargingAttackInput[] _playerChargingAttackInputs;
+        [SerializeField] private PlayerDashInput _playerDashInput;
         [SerializeField] private Player _player;
         private IUpdateble _playerAttackInput;
 
+#if !UNITY_EDITOR && UNITY_WEBGL
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern bool IsMobile();
+#endif
+        
         private void Awake()
         {
-            _playerAttackInput = new PlayerPcAttackInput(_playerChargingAttackInputs, _player);
+            var isMobile = false;
+
+#if !UNITY_EDITOR && UNITY_WEBGL
+        isMobile = IsMobile();
+#endif
+            _playerDashInput.Init(isMobile ? KeyCode.Mouse0 : KeyCode.F);
+            _playerAttackInput = new PlayerAttackInput(_playerChargingAttackInputs, _player, isMobile ? KeyCode.Mouse0 : KeyCode.F);
             InitPlayer();
             InitBestScore();
             _enemySpawnerRoot.StartSpawn();

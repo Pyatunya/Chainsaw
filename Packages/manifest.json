@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.gigacee.checkifmobileforunitywebgl": "https://github.com/gigacee/CheckIfMobileForUnityWebGL.git?path=Assets/Plugins/CheckIfMobileForUnityWebGL",
     "com.unity.collab-proxy": "1.17.6",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.16",

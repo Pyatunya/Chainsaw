@@ -3546,6 +3546,7 @@ MonoBehaviour:
   _playerHealth: {fileID: 1102996682}
   _playerChargingAttackInputs:
   - {fileID: 7897066368288001044}
+  _playerDashInput: {fileID: 7897066368288001044}
   _player: {fileID: 7897066368288001020}
 --- !u!1 &1517460854
 GameObject:

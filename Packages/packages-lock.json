@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.gigacee.checkifmobileforunitywebgl": {
+      "version": "https://github.com/gigacee/CheckIfMobileForUnityWebGL.git?path=Assets/Plugins/CheckIfMobileForUnityWebGL",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7266e400ff4ded32b114bbfe40989cf02da13e39"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.8",
       "depth": 1,
