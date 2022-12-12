@@ -7,7 +7,7 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PlayerDashInput _dashInput;
     [SerializeField] private Player _player;
-    private bool _isAttackingAnimation;
+    // private bool _isAttackingAnimation;
 
     private void OnEnable()
     {
@@ -40,18 +40,18 @@ public class PlayerAnimator : MonoBehaviour
 
     private void OnAttacked()
     {
-        if (_isAttackingAnimation == false)
-        {
-            _isAttackingAnimation = true;
-            _animator.Play("AttackPlayer", -1, 0);
-            StartCoroutine(WaitAttackAnimDelay());
-        }
+        _animator.Play("AttackPlayer", -1, 0);
+        // if (_isAttackingAnimation == false)
+        // {
+        //     _isAttackingAnimation = true;
+        //     StartCoroutine(WaitAttackAnimDelay());
+        // }
     }
 
-    private IEnumerator WaitAttackAnimDelay()
-    {
-        float time = 0.5f;
-        yield return new WaitForSeconds(time);
-        _isAttackingAnimation = false;
-    }
+    // private IEnumerator WaitAttackAnimDelay()
+    // {
+    //     float time = 0.5f;
+    //     yield return new WaitForSeconds(time);
+    //     _isAttackingAnimation = false;
+    // }
 }
