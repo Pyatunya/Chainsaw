@@ -3659,6 +3659,8 @@ MonoBehaviour:
   _bestScore: {fileID: 1515121553}
   _enemySpawnerRoot: {fileID: 623599261}
   _playerHealth: {fileID: 1102996682}
+  _playerChargingAttackInputs: []
+  _player: {fileID: 7897066368288001020}
 --- !u!1 &1517460854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,7 +4059,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 147
+  m_SortingOrder: 999
   m_TargetDisplay: 0
 --- !u!224 &1623630216
 RectTransform:
