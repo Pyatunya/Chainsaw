@@ -6,8 +6,8 @@ public sealed class Player : MonoBehaviour, IPlayer
 {
     [SerializeField] private PlayerSoundView _soundView;
 
-    private readonly float _moveForce = 800f;
-    private readonly float _dashForce = 3400f;
+    private readonly float _moveForce = 2f;
+    private readonly float _dashForce = 5f;
     private readonly DashForceCalculator _dashForceCalculator = new();
     private TargetSearcher _targetSearcher;
 
