@@ -20,7 +20,10 @@ public sealed class ZombieMovementMotion : MonoBehaviour
         _zombie.StopMovement();
     }
 
-    private void OnDestroy() => _zombie.Health.OnDamaged -= OnAttacked;
+    private void OnDestroy()
+    {
+        _zombie.Health.OnDamaged -= OnAttacked;
+    }
 
     private void Update()
     {

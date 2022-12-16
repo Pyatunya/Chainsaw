@@ -450,7 +450,6 @@ MonoBehaviour:
   _price: {fileID: 1840326596238745090}
   _checkMark: {fileID: 7316102487472166939}
   _hasUsedImage: {fileID: 3580763778419440434}
-  <SelectButton>k__BackingField: {fileID: 5878974935295759646}
 --- !u!61 &176766902379918916
 BoxCollider2D:
   m_ObjectHideFlags: 0

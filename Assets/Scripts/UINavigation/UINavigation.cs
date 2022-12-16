@@ -24,9 +24,7 @@ public sealed class UINavigation : MonoBehaviour
         if (Input.GetKey(KeyCode.F))
         {
             _time += Time.unscaledDeltaTime;
-            var minTimeToPlayAnimation = 0.15f;
-            
-            if (_time >= minTimeToPlayAnimation)
+            if (_time >= 0.15f)
                 _cursor.PlayAnimation();
         }
 

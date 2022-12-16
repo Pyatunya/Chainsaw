@@ -6,11 +6,15 @@ public sealed class DamageBlink : MonoBehaviour
     [SerializeField] private float _blinkSeconds = 1.5f;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Color _color = Color.white;
-    [SerializeField] private Health _health;
     
     private Coroutine _onDamaging;
+    private Health _health;
 
-    private void Start() => _health.OnDamaged += OnDamaged;
+    private void Start()
+    {
+        _health = GetComponent<Health>();
+        _health.OnDamaged += OnDamaged;
+    }
 
     private void OnDestroy() => _health.OnDamaged -= OnDamaged;
 

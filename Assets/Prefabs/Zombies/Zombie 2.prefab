@@ -193,7 +193,6 @@ MonoBehaviour:
   _blinkSeconds: 0.25
   _spriteRenderer: {fileID: 7648515858109276250}
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _health: {fileID: 8885449577304539054}
 --- !u!114 &8851729030344015120
 MonoBehaviour:
   m_ObjectHideFlags: 0
