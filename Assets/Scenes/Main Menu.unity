@@ -5362,6 +5362,7 @@ MonoBehaviour:
   _itemContainer: {fileID: 5637198585465280605}
   _upgradePrefab: {fileID: 4524247501642793084, guid: d4cb1f4cc026e7744ad8d8141fff1a2e, type: 3}
   _shoppingCart: {fileID: 5637198586185928892}
+  _upgradeSelector: {fileID: 5637198586817930414}
 --- !u!114 &5637198586338038688
 MonoBehaviour:
   m_ObjectHideFlags: 0

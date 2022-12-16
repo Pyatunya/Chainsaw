@@ -11,7 +11,6 @@ public sealed class Zombie : Entity
     public bool CanMove { get; private set; }
 
     public Vector2 MoveDirection { get; private set; }
-
     
     public void Init(Player player, float speed)
     {

@@ -6,9 +6,7 @@ public sealed class ZombieAnimation : MonoBehaviour
     [SerializeField] private ZombieCollision _zombieCollision;
 
     private bool _hasStopped;
-    private bool _isWalkingRight;
-    private bool _isWalkingUp;
-    
+
     private readonly int _zombieAttack = Animator.StringToHash("ZombieAttack");
     private readonly int _canMove = Animator.StringToHash("CanMove");
     private readonly int _walkDiagonal = Animator.StringToHash("WalkDiagonal");
@@ -25,11 +23,11 @@ public sealed class ZombieAnimation : MonoBehaviour
     {
         if(_hasStopped)
             return;
-        
-        _isWalkingRight = _zombie.MoveDirection.x >= 0;
-        _isWalkingUp = _zombie.MoveDirection.y >= 0;
-        SpriteRenderer.flipX = _isWalkingRight;
-        Animator.SetBool(_walkDiagonal, _isWalkingUp);
+
+        var isWalkingRight = _zombie.MoveDirection.x >= 0;
+        var isWalkingUp = _zombie.MoveDirection.y >= 0;
+        SpriteRenderer.flipX = isWalkingRight;
+        Animator.SetBool(_walkDiagonal, isWalkingUp);
         Animator.SetBool(_canMove, _zombie.CanMove);
     }
 

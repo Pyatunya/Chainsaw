@@ -9,7 +9,8 @@ public sealed class PlayerCollision : MonoBehaviour
     private void OnEnable()
     {
         var storage = new StorageWithNameSaveObject<PlayerCollision, int>();
-        _damage = storage.HasSave() ? storage.Load() : 1;
+        const int defaultDamage = 1;
+        _damage = storage.HasSave() ? storage.Load() : defaultDamage;
     }
 
     private void OnCollisionStay2D(Collision2D collision)

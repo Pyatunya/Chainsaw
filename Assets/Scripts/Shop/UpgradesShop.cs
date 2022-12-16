@@ -11,6 +11,7 @@ public sealed class UpgradesShop : MonoBehaviour
     [SerializeField] private GameObject _itemContainer;
     [SerializeField] private UpgradeView _upgradePrefab;
     [SerializeField] private ShoppingCart _shoppingCart;
+    [SerializeField] private UpgradeSelector _upgradeSelector;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public sealed class UpgradesShop : MonoBehaviour
             var path = $"{data.Price} {data.name} {data.Title} {data.Icon.name} g {data.Description} {data.FullDescription}";
             var upgradeView = upgradeViews[i];
             upgradeView.Init(data, new SaveUpgrade<TStorageType, TSaveType>(new BinaryStorage(), saveTypeProvider.Invoke(data), worseUpgradesSwitch, path), _shoppingCart);
+            upgradeView.SelectButton.Init(_upgradeSelector);
         }
     }
 

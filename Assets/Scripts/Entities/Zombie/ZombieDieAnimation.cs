@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public sealed class ZombieDieAnimation : MonoBehaviour
@@ -9,13 +10,18 @@ public sealed class ZombieDieAnimation : MonoBehaviour
     [SerializeField] private string[] _dieAnimationsBoolNames;
     [SerializeField] private GameObject _zombieDiePrefab;
     [SerializeField] private ZombieCollision _zombieCollision;
+    
     private Rigidbody2D _rigidbody;
     private Coroutine _onDying;
+    private Collider2D[] _colliders;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _zombieCollision = GetComponent<ZombieCollision>();
+        _colliders = GetComponents<Collider2D>();
+        
+        if (_colliders.Length == 0)
+            throw new System.InvalidOperationException("Zombie doesn't have colliders!");
     }
 
     private void OnEnable() => _health.OnDied += OnDied;
@@ -33,14 +39,12 @@ public sealed class ZombieDieAnimation : MonoBehaviour
         var dieAnimationsTriggerName = _dieAnimationsBoolNames[Random.Range(0, _dieAnimationsBoolNames.Length)];
         _zombieAnimation.StopAll();
         _zombieAnimation.Animator.SetTrigger(dieAnimationsTriggerName);
-        var colliders = GetComponents<Collider2D>();
-        
         Destroy(_zombieCollision);
         _rigidbody.bodyType = RigidbodyType2D.Static;
         
-        for (var i = 0; i < colliders.Length; i++)
+        for (var i = 0; i < _colliders.Length; i++)
         {
-            Destroy(colliders[i]);
+            Destroy(_colliders[i]);
         }
         
         yield return new WaitForSeconds(_zombieAnimation.Animator.GetCurrentAnimatorClipInfo(0).Length);

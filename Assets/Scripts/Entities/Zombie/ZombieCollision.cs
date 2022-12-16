@@ -34,9 +34,7 @@ public sealed class ZombieCollision : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out GameLose _))
-        {
             _inCollisionTime = 0f;
-        }
     }
 
     private void Attack(Health health)

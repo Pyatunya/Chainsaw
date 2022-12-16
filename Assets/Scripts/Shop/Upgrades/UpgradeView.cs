@@ -13,6 +13,8 @@ public sealed class UpgradeView : MonoBehaviour, IUpgradeView
     [SerializeField] private Image _hasUsedImage;
     private IShoppingCart _shoppingCart;
 
+    [field: SerializeField] public UpgradeSelectButton SelectButton { get; private set; }
+    
     public bool CanSelect { get; private set; } = true;
     
     public UpgradeViewData Data { get; private set; }
