@@ -80,7 +80,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133123651038987949}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
@@ -175,9 +175,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.34}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.38
+  m_Radius: 0.75
 --- !u!114 &378767045687087423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +267,6 @@ GameObject:
   - component: {fileID: 2070448663204008585}
   - component: {fileID: 7648515858109276250}
   - component: {fileID: 8989654327093075632}
-  - component: {fileID: 3086441998584901685}
   m_Layer: 6
   m_Name: Renderer
   m_TagString: Untagged
@@ -362,18 +361,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3086441998584901685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8642221317014167825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22774e87d7df3d4fbef639d97530bc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2346461660911236025
 PrefabInstance:
   m_ObjectHideFlags: 0
