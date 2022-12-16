@@ -8,10 +8,6 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private PlayerDashInput _dashInput;
     [SerializeField] private Player _player;
     private bool _isAttackingAnimation;
-    
-    private readonly int _chargeCompletedId = Animator.StringToHash("ChargeCompleted");
-    private readonly int _chargeIntroId = Animator.StringToHash("ChargeIntro");
-    private readonly int _attackPlayer = Animator.StringToHash("AttackPlayer");
 
     private void OnEnable()
     {
@@ -34,12 +30,12 @@ public class PlayerAnimator : MonoBehaviour
 
     private void OnDashChargingStarted()
     {
-        _animator.Play(_chargeIntroId, -1, 0);
+        _animator.Play("ChargeIntro", -1, 0);
     }
 
     private void OnDashChargingCompleted()
     {
-        _animator.SetTrigger(_chargeCompletedId);
+        _animator.SetTrigger("ChargeCompleted");
     }
 
     private void OnAttacked()
@@ -47,14 +43,14 @@ public class PlayerAnimator : MonoBehaviour
         if (_isAttackingAnimation == false)
         {
             _isAttackingAnimation = true;
-            _animator.Play(_attackPlayer, -1, 0);
+            _animator.Play("AttackPlayer", -1, 0);
             StartCoroutine(WaitAttackAnimDelay());
         }
     }
 
     private IEnumerator WaitAttackAnimDelay()
     {
-        const float time = 0.5f;
+        float time = 0.5f;
         yield return new WaitForSeconds(time);
         _isAttackingAnimation = false;
     }

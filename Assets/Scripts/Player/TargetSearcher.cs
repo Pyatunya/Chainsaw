@@ -31,7 +31,11 @@ public sealed class TargetSearcher : MonoBehaviour
     private IEnumerable<Entity> FindInCircle()
     {
         var colliders = Physics2D.OverlapCircleAll(transform.position, _radius, _layerMask);
-        var entities = colliders.Select(collider => collider.GetComponent<Entity>());
+
+        var entities = colliders.
+            Where(collider => collider.GetComponent<Entity>() != null).
+            Select(collider => collider.GetComponent<Entity>());
+
         return entities;
     }
 
